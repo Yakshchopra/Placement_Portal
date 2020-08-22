@@ -1,19 +1,32 @@
 import React from 'react';
 import '../static/StudentLogin.css';
-import { FormControl,InputLabel,Input,FormHelperText } from '@material-ui/core';
+import {makeStyles,FormControl,TextField, InputLabel,Input,FormHelperText,Button } from '@material-ui/core';
+
+
 
 function StudentLogin() {
+
+  
+
   return (
       <div className="login">
         <div className="top">
             <img className="srm" src="./images/Srmseal.png" alt="logo" /><span className="heading">SRM Placement Portal</span>
         </div>
         <div className="form">
+        <h1 class="frm-txt">Login</h1>
+      <form>
+        <div className="category-active">Student</div>
+        <div className="category-1">Faculty</div>
+        <div className="category-2">Admin</div>
         <FormControl>
-             <InputLabel htmlFor="my-input">Email address</InputLabel>
-             <Input id="my-input" aria-describedby="my-helper-text" />
-             <FormHelperText id="my-helper-text">We'll never share your email.</FormHelperText>
+             <div><TextField required id="outlined-basic" type="text" label="Register Number" variant="outlined" /></div>
+             <div class="input"><TextField required id="outlined-basic" type="Password" label="Password" variant="outlined" /></div>
+            <Button className="submit" type="submit" variant="contained" color="primary" href="#">
+                Submit
+            </Button>
         </FormControl>
+      </form>
 
         </div>
       </div>

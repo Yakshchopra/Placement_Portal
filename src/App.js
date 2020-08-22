@@ -17,8 +17,6 @@ function App() {
         <switch>   
           <Route path="/" exact component={StudentLogin} />       
           <Route path="/student-dashboard" component={SideNav} />
-          
-        
         </switch>
         
       </div>
