@@ -1,0 +1,36 @@
+.form{
+    margin-top: 50px;
+    width: 40%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+}
+
+.srm{
+    height: 60px;
+}
+
+.top{
+    background-color: #4D8AF0;
+    margin-top: 10px !important;
+    padding: 10px;
+    width: 95vw;
+    margin-left: 13px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.heading{
+    color: white;
+    font-size: 30px;
+    left: 50%;
+    
+    top: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+
+}
