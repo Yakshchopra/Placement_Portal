@@ -1,0 +1,40 @@
+.side-nav{
+    height: 96vh;
+    width: 7%;
+    background-color: #4D8AF0;
+    border-radius: 25px;
+    margin-left: 10px;
+    margin-top: 1%;
+    text-align: center;
+    position: fixed;
+}
+.icon{
+    color: white;
+    font-size: 35px;
+    margin-top: 60px;
+}
+.overlay-cont{
+    position: absolute !important;
+    left: 90px;
+    top: 19%;
+    background-color: #4D8AF0;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 0 20px 20px 0;
+    display: none;
+}
+.icon:hover + .overlay-cont{
+    display: block;
+}
+.icon-2{
+    color: white;
+    font-size: 35px;
+    margin-top: 50px;
+}
+
+.logo{
+    width: 80%;
+    margin-top: 20px;
+}
+
