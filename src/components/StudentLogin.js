@@ -6,8 +6,6 @@ import {makeStyles,FormControl,TextField, InputLabel,Input,FormHelperText,Button
 
 function StudentLogin() {
 
-  
-
   return (
       <div className="login">
         <div className="top">

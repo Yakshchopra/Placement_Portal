@@ -1,0 +1,21 @@
+.dash-1{
+    width: 67%;
+    margin-left: 9%;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.welcome{
+    background-color: #467DFF ;
+    padding: 25px;
+    border-radius: 20px;
+    opacity: 0.6;
+    color: white;
+}
+
+.dash-1-cont{
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    color: grey;
+}

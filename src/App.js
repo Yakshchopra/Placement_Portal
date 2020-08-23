@@ -9,6 +9,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import StudentEdit from './components/StudentEdit';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
       <div className="app">
         <switch>   
           <Route path="/" exact component={StudentLogin} />       
-          <Route path="/student-dashboard" component={SideNav} />
+          <Route path="/student-dashboard" component={StudentEdit} />
         </switch>
         
       </div>
