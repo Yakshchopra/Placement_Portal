@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Placement-portal"
+    }
+  },
+  "defaultProject": "Placement-portal",
+  "cli": {
+    "analytics": "894d0aac-319d-473c-b4f6-fad16f7d548c"
+  }
 }
