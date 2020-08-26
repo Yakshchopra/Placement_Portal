@@ -15,19 +15,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 //Service
-import {AuthService} from './authentication/auth.service'
+import {AuthService} from './authentication/auth.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
+    DetailsformComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
     
     
   ],
