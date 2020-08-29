@@ -5,7 +5,7 @@ import { RegisterComponent } from './authentication/register/register.component'
 
 const routes: Routes = [
   { path: 'lazy', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent}
 ];
 
