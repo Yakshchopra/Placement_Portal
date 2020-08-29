@@ -10,6 +10,7 @@ import { RegisterComponent } from './authentication/register/register.component'
 
 //Forms Module
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 //Http Modules
 import { HttpClientModule } from '@angular/common/http'
@@ -31,7 +32,8 @@ import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.comp
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule
     
     
   ],
