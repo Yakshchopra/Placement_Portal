@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "placement-portal-9c359": {
+      "hosting": {
+        "Placement-portal": [
+          "placement-portal-9c359"
+        ]
+      }
+    }
+  }
+}
