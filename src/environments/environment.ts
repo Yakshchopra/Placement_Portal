@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+<<<<<<< HEAD
   BaseUrl: 'localhost3000/api/',
   firebaseConfig : {
     apiKey: "AIzaSyDkfMxdjlhdxJKIGaPssfMu6tPtP3Bun00",
@@ -16,6 +17,9 @@ export const environment = {
     measurementId: "G-MQ80LCL3ZW"
   }
   
+=======
+  BaseUrl : 'localhost3000/api/'
+>>>>>>> AngularInit
 };
 
 /*

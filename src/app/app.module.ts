@@ -16,7 +16,11 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'
 
 //Service
+<<<<<<< HEAD
 import { AuthService} from './authentication/auth.service';
+=======
+import {AuthService} from './authentication/auth.service';
+>>>>>>> AngularInit
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component'
 
