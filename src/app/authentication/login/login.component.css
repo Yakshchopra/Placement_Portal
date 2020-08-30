@@ -63,6 +63,11 @@ input{
     margin-top: -4px;
 }
 
+
+.yc-sgn:focus{
+    outline: none;
+}
+
 hr{
     margin: 0 !important;
     margin-top: 5px !important;
@@ -108,3 +113,6 @@ hr{
     margin-top: 8%;
 }
 
+.mid{
+    transform: rotate(5deg);
+}

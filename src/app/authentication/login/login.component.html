@@ -4,9 +4,9 @@
         <div class="row">
           <div class="col-sm">
             <div class="yc-selection">
-                <div class="yc-opt"><h1>Student</h1><div class="highlight"></div></div>
-                <div class="yc-opt"><h1>Faculty</h1></div>
-                <div class="yc-opt"><h1>Admin</h1></div>
+                <div class="yc-opt stu"><h1>Student</h1><div class="highlight s"></div></div>
+                <div class="yc-opt fac"><h1>Faculty</h1><div class="highlight f mid"></div></div>
+                <div class="yc-opt adm"><h1>Admin</h1><div class="highlight a"></div></div>
             </div>
           </div>
 
@@ -15,7 +15,7 @@
           </div>
 
           <div class="col-sm">
-            <div class="yc-form">
+            <div class="yc-form s">
                 <div class="row">
                     <div class="col-7">
                       <h1>Welcome Back!</h1>
@@ -25,9 +25,9 @@
                     </div>
                   </div>
                   <hr>
-                  <form class="container">
+                  <form class="student-l container">
                     <div class="form-group">
-                      <label for="r.no">Regestration Number</label>
+                      <label for="r.no">Registration Number</label>
                       <input type="text" class="form-control" id="r.no">
                     </div>
                     <div class="form-group">
@@ -37,6 +37,58 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
             </div>
+
+
+            <!-- faculty -->
+            <div class="yc-form f">
+              <div class="row">
+                  <div class="col-7">
+                    <h1>Welcome Back!</h1>
+                  </div>
+                  <div class="col">
+                    <button class="yc-sgn">Sign-Up</button>
+                  </div>
+                </div>
+                <hr>
+                <form class="faculty-l container">
+                  <div class="form-group">
+                    <label for="r.no">Faculty ID</label>
+                    <input type="text" class="form-control" id="r.no">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+          </div>
+            <!-- faculty / -->
+
+            <!-- admin -->
+            <div class="yc-form a">
+                <div class="row">
+                    <div class="col-7">
+                      <h1>Welcome Back!</h1>
+                    </div>
+                    <div class="col">
+                      <button class="yc-sgn">Sign-Up</button>
+                    </div>
+                  </div>
+                  <hr>
+                  <form class="admin-l container">
+                    <div class="form-group">
+                      <label for="r.no">Admin Number</label>
+                      <input type="text" class="form-control" id="r.no">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                      <input type="password" class="form-control" id="exampleInputPassword1">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+            </div>
+            <!-- admin / -->
+
           </div>
         </div>
       </div>
