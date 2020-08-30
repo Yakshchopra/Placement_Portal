@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -33,8 +34,8 @@ import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.comp
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    FormsModule
-    
+    FormsModule,
+    FontAwesomeModule
     
   ],
   providers: [AuthService],

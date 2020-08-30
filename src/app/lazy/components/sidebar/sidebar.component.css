@@ -1,0 +1,24 @@
+.yc-nav{
+    width: 7%;
+    height: 96vh;
+    background-color: #7d81ff;
+    margin-left: 10px;
+    border-radius: 15px;
+    position: fixed;
+    top: 2%;
+}
+
+.yc-logo{
+    width: 90%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+.icon{
+    font-size: 35px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    margin-top: 45px;
+}
