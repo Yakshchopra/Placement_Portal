@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.post(RegisterUrl, form);
   }
   //Login Function
-  login(form) {
-    let LoginUrl = this.BaseURL + 'login';
+  login(form,i:number) {
+    let LoginUrl = this.BaseURL + ['students/login','faculty/login','admin/login'][i];
     return this.http.post(LoginUrl, form);
   }
 
