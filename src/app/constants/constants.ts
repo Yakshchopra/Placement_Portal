@@ -1,3 +1,7 @@
 export const constants = {
-  EDUCATION: 'Education'
+  EDUCATION: 'Education',
+  registerNumber: 'registerNumber',
+  name: 'name',
+  password: 'password',
+  
 }

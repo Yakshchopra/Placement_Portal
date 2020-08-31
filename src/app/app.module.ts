@@ -8,18 +8,25 @@ import { AppComponent } from './app.component';
 //Authentication Components
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
+import { EmailVerifyComponent } from './authentication/email-verify/email-verify.component';
 
 //Forms Module
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
 //Http Modules
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http'
 
 //Service
-import { AuthService} from './authentication/auth.service';
+import { AuthService } from './authentication/auth.service';
+import { HttpinterceptorService } from './securityTools/httpinterceptor.service';
+
+//Toaster
+import { ToastrModule } from 'ngx-toastr';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component'
+import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +34,7 @@ import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.comp
     LoginComponent,
     RegisterComponent,
     DetailsformComponent,
+    EmailVerifyComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,10 +43,16 @@ import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.comp
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    ToastrModule.forRoot()
     
   ],
-  providers: [AuthService],
+  providers: [AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpinterceptorService,
+     multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

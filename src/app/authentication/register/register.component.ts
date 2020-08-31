@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -7,17 +8,50 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  registerForm: FormGroup
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,
+              private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.registerForm = this.fb.group({
+      name: ['', [Validators.required]],
+      registrationNumber: ['', [Validators.required]],
+      email: ['',[Validators.required]],
+      password: ['', [Validators.required]],
+      conf_pass: ['', [Validators.required]],
+      number: ['', [Validators.required]]
+    },
+      {
+        validators: this.ConfirmedValidator('password', 'conf_pass')
+    })
+  }
+  // Confirmed password Validator
+  ConfirmedValidator(controlName: string, matchingControlName: string){
+    return (formGroup: FormGroup) => {
+        const control = formGroup.controls[controlName];
+        const matchingControl = formGroup.controls[matchingControlName];
+        if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+            return;
+        }
+        if (control.value !== matchingControl.value) {
+            matchingControl.setErrors({ confirmedValidator: true });
+        } else {
+            matchingControl.setErrors(null);
+        }
+    }
+  }
+  get f() { 
+    return this.registerForm;
   }
   
   // Register Function
-    register(form) {
+  register() {
+    let form = this.registerForm.value;
+    delete form['conf_pass'];
       this.auth.register(form)
         .subscribe(res => {
-  
+          console.log(res)
   
         }, err => {
             

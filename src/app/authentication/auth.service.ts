@@ -14,13 +14,17 @@ export class AuthService {
 
   //Regsiter Function
   register<Observable>(form) {
-    let RegisterUrl = this.BaseURL + 'register';
+    let RegisterUrl = this.BaseURL + 'students/register';
     return this.http.post(RegisterUrl, form);
   }
   //Login Function
-  login(form) {
-    let LoginUrl = this.BaseURL + 'login';
+  login(form,i:number) {
+    let LoginUrl = this.BaseURL + ['students/login','faculty/login','admin/login'][i];
     return this.http.post(LoginUrl, form);
+  }
+  verifyEmail(token) {
+    let verifyURL = this.BaseURL + 'verifyemail';
+    return this.http.post(verifyURL, { token: token });
   }
 
   

@@ -4,9 +4,9 @@
         <div class="row">
           <div class="col-sm">
             <div class="yc-selection">
-                <div class="yc-opt"><h1>Student</h1><div class="highlight"></div></div>
-                <div class="yc-opt"><h1>Faculty</h1></div>
-                <div class="yc-opt"><h1>Admin</h1></div>
+                <div class="yc-opt stu" (click)='user = 0'><h1>Student</h1><div class="highlight s" *ngIf='user == 0'></div></div>
+                <div class="yc-opt fac" (click)='user = 1'><h1>Faculty</h1><div class="highlight f mid" *ngIf='user == 1'></div></div>
+                <div class="yc-opt adm" (click)='user = 2'><h1>Admin</h1><div class="highlight a" *ngIf='user == 2'></div></div>
             </div>
           </div>
 
@@ -15,28 +15,31 @@
           </div>
 
           <div class="col-sm">
-            <div class="yc-form">
-                <div class="row">
-                    <div class="col-7">
-                      <h1>Welcome Back!</h1>
-                    </div>
-                    <div class="col">
-                      <button class="yc-sgn">Sign-Up</button>
-                    </div>
+          <!-- login -->
+            <div class="yc-form f" >
+              <div class="row">
+                  <div class="col-7">
+                    <h1>Welcome Back!</h1>
                   </div>
-                  <hr>
-                  <form class="container">
-                    <div class="form-group">
-                      <label for="r.no">Regestration Number</label>
-                      <input type="text" class="form-control" id="r.no">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                  </form>
-            </div>
+                  <div class="col">
+                    <button class="yc-sgn" routerLink="/register">Sign-Up</button>
+                  </div>
+                </div>
+                <hr>
+                <form class="faculty-l container" [formGroup]="loginForm" >
+                  <div class="form-group">
+                    <label for="r.no" *ngIf='user == 1'>Faculty ID</label>
+                    <label for="r.no" *ngIf='user == 0'>Registration Number</label>
+                    <label for="r.no" *ngIf='user == 2'>Admin Number</label>
+                    <input type="text" class="form-control" id="r.no" formControlName="registrationNumber">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
+                  </div>
+                  <button type="submit" class="btn btn-primary" (click)='login()'>Submit</button>
+                </form>
+              </div>
           </div>
         </div>
       </div>

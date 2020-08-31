@@ -63,6 +63,11 @@ input{
     margin-top: -4px;
 }
 
+
+.yc-sgn:focus{
+    outline: none;
+}
+
 hr{
     margin: 0 !important;
     margin-top: 5px !important;
@@ -72,6 +77,7 @@ hr{
 .yc-opt{
     background-color:#B5B9FF;
     width: 60%;
+    cursor: pointer;
     text-align: center;
     padding: 5px;
     border-radius: 20px;
@@ -108,3 +114,6 @@ hr{
     margin-top: 8%;
 }
 
+.mid{
+    transform: rotate(5deg);
+}

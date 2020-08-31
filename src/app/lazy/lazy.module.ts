@@ -9,7 +9,9 @@ import { SidebarComponent} from './components/sidebar/sidebar.component';
 import { ProfileComponent } from './components/profile/profile.component'
 
 //Angular Material
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+
+
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import {MatDialogModule} from '@angular/material/dialog';
   imports: [
     CommonModule,
     LazyRoutingModule,
-    MatDialogModule
+    MatDialogModule,
+  
+    
   ]
 })
 export class LazyModule { }
