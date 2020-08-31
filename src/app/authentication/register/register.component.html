@@ -1,18 +1,18 @@
 <section class="form">
-    <form class="container cont">
+    <form [formGroup]='registerForm' class="container cont">
         <h1 class="header">Register</h1>
         <hr>
         <div class="form-row">
           <div class="col">
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" required>
+                <input formControlName='name' type="text" class="form-control" id="name" required>
               </div>
           </div>
           <div class="col">
             <div class="form-group">
                 <label for="r.no">Register Number</label>
-                <input type="text" class="form-control" id="r.no" required>
+                <input formControlName='registrationNumber' type="text" class="form-control" id="r.no" required>
               </div>
           </div>
         </div>
@@ -20,13 +20,13 @@
             <div class="col">
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <input formControlName='email' type="email" class="form-control" id="email" required>
                   </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="phone">Contact Number</label>
-                    <input type="number" class="form-control" id="phone" required>
+                    <input formControlName='number' type="number" class="form-control" id="phone" required>
                   </div>
             </div>
           </div>
@@ -34,17 +34,17 @@
             <div class="col">
                 <div class="form-group">
                     <label for="pass">Password</label>
-                    <input type="password" class="form-control" id="pass" required>
+                    <input formControlName='password' type="password" class="form-control" id="pass" required>
                   </div>
             </div>
             <div class="col">
                 <div class="form-group">
                     <label for="cmp">Confirm Password</label>
-                    <input type="password" class="form-control" id="cmp" required>
+                    <input formControlName='conf_pass' type="password" class="form-control" id="cmp" required>
                   </div>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Next</button>
+          <button class="btn btn-primary" type="submit" (click)='register()'>Next</button>
       </form>
 
       <!-- second-form -->
