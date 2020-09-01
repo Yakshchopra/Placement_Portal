@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  
-  constructor() { }
 
+  constructor(private change: ChangeDetectorRef) { }
+  
   ngOnInit(): void {
     
   }
+  
 
 }

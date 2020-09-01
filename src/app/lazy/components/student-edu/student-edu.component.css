@@ -37,6 +37,26 @@ hr{
 .icon{
     font-size: 20px;
 }
+.ver_icon{
+    font-size: 20px;
+    color: green;
+    
+    
+}
+.btn-primary {
+    border-radius: 15px;
+    background-color: #7D81FF !important;
+    font-size: 15px;
+    margin-top: -10px;
+    outline:none;
+    border:none;
+    
+}
+.btn-primary:active{
+    background-color: #686dfc !important;
+    outline:none !important;
+    border:none  !important;
+}
 span{
     margin-left: 10px;
 }

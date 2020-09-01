@@ -26,6 +26,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component';
+import { HttpCacheService } from './securityTools/http-cache.service';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.comp
     ToastrModule.forRoot()
     
   ],
-  providers: [AuthService,
+  providers: [AuthService,HttpCacheService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpinterceptorService,
