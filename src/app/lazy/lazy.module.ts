@@ -28,11 +28,7 @@ import { UploadFileComponent } from './popups/upload-file/upload-file.component'
     SidebarComponent,
     ProfileComponent,
     StudentEduComponent,
-<<<<<<< HEAD
-    StudentAchivementsComponent
-=======
     UploadFileComponent
->>>>>>> f70f6afeedc3c237a0f9e3f307d5338d0b317f1d
   ],
   imports: [
     CommonModule,
