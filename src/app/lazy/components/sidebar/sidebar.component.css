@@ -6,6 +6,8 @@
     border-radius: 15px;
     position: fixed;
     top: 2%;
+    background-image: url(../../../../assets/images/nav.png);
+    background-size: contain;
 }
 
 .yc-logo{

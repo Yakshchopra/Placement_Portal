@@ -10,6 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component'
 
 //Angular Material
 import { MatDialogModule } from '@angular/material/dialog';
+import { StudentEduComponent } from './components/student-edu/student-edu.component';
 
 //Service
 import { ProfileService } from './components/profile/profile.service';
@@ -19,7 +20,8 @@ import { ProfileService } from './components/profile/profile.service';
   declarations: [
     LazyComponent,
     SidebarComponent,
-    ProfileComponent
+    ProfileComponent,
+    StudentEduComponent
   ],
   imports: [
     CommonModule,
