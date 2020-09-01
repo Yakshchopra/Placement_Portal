@@ -14,6 +14,7 @@ import { StudentEduComponent } from './components/student-edu/student-edu.compon
 
 //Service
 import { ProfileService } from './components/profile/profile.service';
+import { StudentAchivementsComponent } from './components/student-achivements/student-achivements.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { ProfileService } from './components/profile/profile.service';
     LazyComponent,
     SidebarComponent,
     ProfileComponent,
-    StudentEduComponent
+    StudentEduComponent,
+    StudentAchivementsComponent
   ],
   imports: [
     CommonModule,
