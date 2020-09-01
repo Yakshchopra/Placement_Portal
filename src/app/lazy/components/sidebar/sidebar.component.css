@@ -32,7 +32,11 @@
     margin-top: -40px;
     margin-left:95% ;
 }
-.item:active {
-border:none;
-outline:none;
+.item {
+    border:none;
 }
+.item:focus {
+border:none !important;
+outline:none !important;
+}
+
