@@ -24,3 +24,15 @@
     color: white;
     margin-top: 45px;
 }
+.block {
+    height: 50px;
+    position: absolute;
+    width: 5px;
+    background-color: white;
+    margin-top: -40px;
+    margin-left:95% ;
+}
+.item:active {
+border:none;
+outline:none;
+}

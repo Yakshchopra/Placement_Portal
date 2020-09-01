@@ -11,8 +11,8 @@ const routes: Routes = [
   { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'student/register/:token', component: EmailVerifyComponent},
-  { path: 'education', component: StudentEduComponent}
+  { path: 'student/register/:token', component: EmailVerifyComponent },
+  
 ];
 
 @NgModule({
