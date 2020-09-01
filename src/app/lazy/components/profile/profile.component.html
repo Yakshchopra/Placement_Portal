@@ -27,13 +27,13 @@
         <hr>
         <div class="container">
           
-            <div class="row">
+            <div class="row" *ngIf='userdata'>
               <div class="col-sm name">
                 <h2>
-                    Yaksh Chopra
+                    {{userdata.name}}
                 </h2>
                 <p class="reg-no">
-                    RA1811032010048
+                    {{userdata.registrationNumber}}
                 </p>
                 <p>
                     CSE-IoT
@@ -43,12 +43,12 @@
                 <div class="contact">
                     <i class="fas fa-envelope icon"></i>
                         <span>
-                            yakshchopra@gmail.com
+                            {{userdata.email}}
                         </span>
                         <div class="yc-2">
                           <i class="fas fa-phone-alt icon"></i>
                           <span>
-                              9419102821
+                              {{userdata.number}}
                           </span>
                         </div>
                    
@@ -58,11 +58,14 @@
                 <div class="adv">
                   <i class="fas fa-chalkboard-teacher icon sec"></i>
                     <span class="sec">
-                      Prabushankar K.C.
+                      {{userdata.faculty}}
                     </span>
                 </div>
                 
               </div>
+            </div>
+            <div class="row d-flex justify-content-center mt-3" *ngIf='!userdata'>
+              <img src="../../../../assets//gifs/preloader.gif" width="100" height="100">
             </div>
           </div>
           <h1 class="field-1 tw">Skills</h1>

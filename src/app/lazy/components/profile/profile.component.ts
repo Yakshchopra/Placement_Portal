@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-declare var $: any;
+import { ProfileService } from './profile.service';
 
+declare var $: any;
+interface userdetail {
+  name: string,
+  email: string,
+  faculty?: string,
+  number: number,
+  registrationNumber:String
+}
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -8,11 +16,12 @@ declare var $: any;
 })
 export class ProfileComponent implements OnInit {
 
-  
+  userdata: userdetail;
 
-  constructor() { }
+  constructor(private prf_service: ProfileService) { }
 
   ngOnInit(): void {
+    this.getUserDetail();
     $(document).ready(function() { 
       $('.input-btn').click(function() { 
           if ($('#skl').val().length != 0) { 
@@ -25,6 +34,12 @@ export class ProfileComponent implements OnInit {
           } else alert("Enter some Text!"); 
       }); 
   }); 
+  }
+  getUserDetail() {
+    this.prf_service.getUserDetail()
+      .subscribe(res => {
+        this.userdata = res;
+    })
   }
 
 }

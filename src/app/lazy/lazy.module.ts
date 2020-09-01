@@ -11,7 +11,8 @@ import { ProfileComponent } from './components/profile/profile.component'
 //Angular Material
 import { MatDialogModule } from '@angular/material/dialog';
 
-
+//Service
+import { ProfileService } from './components/profile/profile.service';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDialogModule,
   
     
-  ]
+  ],
+  providers:[ProfileService]
 })
 export class LazyModule { }

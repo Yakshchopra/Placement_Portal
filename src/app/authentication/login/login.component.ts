@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
           this.errormessage = 'Student not Registered';
           this.errorToaster('top', 'center', this.errormessage);
         }
-         else if (response.message == 'verify') {
+         else if (response.message == 'verified') {
           this.errormessage = 'Verification link Sent to your Email';
           this.warnToaster('top', 'center', this.errormessage);
         } else {
@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         
       }, err => {
           this.errormessage = err.error.message;
+          this.errorToaster('botton', 'right', this.errormessage);
           console.log(this.errormessage);
     } )
   }
