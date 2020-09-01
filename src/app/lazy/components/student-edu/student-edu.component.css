@@ -16,7 +16,10 @@
     padding: 20px;
     width: 75%;
     z-index: 3;
-    
+    margin-left: 0.5%;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+-moz-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
 }
 
 .school h1{
@@ -46,17 +49,22 @@ span{
     position: absolute;
     top: 0;
     background-color: #FFDBE1;    
+    background-image: url(../../../../assets/images/bg.png);
+    background-size: cover;
     width: 21%;
-    right: 1%;
+    right: 0.75%;
     height: 40vh;
     border-radius: 0 0 35px 35px;
     padding: 20px;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+    box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
 }
 
 .highlights h1{
     text-align: center;
     font-weight: 500;
-    color: slategray;
+    color: white;
     margin: 2px;
 }
 
@@ -88,13 +96,17 @@ span{
 }
 
 h2{
-    color: slategray;
+    color: white;
 }
 
 .ills{
     position: absolute;
     right: 1%;
-    top: 50%;
+    top: 54%;
     width: 21%;
     z-index: -1;
+}
+
+button{
+    background-color: blue !important;
 }
