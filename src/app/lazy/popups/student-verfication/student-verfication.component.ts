@@ -54,16 +54,16 @@ export class StudentVerficationComponent implements OnInit,OnDestroy {
           
           this.acv_service.submitCourse(this.form)
             .subscribe(check => {
+              this.dialogRef.close({ upload: true,type:'course' });
               
-              this.closerDialog();
             }, err => {
                 this.errormessage = err.error.message;
           })
         } else {
-          console.log('go')
+         
           this.acv_service.submitworkshop(this.form)
           .subscribe(check => {
-            this.closerDialog();
+            this.dialogRef.close({ upload: true, type: 'workshop' });
           }, err => {
               this.errormessage = err.error.message;
         })

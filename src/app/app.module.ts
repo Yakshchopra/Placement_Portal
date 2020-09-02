@@ -23,10 +23,12 @@ import { HttpinterceptorService } from './securityTools/httpinterceptor.service'
 
 //Toaster
 import { ToastrModule } from 'ngx-toastr';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component';
 import { HttpCacheService } from './securityTools/http-cache.service';
+
 
 
 @NgModule({
@@ -45,7 +47,8 @@ import { HttpCacheService } from './securityTools/http-cache.service';
     BrowserAnimationsModule,
     FormsModule,
     FontAwesomeModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    MatProgressSpinnerModule
     
   ],
   providers: [AuthService,HttpCacheService,

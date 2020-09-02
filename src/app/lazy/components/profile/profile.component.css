@@ -98,12 +98,18 @@ hr{
     margin-top: 25px;
 }
 
-.skl{
-    background-color: #7D81FF;
+#skl{
+    
     border-radius: 20px;
     padding: 5px 15px 5px 15px;
-    color: white;
+    color: black;
     margin-left: 10px;
+    
+    border-style: solid !important;
+}
+#skl:focus{
+    border-color:#7D81FF !important ;
+    outline:none;
 }
 
 .skills{

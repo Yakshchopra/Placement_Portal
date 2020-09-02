@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
+import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
+
 
 declare var $: any;
 interface userdetail {
@@ -17,9 +19,10 @@ interface userdetail {
 export class ProfileComponent implements OnInit {
 
   userdata: userdetail;
-
+  skill: string;
+  errormessage: string;
   constructor(private prf_service: ProfileService) { }
-
+  skills = [];
   ngOnInit(): void {
     this.getUserDetail();
     $(document).ready(function() { 
@@ -41,5 +44,26 @@ export class ProfileComponent implements OnInit {
         this.userdata = res;
     })
   }
-
+  drop(event: CdkDragDrop<string>) {
+    moveItemInArray(this.skills, event.previousIndex, event.currentIndex);
+  }
+  add() {
+    this.prf_service.submitSkills({ name: this.skill })
+      .subscribe(res => {
+        console.log(res)
+        this.skills.push(this.skill);
+        this.skill = '';
+      },
+        err => {
+          this.errormessage = err.error.message;
+      })
+  }
+  getSkills() {
+    this.prf_service.getSkills()
+      .subscribe(res => {
+        this.skills = res;
+      },err => {
+          this.errormessage = err.error.message;
+    })
+  }
 }

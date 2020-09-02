@@ -16,7 +16,15 @@ export class ProfileService {
   constructor(private http: HttpClient) { }
   private BaseURL = environment.BaseUrl;
   getUserDetail() {
-    let URL = this.BaseURL + 'userdetail/get'
+    let URL = this.BaseURL + 'userdetail/get';
     return this.http.get<userdetail>(URL);
+  }
+  submitSkills(data) {
+    let URL = this.BaseURL + 'skills/update';
+    return this.http.post<any>(URL,data);
+  }
+  getSkills() {
+    let URL = this.BaseURL + 'skills/get';
+    return this.http.get<any>(URL);
   }
 }

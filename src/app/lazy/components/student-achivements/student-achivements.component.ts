@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentVerficationComponent } from '../../popups/student-verfication/student-verfication.component';
 import { AchievmentsService } from './achievments.service';
+
+
+
 declare var $: any;
 interface file {
   name: string,
@@ -38,11 +41,21 @@ export class StudentAchivementsComponent implements OnInit {
   })
   }
   openDialog(state) {
-    this.diaglogref.open(StudentVerficationComponent, {
+   let dialog =  this.diaglogref.open(StudentVerficationComponent, {
       width: '50%',
       data:{name:state}
       
 
+   })
+    dialog.afterClosed()
+      .subscribe(res => {
+        if (res.upload) {
+          if (res.type === 'workshop') {
+            this.retrieveworkshops();
+          } else {
+            this.retrievecourse();
+        }
+      }
     })
   }
 

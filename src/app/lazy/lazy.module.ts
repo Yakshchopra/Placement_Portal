@@ -13,8 +13,10 @@ import { StudentAchivementsComponent } from './components/student-achivements/st
 //Angular Material
 import { MatDialogModule } from '@angular/material/dialog';
 import { StudentEduComponent } from './components/student-edu/student-edu.component';
-import { MatIconModule} from '@angular/material/icon';
-import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatChipsModule } from '@angular/material/chips';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 
 //Service
 import { ProfileService } from './components/profile/profile.service';
@@ -23,6 +25,7 @@ import { ProfileService } from './components/profile/profile.service';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { UploadFileComponent } from './popups/upload-file/upload-file.component';
 import { StudentVerficationComponent } from './popups/student-verfication/student-verfication.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { StudentVerficationComponent } from './popups/student-verfication/studen
     MatDialogModule,
     MatIconModule,
     NgxFileDropModule,
-    FormsModule
+    FormsModule,
+    MatChipsModule,
+    DragDropModule
   
     
   ],

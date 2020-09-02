@@ -71,9 +71,17 @@
           <hr>
           <div class="skills">            
              <div class="gp-1">
-              <span><input id="skl" type="text" class="form-group" placeholder="add skill"></span>
-              <span><a><i class="fas fa-plus-circle icon input-btn"></i></a></span>
+              <span><input id="skl" type="text" class="form-group" placeholder="add skill" [(ngModel)]='skill'></span>
+              <span (click)='add()'><a><i class="fas fa-plus-circle icon input-btn"></i></a></span>
               <div class="skill-add"> 
+                <mat-chip-list aria-label="Fish selection"
+                cdkDropList 
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)">
+                  
+                  <mat-chip color="primary" cdkDrag *ngFor='let sk of skills' >{{sk}}</mat-chip>
+                  
+                </mat-chip-list>
               </div> 
             </div>
           </div>
