@@ -4,7 +4,7 @@ import { HttpEvent, HttpHandler, HttpRequest, HttpResponse } from '@angular/comm
 import { Observable, of } from 'rxjs';  
 import { tap } from 'rxjs/operators';  
 import { HttpCacheService } from './http-cache.service';  
-
+import { HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +12,10 @@ export class HttpinterceptorService {
 
   constructor(private cacheService: HttpCacheService) { }
   intercept(req, next) {
-    let tokenAuthorization = req.clone({
+    let tokenAuthorization;
+ 
+    tokenAuthorization = req.clone({
+      
       setHeaders: {
         Authorization: 'Bearer ' + (localStorage.getItem('token') || 'falseToken')
       }

@@ -13,7 +13,8 @@ import { StudentAchivementsComponent } from './components/student-achivements/st
 //Angular Material
 import { MatDialogModule } from '@angular/material/dialog';
 import { StudentEduComponent } from './components/student-edu/student-edu.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule} from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 //Service
 import { ProfileService } from './components/profile/profile.service';
@@ -38,7 +39,8 @@ import { StudentVerficationComponent } from './popups/student-verfication/studen
     LazyRoutingModule,
     MatDialogModule,
     MatIconModule,
-    NgxFileDropModule
+    NgxFileDropModule,
+    FormsModule
   
     
   ],

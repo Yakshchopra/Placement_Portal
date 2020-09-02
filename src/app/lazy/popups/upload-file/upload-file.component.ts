@@ -3,6 +3,7 @@ import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
+import { AchievmentsService } from '../../components/student-achivements/achievments.service';
 
 @Component({
   selector: 'app-upload-file',
@@ -10,11 +11,22 @@ import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 
   styleUrls: ['./upload-file.component.css']
 })
 export class UploadFileComponent implements OnInit {
-
+  fileUrl;
+  errormessage;
   constructor(public dialogRef: MatDialogRef<UploadFileComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
+    @Inject(MAT_DIALOG_DATA) public data: any, private acv_service: AchievmentsService) { }
+  
   ngOnInit(): void {
+  }
+  upload(file) {
+    this.acv_service.uploadFile(file)
+      .subscribe(res => {
+        let response:any = res;
+        this.fileUrl = response.fileurl;
+        this.dialogRef.close(this.fileUrl);
+      }, err => {
+          this.errormessage = err.error.message;
+    })
   }
   file = false;
   closeDialog() {
@@ -34,19 +46,19 @@ export class UploadFileComponent implements OnInit {
           // Here you can access the real file
           console.log(droppedFile.relativePath, file);
           
-            this.file = true;
+          this.file = true;
+          
           
  
-          /**
+          
           // You could upload it like this:
           const formData = new FormData()
-          formData.append('logo', file, relativePath)
+          formData.append(this.data.name, file, droppedFile.relativePath)
+          this.upload(formData);
  
           // Headers
-          const headers = new HttpHeaders({
-            'security-token': 'mytoken'
-          })
- 
+         
+          /**
           this.http.post('https://mybackend.com/api/upload/sanitize-and-save-logo', formData, { headers: headers, responseType: 'blob' })
           .subscribe(data => {
             // Sanitized logo returned from backend

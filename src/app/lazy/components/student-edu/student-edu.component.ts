@@ -28,6 +28,7 @@ export class StudentEduComponent implements OnInit {
   openDialog(name) {
     const dialogRef = this.dialog.open(UploadFileComponent, {
       width: '250px',
+      
       data: { name: name }
     });
   }
