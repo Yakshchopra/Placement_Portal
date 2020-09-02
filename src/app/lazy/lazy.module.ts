@@ -7,6 +7,7 @@ import { LazyRoutingModule } from './lazy-routing.module';
 import { LazyComponent } from './lazy.component';
 import { SidebarComponent} from './components/sidebar/sidebar.component';
 import { ProfileComponent } from './components/profile/profile.component'
+import { StudentAchivementsComponent } from './components/student-achivements/student-achivements.component';
 
 
 //Angular Material
@@ -16,11 +17,11 @@ import {MatIconModule} from '@angular/material/icon';
 
 //Service
 import { ProfileService } from './components/profile/profile.service';
-import { StudentAchivementsComponent } from './components/student-achivements/student-achivements.component';
 
 //Other modules
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { UploadFileComponent } from './popups/upload-file/upload-file.component';
+import { StudentVerficationComponent } from './popups/student-verfication/student-verfication.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,9 @@ import { UploadFileComponent } from './popups/upload-file/upload-file.component'
     SidebarComponent,
     ProfileComponent,
     StudentEduComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    StudentAchivementsComponent,
+    StudentVerficationComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { StudentVerficationComponent } from '../../popups/student-verfication/student-verfication.component';
 declare var $: any;
 
 @Component({
@@ -8,15 +10,18 @@ declare var $: any;
 })
 export class StudentAchivementsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private diaglogref:MatDialog) { }
+  
 
   ngOnInit(): void {
-    $(document).ready(function(){
-      $(".form").hide();      
-      $(".add").click(function(){
-        $(".form").show();
-      });
-    });
+  }
+  openDialog() {
+    this.diaglogref.open(StudentVerficationComponent, {
+      width: '50%',
+      
+      
+
+    })
   }
 
 }
