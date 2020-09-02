@@ -6,7 +6,7 @@
 
 export const environment = {
   production: false,
-  BaseUrl : 'http://localhost:3000/api/'
+  BaseUrl : 'https://placement.azurewebsites.net/api/'
 };
 
 /*
