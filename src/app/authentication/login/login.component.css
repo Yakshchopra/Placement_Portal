@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+
 .main{
     background-color: #7d81ff;
     height: 100vh;
@@ -22,6 +25,7 @@
 
 .col-7 h1{
     text-shadow: 0px 2px 3px silver;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .yc-form{
@@ -50,6 +54,7 @@ input{
     margin-bottom: 10px;
     background-color: #7d81ff;
     border: none;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .yc-sgn{
@@ -61,6 +66,7 @@ input{
     color: white;
     border-radius: 20px;
     margin-top: -4px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 
@@ -72,6 +78,7 @@ hr{
     margin: 0 !important;
     margin-top: 5px !important;
     margin-bottom: 25px !important;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .yc-opt{
@@ -107,7 +114,7 @@ hr{
     margin-top: 6%;
     color: white;
     text-shadow: 0px 2px 5px #234D3C;
-   
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .yc-selection{

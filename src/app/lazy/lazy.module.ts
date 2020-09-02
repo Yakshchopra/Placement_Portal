@@ -23,6 +23,7 @@ import { ProfileService } from './components/profile/profile.service';
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { UploadFileComponent } from './popups/upload-file/upload-file.component';
 import { StudentVerficationComponent } from './popups/student-verfication/student-verfication.component';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { StudentVerficationComponent } from './popups/student-verfication/studen
     StudentEduComponent,
     UploadFileComponent,
     StudentAchivementsComponent,
-    StudentVerficationComponent
+    StudentVerficationComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,10 @@
+img{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+.error{
+    height: 100vh;
+    overflow: hidden;
+}
