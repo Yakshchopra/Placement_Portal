@@ -12,9 +12,19 @@ export class StudentAchivementsComponent implements OnInit {
 
   ngOnInit(): void {
     $(document).ready(function(){
-      $(".form").hide();      
+      $(".form").hide();   
+      $(".form-achive").hide();   
       $(".add").click(function(){
         $(".form").show();
+      });
+      $(".add-ach").click(function(){
+        $(".form-achive").show();
+      });
+      $(".cross").click(function(){
+        $(".form-achive").hide();
+      });
+      $(".cross-1").click(function(){
+        $(".form").hide();
       });
     });
   }

@@ -19,7 +19,8 @@
 .tile{
     height: 100px;
     width: 90%;
-    background-color: black;
+    border-radius: 10px;
+    background-color: #7d81ff;
 }
 
 .courses h2{
@@ -36,7 +37,7 @@
     margin-top: 30px;
 }
 
-.add{
+.add,.add-ach{
     padding: 10px;
     border-radius: 20px;
     border: 0;
@@ -56,6 +57,7 @@
     left: 0;
     top: 0;
     background-image: url(../../../../assets/images/certi.png);
+    z-index: 3;
 }
 
 .cont{
@@ -85,7 +87,7 @@ hr{
 }
 
 .achive{
-    width: 45%;
+    width: 55%;
 }
 
 .highlights{
@@ -119,4 +121,34 @@ img{
     right: 0;
     top: 47%;
     z-index: -1;
+}
+
+.icon{
+    font-size: 60px;
+    margin-left: 50%;
+    margin-top:50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+.btn{
+    margin-top: 20px;
+}
+
+.form-achive{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url(../../../../assets/images/certi.png);
+    z-index: 3;
+}
+
+.cross{
+    float: right;
+}
+
+.cross-1{
+    float: right;
 }
