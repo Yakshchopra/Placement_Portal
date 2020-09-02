@@ -5,20 +5,18 @@
 
             <div class="form-group">
                 <div class="d-flex justify-content-between">
-                    <label for="exampleInputEmail1">Email address</label>
-
+                    <label for="name">Name</label>
                     <mat-icon style="cursor: pointer;" (click)='closerDialog()'>clear</mat-icon>
                 </div>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <input type="text" class="form-control" id="name">
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="date">Date of Completion</label>
+                <input type="date" class="form-control" id="date">
             </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            <div class="form-group custom-file">
+                <input type="file" class="custom-file-input" id="customFile">
+                <label class="custom-file-label" for="customFile">Attach Proof</label>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
