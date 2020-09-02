@@ -6,6 +6,8 @@
     border-radius: 15px;
     position: fixed;
     top: 2%;
+    background-image: url(../../../../assets/images/nav.png);
+    background-size: contain;
 }
 
 .yc-logo{
@@ -22,3 +24,19 @@
     color: white;
     margin-top: 45px;
 }
+.block {
+    height: 50px;
+    position: absolute;
+    width: 5px;
+    background-color: white;
+    margin-top: -40px;
+    margin-left:95% ;
+}
+.item {
+    border:none;
+}
+.item:focus {
+border:none !important;
+outline:none !important;
+}
+

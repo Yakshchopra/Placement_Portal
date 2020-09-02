@@ -1,0 +1,104 @@
+.content{
+    width: 90%;
+    height: 100vh;
+    margin-left: 9%;
+}
+
+.courses{
+    padding: 20px;
+    background-color: #ECECFF;
+    margin-top: 20px;
+    border-radius: 20px;
+    width: 75%;
+}
+
+.col-2{
+    padding: 15px;
+}
+
+.tile{
+    height: 100px;
+    width: 90%;
+    background-color: black;
+}
+
+.courses h2{
+    padding: 0;
+    margin: 0;
+}
+
+.courses h3{
+    padding: 0 ;
+    margin: 0;
+}
+
+.name{
+    margin-top: 30px;
+}
+
+.add{
+    padding: 10px;
+    border-radius: 20px;
+    border: 0;
+    background-color: #7d81ff;
+    color: white;
+    margin-top: 20px;
+}
+
+.add:focus{
+    outline: none;
+}
+
+
+
+h1{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    color: grey;
+}
+hr{
+    margin: 0;
+    padding: 10px;
+}
+
+.col-sm{
+    font-size: 17px;
+}
+
+.achive{
+    width: 45%;
+}
+
+.highlights{
+    position: absolute;
+    top: 0;
+    background-image: url(../../../../assets/images/bg.png);
+    background-size: cover;
+    width: 21%;
+    right: 0.75%;
+    height: 40vh;
+    border-radius: 0 0 35px 35px;
+    padding: 20px;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+    box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
+}
+
+.highlights h1{
+    color: white;
+}
+
+.highlights h3{
+    color: white;
+    font-size: 20px;
+}
+
+img{
+    position: absolute;
+    top: 0;
+    width: 40%;
+    right: 0;
+    top: 47%;
+    z-index: -1;
+}

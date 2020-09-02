@@ -26,6 +26,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "jquery": "^3.5.1",
+    "ngx-file-drop": "^9.0.1",
     "ngx-toastr": "^13.0.0",
     "rxjs": "~6.5.5",
     "save": "^2.4.0",

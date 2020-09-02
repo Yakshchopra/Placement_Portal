@@ -1,0 +1,74 @@
+<div class="main">
+    <div class="content">
+        <div class="courses" >
+            <h1>
+                Certifications
+            </h1>
+            <hr>
+            <div class="container" *ngFor='let course of courses'>
+                <div class="row">
+                    <div class="col-2">
+                        <div class="tile">
+                            <i class="fas fa-certificate icon"></i>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="name">
+                            <h2>
+                                {{course.name}}
+                            </h2>
+                            <h3>
+                                Completed on {{course.doc}}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="add" (click)='openDialog(true)'>
+                Add Certifications
+            </button>
+
+         
+        </div>
+
+
+        <!-- ach -->
+        <div class="courses achive" >
+            <h1>
+                Achivements
+            </h1>
+            <hr>
+            <div class="container" *ngFor='let cour of workshops'>
+                <div class="row">
+                    <div class="col-sm">
+                        {{cour.name}}
+                    </div>
+                    <div class="col-sm">
+                        Date: {{cour.doc}}
+                    </div>
+                </div>
+            </div>
+            <button class="add"  (click)='openDialog(false)'>
+                Add Achivement
+            </button>
+
+        </div>
+        <!-- /ach -->
+        <div class="highlights">
+            <h1>
+                Highlights
+            </h1>
+            <hr>
+            <h3>
+                Total Certifications: 5
+            </h3>
+            <h3>
+                Total Achivements: 5
+            </h3>
+        </div>
+
+        <div class="ill">
+            <img src="../../../../assets/images/undraw_winners_ao2o.svg" alt="illustration">
+        </div>
+    </div>
+   

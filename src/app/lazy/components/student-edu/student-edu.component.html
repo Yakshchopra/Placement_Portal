@@ -1,0 +1,79 @@
+
+    <div class="content">
+        <div class="school">
+            <div class="headline">
+                <h1>
+                    School Education
+                    <hr>
+                </h1>
+            </div>
+            <div class="container" *ngFor='let student of school'>
+                <div class="row"  >
+                  <div class="col-sm">
+                    {{student.class}}
+                  </div>
+                  <div class="col-sm">
+                    {{student.percentage}}
+                  </div>
+                  <div class="col-sm">
+                    <button class='btn btn-primary' (click)='openDialog(student.name)'>Upload File</button>
+                  </div>
+                  <div class="col-sm">
+                    <i class="far fa-check-circle icon"></i><span> Verified</span>
+                  </div>
+                </div>
+              </div>
+              
+            
+        </div>
+
+        <!-- college -->
+        <div class="school coll">
+            <div class="headline">
+                <h1>
+                    College Education
+                    <hr>
+                </h1>
+            </div>
+            <div class="container" *ngFor='let col of college'>
+                <div class="row">
+                  <div class="col-sm">
+                     Semester-{{col.semester}}
+                  </div>
+                  <div class="col-sm">
+                    {{col.percentage}}
+                  </div>
+                  <div class="col-sm">
+                    <button class="btn btn-primary" (click)='openDialog("semester-"+col.semester)'>Upload File</button>
+                  </div>
+                  <div class="col-sm">
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> Verified</span>
+                  </div>
+                </div>
+              </div>
+
+              
+            
+        </div>
+        <!-- college-end -->
+        <div class="highlights">
+            <h1>Highlights</h1>
+            <hr>
+            <h2>
+                CGPA: 9.6
+            </h2>
+            <h2>
+                Total Arrears: 0
+            </h2>
+            <h2>
+                Standing Arrears: 0
+            </h2>
+        </div>    
+        <div class="illustartion">
+            <img class="ills" src="../../../../assets/images/undraw_book_lover_mkck.svg" alt="">
+        </div>
+    
+    </div>
+    
+    
+

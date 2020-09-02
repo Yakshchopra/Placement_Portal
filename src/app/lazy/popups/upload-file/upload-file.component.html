@@ -1,0 +1,23 @@
+<div style="width:100%;padding-left: 90%;margin-top: 0px;" class="d-flex justify-content-right">
+    <mat-icon (click)='closeDialog()' style="cursor: pointer;">clear</mat-icon><br><br>
+</div>
+<div >
+
+
+<ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" *ngIf='!file'>
+        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+            <div class="box">
+                <span style="color: red;" *ngIf='errormessage'>{{errormessage}}</span>
+                Drag Files here<br><br>
+                <button type="button" style="border: none;outline: none;background-color: #7D81FF;color: white;" (click)="openFileSelector()">Browse Files</button>
+            </div>
+         
+        </ng-template>
+</ngx-file-drop>
+<div class="box" *ngIf='file'>
+    <span>{{files[0].relativePath}} has been added</span><mat-icon (click)='delete()' style="position: absolute;margin-top:-3px ;cursor: pointer;">clear</mat-icon><br><br>
+    <button style="border: none;outline: none;background-color: #7D81FF;color: white;">Upload</button>
+</div>
+</div>
+
