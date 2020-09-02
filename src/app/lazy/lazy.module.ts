@@ -26,6 +26,7 @@ import { NgxFileDropModule } from 'ngx-file-drop';
 import { UploadFileComponent } from './popups/upload-file/upload-file.component';
 import { StudentVerficationComponent } from './popups/student-verfication/student-verfication.component';
 import { FormsModule } from '@angular/forms';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     StudentEduComponent,
     UploadFileComponent,
     StudentAchivementsComponent,
-    StudentVerficationComponent
+    StudentVerficationComponent,
+    ErrorComponent
   ],
   imports: [
     CommonModule,

@@ -27,10 +27,14 @@
 .block {
     height: 50px;
     position: absolute;
-    width: 5px;
+    width: 10px;
     background-color: white;
     margin-top: -40px;
-    margin-left:95% ;
+    margin-left:90% ;
+    border-radius: 10px 0 0 10px;
+    -webkit-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
+    -moz-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
+    box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
 }
 .item {
     border:none;
