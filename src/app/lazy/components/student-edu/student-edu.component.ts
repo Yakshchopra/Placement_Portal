@@ -20,7 +20,6 @@ export class StudentEduComponent implements OnInit {
     { semester: 1, percentage: '9.8', verified: false },
     { semester: 1, percentage: '9.8', verified: false },
     { semester: 1, percentage: '9.8', verified: false },
-    
   ]
 
   ngOnInit(): void {
