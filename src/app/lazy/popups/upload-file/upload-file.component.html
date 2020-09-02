@@ -8,6 +8,7 @@
     (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" *ngIf='!file'>
         <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
             <div class="box">
+                <span style="color: red;" *ngIf='errormessage'>{{errormessage}}</span>
                 Drag Files here<br><br>
                 <button type="button" style="border: none;outline: none;background-color: #7D81FF;color: white;" (click)="openFileSelector()">Browse Files</button>
             </div>

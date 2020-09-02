@@ -1,11 +1,11 @@
 <div class="main">
     <div class="content">
-        <div class="courses">
+        <div class="courses" >
             <h1>
                 Certifications
             </h1>
             <hr>
-            <div class="container">
+            <div class="container" *ngFor='let course of courses'>
                 <div class="row">
                     <div class="col-2">
                         <div class="tile">
@@ -15,16 +15,16 @@
                     <div class="col">
                         <div class="name">
                             <h2>
-                                AWS- Building Serverles Applications
+                                {{course.name}}
                             </h2>
                             <h3>
-                                Completed on 20-05-2020
+                                Completed on {{course.doc}}
                             </h3>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="add" (click)='openDialog()'>
+            <button class="add" (click)='openDialog(true)'>
                 Add Certifications
             </button>
 
@@ -33,22 +33,22 @@
 
 
         <!-- ach -->
-        <div class="courses achive">
+        <div class="courses achive" >
             <h1>
                 Achivements
             </h1>
             <hr>
-            <div class="container">
+            <div class="container" *ngFor='let cour of workshops'>
                 <div class="row">
                     <div class="col-sm">
-                        Workshop on Web-Designing
+                        {{cour.name}}
                     </div>
                     <div class="col-sm">
-                        Date: 20-05-2000
+                        Date: {{cour.doc}}
                     </div>
                 </div>
             </div>
-            <button class="add"  (click)='openDialog()'>
+            <button class="add"  (click)='openDialog(false)'>
                 Add Achivement
             </button>
 
