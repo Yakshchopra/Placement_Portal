@@ -21,6 +21,7 @@ import { StudentAchivementsComponent } from './components/student-achivements/st
 //Other modules
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { UploadFileComponent } from './popups/upload-file/upload-file.component';
+import { StuPlacementComponent } from './components/stu-placement/stu-placement.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { UploadFileComponent } from './popups/upload-file/upload-file.component'
     SidebarComponent,
     ProfileComponent,
     StudentEduComponent,
-    UploadFileComponent
+    UploadFileComponent,
+    StuPlacementComponent
   ],
   imports: [
     CommonModule,

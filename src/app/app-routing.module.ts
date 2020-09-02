@@ -6,6 +6,7 @@ import { ProfileComponent } from './lazy/components/profile/profile.component';
 import { EmailVerifyComponent } from './authentication/email-verify/email-verify.component';
 import { StudentEduComponent } from './lazy/components/student-edu/student-edu.component';
 import { StudentAchivementsComponent } from './lazy/components/student-achivements/student-achivements.component';
+import { StuPlacementComponent } from './lazy/components/stu-placement/stu-placement.component';
 
 //Note-: Add other routes to lazyRouting
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'student/register/:token', component: EmailVerifyComponent },
-  { path: 'certifications', component: StudentAchivementsComponent}
+  { path: 'certifications', component: StudentAchivementsComponent},
+  {path: 'placements', component: StuPlacementComponent}
 ];
 
 @NgModule({
