@@ -9,8 +9,9 @@
 .cont{
     background-color: white;
     padding: 20px 50px;
-    margin-top: 8%;
+    margin-top: 6%;
     border-radius: 20px;
+    width: 50%;
     -webkit-box-shadow: 2px 2px 8px 0px rgba(133,133,133,1);
     -moz-box-shadow: 2px 2px 8px 0px rgba(133,133,133,1);
     box-shadow: 2px 2px 8px 0px rgba(133,133,133,1);
@@ -45,4 +46,29 @@ h1{
 hr{
     margin: 0;
     padding: 15px;
+}
+
+.dot-1, .dot-2{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: solid #7d81ff;
+
+}
+
+.dots{
+    width: 30%;
+    margin-left: 53%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+}
+
+.active{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #7d81ff;
+    margin-left: 50%;
+    margin-top: 50%;
+    transform: translate(-50%,-50%);
 }
