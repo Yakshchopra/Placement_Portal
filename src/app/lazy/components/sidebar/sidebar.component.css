@@ -36,9 +36,12 @@
     -moz-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
     box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
 }
+
+
 .item {
     border:none;
 }
+
 .item:focus {
 border:none !important;
 outline:none !important;

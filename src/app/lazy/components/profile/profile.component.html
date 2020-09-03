@@ -1,89 +1,179 @@
 
     <section class="yc__content">
         <!-- Headline start -->
-       <div class="yc__headline">
-        <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <h1>
-                    Welcome Back!
-                </h1>
-              </div>
-              <div class="col-sm">
-                <div class="avatar">
-                    
-                </div>
-              </div>
-            </div>
-          </div>
-       </div>
-       <!-- Headline end -->
-
-       <!-- profile-start -->
-
-       <div class="about">
-        <h1 class="field-1">Personal Details</h1>
-        <hr>
-        <div class="container">
+        <div class="yc__headline">
+          <h1>Welcome Back!</h1>
+        </div>
+       
           
-            <div class="row" *ngIf='userdata'>
-              <div class="col-sm name">
-                <h2>
-                    {{userdata.name}}
-                </h2>
-                <p class="reg-no">
-                    {{userdata.registrationNumber}}
-                </p>
-                <p>
-                    CSE-IoT
-                </p>
-              </div>
-              <div class="col-sm">
-                <div class="contact">
-                    <i class="fas fa-envelope icon"></i>
-                        <span>
-                            {{userdata.email}}
-                        </span>
-                        <div class="yc-2">
-                          <i class="fas fa-phone-alt icon"></i>
-                          <span>
-                              {{userdata.number}}
-                          </span>
-                        </div>
-                   
+          <div class="placement">
+              <h1>
+                Placement Details
+              </h1>
+              <hr>
+              <div class="entries">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-3">
+                       <h3>Company</h3>
+                    </div>
+                    <div class="col-sm">
+                       <h3>Status</h3>
+                    </div>
+                    <div class="col-sm">
+                        <h3>Verification</h3>
+                    </div>
+                  </div>
+
+                  <div class="row field">
+                    <div class="col-sm-3">
+                       <p>AWS</p>
+                    </div>
+                    <div class="col-sm">
+                       <p>Selected for round-2 <span><i class="fas fa-pencil-alt edit"></i></span></p>
+                    </div>
+                    <div class="col-sm">
+                        <p><i class="fas fa-check-circle"></i><span> Pending</span></p>
+                    </div>
+                  </div>
+
+                  <div class="row field">
+                    <div class="col-sm-3">
+                       <p>AWS</p>
+                    </div>
+                    <div class="col-sm">
+                       <p>Selected for round-2 <span><i class="fas fa-pencil-alt edit"></i></span></p>
+                    </div>
+                    <div class="col-sm">
+                        <p><i class="fas fa-check-circle"></i><span> Pending</span></p>
+                    </div>
+                  </div>
+
+                  <div class="row field">
+                    <div class="col-sm-3">
+                       <p>AWS</p>
+                    </div>
+                    <div class="col-sm">
+                       <p>Selected for round-2 <span><i class="fas fa-pencil-alt edit"></i></span></p>
+                    </div>
+                    <div class="col-sm">
+                        <p><i class="fas fa-check-circle"></i><span> Pending</span></p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-              <div class="col-sm">
-                <div class="adv">
-                  <i class="fas fa-chalkboard-teacher icon sec"></i>
-                    <span class="sec">
-                      {{userdata.faculty}}
-                    </span>
-                </div>
-                
+          </div>
+      
+          <!-- tiles -->
+          <div class="tiles">
+            <div class="row">
+              <div class="col">
+                 <h1>
+                   9.8
+                 </h1>
+                 <hr>
+                 <p>CGPA</p>
+              </div>
+              <div class="col">
+                <h1>
+                  5
+                </h1>
+                <hr>
+                <p>Applied</p>
+              </div>
+              <div class="col">
+                <h1>
+                  3
+                </h1>
+                <hr>
+                <p>Certifications</p>
               </div>
             </div>
-            <div class="row d-flex justify-content-center mt-3" *ngIf='!userdata'>
-              <img src="../../../../assets//gifs/preloader.gif" width="100" height="100">
-            </div>
           </div>
-          <h1 class="field-1 tw">Skills</h1>
-          <hr>
-          <div class="skills">            
-             <div class="gp-1">
-              <span><input id="skl" type="text" class="form-group" placeholder="add skill" [(ngModel)]='skill'></span>
-              <span (click)='add()'><a><i class="fas fa-plus-circle icon input-btn"></i></a></span>
-              <div class="skill-add"> 
-                <mat-chip-list aria-label="Fish selection"
-                cdkDropList 
-  cdkDropListOrientation="horizontal"
-  (cdkDropListDropped)="drop($event)">
-                  
-                  <mat-chip color="primary" cdkDrag *ngFor='let sk of skills' >{{sk}}</mat-chip>
-                  
-                </mat-chip-list>
-              </div> 
+
+          <!-- /tiles -->
+       
+       
+      
+
+      <!-- Id-start -->
+      <div class="id-crd">
+       <div class="id">
+        <svg xmlns="http://www.w3.org/2000/svg" width="348" height="220" viewBox="0 0 348 220">
+          <g id="Group_12" data-name="Group 12" transform="translate(-829 -136)">
+            <path id="Path_8" data-name="Path 8" d="M0,0H348V118.91L0,220Z" transform="translate(829 136)" fill="#7d81ff" opacity="0.27"/>
+            <path id="Path_7" data-name="Path 7" d="M0,0H348V108.03L0,174Z" transform="translate(829 136)" fill="#7d81ff"/>
+            <g id="Group_9" data-name="Group 9">
+              <g id="Polygon_8" data-name="Polygon 8" transform="translate(837 144)" fill="none" opacity="0.22">
+                <path d="M23,0,46,40H0Z" stroke="none"/>
+                <path d="M 23 16.04908752441406 L 13.82822418212891 32 L 32.17177581787109 32 L 23 16.04908752441406 M 23 0 L 46 40 L 0 40 L 23 0 Z" stroke="none" fill="#fff"/>
+              </g>
+              <g id="Rectangle_41" data-name="Rectangle 41" transform="matrix(0.839, 0.545, -0.545, 0.839, 896.295, 197.867)" fill="none" stroke="#fff" stroke-width="7" opacity="0.25">
+                <rect width="32" height="32" stroke="none"/>
+                <rect x="3.5" y="3.5" width="25" height="25" fill="none"/>
+              </g>
+              <g id="Ellipse_10" data-name="Ellipse 10" transform="translate(837 240)" fill="none" stroke="#fff" stroke-width="8" opacity="0.27">
+                <circle cx="17" cy="17" r="17" stroke="none"/>
+                <circle cx="17" cy="17" r="13" fill="none"/>
+              </g>
+            </g>
+            <g id="Group_10" data-name="Group 10" transform="translate(931 144)">
+              <g id="Polygon_8-2" data-name="Polygon 8" transform="translate(46 130) rotate(180)" fill="none" opacity="0.22">
+                <path d="M23,0,46,40H0Z" stroke="none"/>
+                <path d="M 22.9999828338623 16.04909515380859 L 13.82822036743164 32 L 32.17174530029297 32 L 22.9999828338623 16.04909515380859 M 22.9999828338623 0 L 45.99996948242188 40 L -3.814697265625e-06 40 L 22.9999828338623 0 Z" stroke="none" fill="#fff"/>
+              </g>
+              <g id="Rectangle_41-2" data-name="Rectangle 41" transform="matrix(0.839, -0.545, 0.545, 0.839, 41.867, 49.295)" fill="none" stroke="#fff" stroke-width="7" opacity="0.25">
+                <rect width="32" height="32" stroke="none"/>
+                <rect x="3.5" y="3.5" width="25" height="25" fill="none"/>
+              </g>
+              <g id="Ellipse_10-2" data-name="Ellipse 10" transform="translate(0)" fill="none" stroke="#fff" stroke-width="8" opacity="0.27">
+                <ellipse cx="17" cy="17" rx="17" ry="17" stroke="none"/>
+                <ellipse cx="17" cy="17" rx="13" ry="13" fill="none"/>
+              </g>
+            </g>
+            <g id="Group_11" data-name="Group 11" transform="translate(200)">
+              <g id="Polygon_8-3" data-name="Polygon 8" transform="translate(837 144)" fill="none" opacity="0.22">
+                <path d="M23,0,46,40H0Z" stroke="none"/>
+                <path d="M 23 16.04908752441406 L 13.82822418212891 32 L 32.17177581787109 32 L 23 16.04908752441406 M 23 0 L 46 40 L 0 40 L 23 0 Z" stroke="none" fill="#fff"/>
+              </g>
+              <g id="Rectangle_41-3" data-name="Rectangle 41" transform="matrix(0.839, 0.545, -0.545, 0.839, 896.295, 197.867)" fill="none" stroke="#fff" stroke-width="7" opacity="0.25">
+                <rect width="32" height="32" stroke="none"/>
+                <rect x="3.5" y="3.5" width="25" height="25" fill="none"/>
+              </g>
+              <g id="Ellipse_10-3" data-name="Ellipse 10" transform="translate(837 240)" fill="none" stroke="#fff" stroke-width="8" opacity="0.27">
+                <circle cx="17" cy="17" r="17" stroke="none"/>
+                <circle cx="17" cy="17" r="13" fill="none"/>
+              </g>
+            </g>
+            <g id="Ellipse_11" data-name="Ellipse 11" transform="translate(1116 143)" fill="none" stroke="#fff" stroke-width="8" opacity="0.26">
+              <circle cx="20" cy="20" r="20" stroke="none"/>
+              <circle cx="20" cy="20" r="16" fill="none"/>
+            </g>
+            <g id="Polygon_9" data-name="Polygon 9" transform="translate(1130.573 205.087) rotate(-14)" fill="none" opacity="0.31">
+              <path d="M19,0,38,33H0Z" stroke="none"/>
+              <path d="M 19 14.0290641784668 L 12.10764312744141 26 L 25.89235687255859 26 L 19 14.0290641784668 M 19 0 L 38 33 L 0 33 L 19 0 Z" stroke="none" fill="#fff"/>
+            </g>
+          </g>
+        </svg>
+            <div class="circle">
+              
             </div>
-          </div>
+
+            <div class="desc">
+              <h1>Yaksh Chopra</h1>
+              <h4>
+                <i class="fas fa-envelope"></i> <span>yakshchopra@gmail.com</span>
+              </h4>
+              <h4>
+                <i class="fas fa-phone-alt"></i> <span>9682567645</span>
+              </h4>
+            </div>
        </div>
+      </div>
+
+      <div class="ill">
+        <img class="image" src="../../../../assets/images/undraw_checking_boxes_2ibd.svg" alt="">
+      </div>
+      
 </section>

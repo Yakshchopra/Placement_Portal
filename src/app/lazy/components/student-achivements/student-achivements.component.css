@@ -2,6 +2,7 @@
     width: 90%;
     height: 100vh;
     margin-left: 9%;
+    overflow: hidden;
 }
 
 .courses{
