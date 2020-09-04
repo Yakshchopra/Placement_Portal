@@ -1,4 +1,4 @@
-<section class="form">
+<!-- <section class="form">
     <form [formGroup]='registerForm' class="container cont">
         <h1 class="header">Register</h1>
         <hr>
@@ -81,8 +81,106 @@
 
 
 
-      <!-- second-form -->
+      
 
-      <!-- second-form-end -->
+</section> -->
 
+<section class="main">
+     <div class="whole container">
+        <div class="headline">
+          <h1>
+            Let's get you started !
+          </h1>
+        </div>
+        <div class="reg-form-1">
+
+          <form [formGroup]='registerForm'>
+
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="field">
+                    <mat-label>Name</mat-label>
+                    <input formControlName='name' type="text" id="name" matInput>
+                  </mat-form-field>
+                  <span class='error'  *ngIf='f.controls.name.errors?.required && (f.controls.name.touched || submitted)'>please enter valid name </span>
+                </div>
+              </div>
+  
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="field">
+                    <mat-label>Registration Number</mat-label>
+                    <input matInput formControlName='registrationNumber' type="text">
+                  </mat-form-field>
+                  <span class="error" *ngIf='f.controls.registrationNumber.errors?.required && (f.controls.registrationNumber.touched || submitted)'>please enter valid registration Number </span>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="field">
+                    <mat-label>Email</mat-label>
+                    <input formControlName='email' type="email" matInput>
+                  </mat-form-field>
+                  <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>please enter valid email id </span>
+                </div>
+              </div>
+  
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="field">
+                    <mat-label>Contact Number</mat-label>
+                    <input formControlName='number' type="number" matInput>
+                  </mat-form-field>
+                  <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>please enter valid Contact Number </span>
+                </div>
+              </div>
+  
+            </div>
+  
+            <div class="row">
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="field">
+                    <mat-label>Password</mat-label>
+                    <input formControlName='password' type="password" matInput>
+                  </mat-form-field>
+                  <span class='error'  *ngIf='f.controls.password.errors?.required && (f.controls.password.touched || submitted)'>please enter valid password  </span>
+                </div>
+              </div>
+  
+              <div class="col">
+                <div class="form-group">
+                  <mat-form-field appearance="outline" class="field">
+                    <mat-label>Confirm Password</mat-label>
+                    <input formControlName='conf_pass' type="password" matInput>
+                  </mat-form-field>
+                  <span class='error'  *ngIf='f.controls.conf_pass.errors?.ConfirmedValidator && (f.controls.conf_pass.touched || submitted)'>Password did not match </span>
+                </div>
+              </div>
+  
+            </div>
+
+          </form>
+          
+          <!-- <div class="legend">
+            <div class="first"><div class="active"></div></div>
+            <div class="second"></div>
+          </div> -->
+
+          <h3>Just one more step left to go to get you going.</h3>
+
+          <div class="next">
+            <i class="fas fa-arrow-right icon"></i>
+            <div class="overlay"></div>
+            
+        </div>
+
+     </div>
+     </div>
+     
 </section>
