@@ -17,7 +17,7 @@ interface file {
   styleUrls: ['./student-achivements.component.css']
 })
 export class StudentAchivementsComponent implements OnInit, OnDestroy {
-  sub: SubSink;
+  sub = new SubSink();
   constructor(private diaglogref: MatDialog, private acv_service: AchievmentsService) { }
   courses: file[];
   workshops: file[];
@@ -27,20 +27,20 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
     this.retrieveworkshops();
   }
   retrievecourse() {
-    this.sub.add(
+
       this.acv_service.getcourses()
         .subscribe(res => {
           const respone: any = res;
           this.courses = respone.courses;
-        }));
+        });
   }
   retrieveworkshops() {
-    this.sub.add(
+
     this.acv_service.getworkshops()
     .subscribe(res => {
       const respone: any = res;
       this.workshops = respone.workshops;
-  }));
+  });
   }
   openDialog(state) {
    const dialog =  this.diaglogref.open(StudentVerficationComponent, {
@@ -49,7 +49,7 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
 
 
    });
-   this.sub.add(
+
       dialog.afterClosed()
         .subscribe(res => {
           if (res.upload) {
@@ -59,9 +59,9 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
               this.retrievecourse();
             }
           }
-        }));
+        });
   }
   ngOnDestroy() {
-    this.sub.unsubscribe();
+
   }
 }

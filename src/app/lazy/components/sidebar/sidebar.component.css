@@ -30,7 +30,7 @@
     width: 10px;
     background-color: white;
     margin-top: -40px;
-    margin-left:90% ;
+    margin-left:82% ;
     border-radius: 10px 0 0 10px;
     -webkit-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
     -moz-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
@@ -40,6 +40,7 @@
 
 .item {
     border:none;
+    padding:10px
 }
 
 .item:focus {

@@ -1,5 +1,5 @@
 
-    
+
 
 <section class="yc-nav">
         <div class="logo">
@@ -17,13 +17,8 @@
             <i class="fas fa-trophy icon"></i>
             <div class="block" *ngIf='trophy.isActive'></div>
         </div>
-        <div class="item" routerLink='/student/grad' routerLinkActive #grad='routerLinkActive'>
-            <i class="fas fa-graduation-cap icon"></i>
-            <div class="block" *ngIf='grad.isActive'></div>
-        </div>
-        <div class="item" routerLink='/student/new' routerLinkActive #log='routerLinkActive'>
+        <div class="item" (click)="logout()">
             <i class="fas fa-sign-out-alt icon"></i>
-            <div class="block" *ngIf='log.isActive'></div>
         </div>
     </section>
 

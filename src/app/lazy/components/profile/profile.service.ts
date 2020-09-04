@@ -12,7 +12,7 @@ interface userdetail {
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService implements OnDestroy{
+export class ProfileService{
   sub: SubSink;
   constructor(private http: HttpClient) { }
   private BaseURL = environment.BaseUrl;
@@ -28,8 +28,6 @@ export class ProfileService implements OnDestroy{
     const URL = this.BaseURL + 'skills/get';
     return this.http.get<any>(URL);
   }
-  ngOnDestroy() {
 
-  }
 
 }

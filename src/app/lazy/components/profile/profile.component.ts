@@ -20,7 +20,7 @@ interface userdetail {
 })
 
 export class ProfileComponent implements OnInit {
- 
+
 
   ngOnInit(): void {
 
