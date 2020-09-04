@@ -41,7 +41,10 @@
     padding: 20px;
     border-radius: 20px;
     width: 75%;
+    
 }
+
+
 
 .yc__headline h1{
     margin-top: 12px;
@@ -112,7 +115,7 @@ svg{
 
 .col{
     background-color: #7D81FF;
-    opacity: 0.7;
+    opacity: 1;
     margin: 0 30px;
     border-radius: 15px;
     padding: 10px;
@@ -120,7 +123,7 @@ svg{
 
 .tiles{
     width: 60%;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
     color: white;
 }
@@ -150,7 +153,9 @@ svg{
     border-radius: 20px;
     max-height: 260px;
     overflow-y: scroll;
+   
 }
+
 
 .placement hr{
     margin-top: 0px !important;
@@ -203,4 +208,27 @@ svg{
     top: 65%;
     width: 30%;
     right: 2%;
+}
+
+.addition{
+    float: right;
+}
+
+.addition{
+    font-size: 20px !important;
+    margin-right: 15px;
+    color: #7D81FF;
+}
+
+h3{
+    font-size: 20px;
+}
+
+.col:hover{
+    -webkit-box-shadow: 0px 0px 6px 0px grey;
+    -moz-box-shadow: 0px 0px 6px 0px grey;
+    box-shadow: 0px 0px 6px 0px grey;
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
 }

@@ -27,6 +27,7 @@ import { UploadFileComponent } from './popups/upload-file/upload-file.component'
 import { StudentVerficationComponent } from './popups/student-verfication/student-verfication.component';
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './components/error/error.component';
+import { PlacementDetailsComponent } from './popups/placement-details/placement-details.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { ErrorComponent } from './components/error/error.component';
     UploadFileComponent,
     StudentAchivementsComponent,
     StudentVerficationComponent,
-    ErrorComponent
+    ErrorComponent,
+    PlacementDetailsComponent
   ],
   imports: [
     CommonModule,
