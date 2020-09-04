@@ -7,13 +7,15 @@ import { EmailVerifyComponent } from './authentication/email-verify/email-verify
 import { StudentEduComponent } from './lazy/components/student-edu/student-edu.component';
 import { ErrorComponent } from './lazy/components/error/error.component';
 import { AuthGuard } from './securityTools/auth.guard';
+import { RegSelectinComponent } from './lazy/components/reg-selectin/reg-selectin.component';
 
 // Note-: Add other routes to lazyRouting
 const routes: Routes = [
   { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) , canActivate:[AuthGuard]},
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'student/register/:token', component: EmailVerifyComponent },
+  {path: 'select', component: RegSelectinComponent},
+  { path: 'student/register/:token', component: EmailVerifyComponent },  
   { path: '**' , component: ErrorComponent}
 ];
 

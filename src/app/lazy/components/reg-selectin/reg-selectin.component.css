@@ -1,0 +1,89 @@
+.main{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../../../../assets/images/regbg.png);
+    background-size: cover;
+}
+
+.content{
+    top: 8%;
+    width: 50%;
+    position: absolute;
+    left: 3%;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 450;
+    color: slategray;
+    line-height: 60px;
+}
+
+h2{
+    font-size: 30px;
+    color: #7d81ff;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+h3{
+    font-size: 32px;
+    font-weight: 400;
+    color: slategray;
+    margin-top: 40px;
+}
+
+.col-sm{
+    text-align: center;
+}
+
+/* p{
+    font-size: 30px;
+    font-weight: 500;
+} */
+
+button{
+    font-size: 23px;
+    font-weight: 400;
+    padding: 5px 25px;
+    background-color: #7d81ff;
+    color: white;
+    border-radius: 10px ;
+}
+
+button:focus{
+    outline: none;
+}
+
+.teach{
+    height: 150px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.selection{
+    margin-left: -5%;
+}
+
+.next{
+    position: absolute;
+    top: 70%;
+    height: 100px;
+    width: 100px;
+    background-color: #FFCB3E;
+    transform: rotate(33deg);
+    border-radius: 20px;
+    left: 115%;
+    -webkit-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
+box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
+}
+
+.overlay{
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+    background-color: white;
+    float: right;
+    opacity: 0.3;
+}

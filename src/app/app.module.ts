@@ -29,6 +29,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailsformComponent } from './lazy/popups/detailsform/detailsform.component';
 import { HttpCacheService } from './securityTools/http-cache.service';
 
+//Material
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
 
 
 @NgModule({
@@ -48,8 +53,11 @@ import { HttpCacheService } from './securityTools/http-cache.service';
     FormsModule,
     FontAwesomeModule,
     ToastrModule.forRoot(),
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [AuthService, HttpCacheService,
     {

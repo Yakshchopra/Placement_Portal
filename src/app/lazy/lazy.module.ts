@@ -17,8 +17,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-
-
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 // Service
 import { ProfileService } from './components/profile/profile.service';
@@ -30,6 +31,7 @@ import { StudentVerficationComponent } from './popups/student-verfication/studen
 import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './components/error/error.component';
 import { PlacementDetailsComponent } from './popups/placement-details/placement-details.component';
+import { RegSelectinComponent } from './components/reg-selectin/reg-selectin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { PlacementDetailsComponent } from './popups/placement-details/placement-
     StudentAchivementsComponent,
     StudentVerficationComponent,
     ErrorComponent,
-    PlacementDetailsComponent
+    PlacementDetailsComponent,
+    RegSelectinComponent
   ],
   imports: [
     CommonModule,
@@ -52,9 +55,10 @@ import { PlacementDetailsComponent } from './popups/placement-details/placement-
     FormsModule,
     MatChipsModule,
     DragDropModule,
-    MatProgressBarModule
-
-
+    MatProgressBarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [ProfileService],
   bootstrap: [LazyComponent]
