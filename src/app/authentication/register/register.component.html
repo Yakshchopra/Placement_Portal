@@ -8,12 +8,15 @@
               <div class="form-group">
                   <label for="name">Name</label>
                   <input formControlName='name' type="text" class="form-control" id="name" required>
+                  <span *ngIf='f.controls.name.errors.email'>please enter valid email id </span>
                 </div>
             </div>
             <div class="col">
               <div class="form-group">
                   <label for="r.no">Register Number</label>
                   <input formControlName='registrationNumber' type="text" class="form-control" id="r.no" required>
+                  <span *ngIf='f.controls.name.errors.email '>please enter valid email id </span>
+
                 </div>
             </div>
           </div>

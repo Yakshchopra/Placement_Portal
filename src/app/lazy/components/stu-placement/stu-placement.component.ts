@@ -13,12 +13,12 @@ export class StuPlacementComponent implements OnInit {
   ngOnInit(): void {
 
     $(document).ready(function(){
-      $(".form").hide();    
-      $(".add").click(function(){
-        $(".form").show();
+      $('.form').hide();
+      $('.add').click(function(){
+        $('.form').show();
       });
-      $(".cross-1").click(function(){
-        $(".form").hide();
+      $('.cross-1').click(function(){
+        $('.form').hide();
       });
 
     });

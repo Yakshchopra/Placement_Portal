@@ -6,11 +6,11 @@ import { LazyRoutingModule } from './lazy-routing.module';
 // Components
 import { LazyComponent } from './lazy.component';
 import { SidebarComponent} from './components/sidebar/sidebar.component';
-import { ProfileComponent } from './components/profile/profile.component'
+import { ProfileComponent } from './components/profile/profile.component';
 import { StudentAchivementsComponent } from './components/student-achivements/student-achivements.component';
 
 
-//Angular Material
+// Angular Material
 import { MatDialogModule } from '@angular/material/dialog';
 import { StudentEduComponent } from './components/student-edu/student-edu.component';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,10 +18,10 @@ import { MatChipsModule } from '@angular/material/chips';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
-//Service
+// Service
 import { ProfileService } from './components/profile/profile.service';
 
-//Other modules
+// Other modules
 import { NgxFileDropModule } from 'ngx-file-drop';
 import { UploadFileComponent } from './popups/upload-file/upload-file.component';
 import { StudentVerficationComponent } from './popups/student-verfication/student-verfication.component';
@@ -48,8 +48,8 @@ import { ErrorComponent } from './components/error/error.component';
     FormsModule,
     MatChipsModule,
     DragDropModule
-  
-    
+
+
   ],
   providers: [ProfileService],
   bootstrap: [LazyComponent]

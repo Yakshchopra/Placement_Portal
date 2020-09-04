@@ -13,12 +13,12 @@ import {MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 export class DetailsformComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DetailsformComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-  
+              @Inject(MAT_DIALOG_DATA) public data: any) { }
+
   Education = constants.EDUCATION;
   ngOnInit(): void {
-  this.data = 'education'
-  
+  this.data = 'education';
+
   }
 
 }

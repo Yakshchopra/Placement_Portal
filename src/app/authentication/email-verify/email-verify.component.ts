@@ -14,14 +14,14 @@ export class EmailVerifyComponent implements OnInit {
               private route: Router) { }
 
   ngOnInit(): void {
-    let token = this.activate.snapshot.paramMap.get('token');
+    const token = this.activate.snapshot.paramMap.get('token');
     this.auth.verifyEmail(token)
       .subscribe(res => {
         this.ouput_message = 'Email has been successfully Verified';
         setTimeout(() => {
-        this.route.navigateByUrl('/')
-      },2000)
-    })
+        this.route.navigateByUrl('/');
+      }, 2000);
+    });
   }
 
 }

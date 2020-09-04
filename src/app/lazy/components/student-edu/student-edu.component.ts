@@ -20,19 +20,19 @@ export class StudentEduComponent implements OnInit {
     { semester: 1, percentage: '9.8', verified: false },
     { semester: 1, percentage: '9.8', verified: false },
     { semester: 1, percentage: '9.8', verified: false },
-  ]
+  ];
 
   ngOnInit(): void {
-    
+
   }
   openDialog(name) {
     const dialogRef = this.dialog.open(UploadFileComponent, {
       width: '250px',
-      
-      data: { name: name }
+
+      data: { name }
     });
   }
-  
-  
+
+
 
 }

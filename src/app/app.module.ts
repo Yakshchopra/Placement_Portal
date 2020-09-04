@@ -5,23 +5,23 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-//Authentication Components
+// Authentication Components
 import { LoginComponent } from './authentication/login/login.component';
 import { RegisterComponent } from './authentication/register/register.component';
 import { EmailVerifyComponent } from './authentication/email-verify/email-verify.component';
 
-//Forms Module
+// Forms Module
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 
-//Http Modules
-import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http'
+// Http Modules
+import { HttpClientModule , HTTP_INTERCEPTORS} from '@angular/common/http';
 
-//Service
+// Service
 import { AuthService } from './authentication/auth.service';
 import { HttpinterceptorService } from './securityTools/httpinterceptor.service';
 
-//Toaster
+// Toaster
 import { ToastrModule } from 'ngx-toastr';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
@@ -49,13 +49,13 @@ import { HttpCacheService } from './securityTools/http-cache.service';
     FontAwesomeModule,
     ToastrModule.forRoot(),
     MatProgressSpinnerModule
-    
+
   ],
-  providers: [AuthService,HttpCacheService,
+  providers: [AuthService, HttpCacheService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpinterceptorService,
-     multi:true
+     multi: true
   }],
   bootstrap: [AppComponent]
 })

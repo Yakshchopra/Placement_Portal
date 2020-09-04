@@ -3,5 +3,5 @@ export const constants = {
   registerNumber: 'registerNumber',
   name: 'name',
   password: 'password',
-  
-}
+
+};

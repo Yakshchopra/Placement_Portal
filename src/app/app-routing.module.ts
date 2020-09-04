@@ -7,7 +7,7 @@ import { EmailVerifyComponent } from './authentication/email-verify/email-verify
 import { StudentEduComponent } from './lazy/components/student-edu/student-edu.component';
 import { ErrorComponent } from './lazy/components/error/error.component';
 
-//Note-: Add other routes to lazyRouting
+// Note-: Add other routes to lazyRouting
 const routes: Routes = [
   { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
   { path: '', component: LoginComponent },

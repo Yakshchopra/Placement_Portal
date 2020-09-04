@@ -8,10 +8,10 @@ import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 export class SidebarComponent implements OnInit {
 
   constructor(private change: ChangeDetectorRef) { }
-  
+
   ngOnInit(): void {
-    
+
   }
-  
+
 
 }

@@ -8,11 +8,11 @@ import { StudentAchivementsComponent } from './components/student-achivements/st
 
 const routes: Routes = [{
   path: '', component: LazyComponent, children: [
-    { path: '', redirectTo:'profile'},
+    { path: '', redirectTo: 'profile'},
     { path: 'profile', component: ProfileComponent },
     { path: 'education', component: StudentEduComponent },
     { path: 'certifications', component: StudentAchivementsComponent}
-    
+
   ]
   },
 ];
