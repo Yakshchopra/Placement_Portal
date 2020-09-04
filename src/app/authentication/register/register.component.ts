@@ -9,16 +9,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
-
-  constructor(private auth: AuthService, private fb: FormBuilder) {}
-
-  ngOnInit(): void {
+  submitted = false;
+  constructor(private auth: AuthService, private fb: FormBuilder) {
     this.registerForm = this.fb.group(
       {
-        name: [
-          '',
-          [Validators.required, Validators.minLength(10), Validators.email],
-        ],
+        name: [ '', [Validators.required]],
         registrationNumber: ['', [Validators.required]],
         email: ['', [Validators.required]],
         password: ['', [Validators.required]],
@@ -26,9 +21,13 @@ export class RegisterComponent implements OnInit {
         number: ['', [Validators.required]],
       },
       {
-        validators: this.ConfirmedValidator('password', 'conf_pass'),
+        validator: this.ConfirmedValidator('password', 'conf_pass'),
       }
     );
+  }
+
+  ngOnInit(): void {
+
   }
   // Confirmed password Validator
   ConfirmedValidator(controlName: string, matchingControlName: string) {
@@ -54,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
   // Register Function
   register() {
-    if (this.registerForm.valid) {
+
       const form = this.registerForm.value;
       delete form.conf_pass;
       this.auth.register(form).subscribe(
@@ -64,5 +63,5 @@ export class RegisterComponent implements OnInit {
         (err) => {}
       );
     }
-  }
+
 }
