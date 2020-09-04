@@ -15,7 +15,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { StudentEduComponent } from './components/student-edu/student-edu.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 
 // Service
@@ -49,7 +51,8 @@ import { PlacementDetailsComponent } from './popups/placement-details/placement-
     NgxFileDropModule,
     FormsModule,
     MatChipsModule,
-    DragDropModule
+    DragDropModule,
+    MatProgressBarModule
 
 
   ],

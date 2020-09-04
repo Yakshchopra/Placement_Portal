@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProfileService } from './profile.service';
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
@@ -19,11 +19,21 @@ interface userdetail {
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileComponent implements OnInit {
-
-
+export class ProfileComponent implements OnInit,OnDestroy {
+  sub1;
+  profile: userdetail;
+  errormessage;
+  constructor(private srv: ProfileService) {}
   ngOnInit(): void {
-
+   this.sub1 =  this.srv.getUserDetail()
+      .subscribe(res => {
+        this.profile = res;
+      }, err => {
+          this.errormessage = err.error.message;
+    })
+  }
+  ngOnDestroy() {
+    this.sub1.unsubscribe();
   }
 
 }

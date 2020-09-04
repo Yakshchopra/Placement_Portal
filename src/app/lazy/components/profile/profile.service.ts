@@ -1,7 +1,6 @@
 import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../../environments/environment';
-import { SubSink } from 'subsink';
 interface userdetail {
   name: string;
   email: string;
@@ -13,7 +12,7 @@ interface userdetail {
   providedIn: 'root'
 })
 export class ProfileService{
-  sub: SubSink;
+
   constructor(private http: HttpClient) { }
   private BaseURL = environment.BaseUrl;
   getUserDetail() {
@@ -26,6 +25,10 @@ export class ProfileService{
   }
   getSkills() {
     const URL = this.BaseURL + 'skills/get';
+    return this.http.get<any>(URL);
+  }
+  getEducation() {
+    const URL = this.BaseURL + 'education/get';
     return this.http.get<any>(URL);
   }
 
