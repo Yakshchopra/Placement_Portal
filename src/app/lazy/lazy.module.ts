@@ -20,6 +20,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTableModule} from '@angular/material/table';
 
 // Service
 import { ProfileService } from './components/profile/profile.service';
@@ -32,6 +33,7 @@ import { FormsModule } from '@angular/forms';
 import { ErrorComponent } from './components/error/error.component';
 import { PlacementDetailsComponent } from './popups/placement-details/placement-details.component';
 import { RegSelectinComponent } from './components/reg-selectin/reg-selectin.component';
+import { FacultyProfileComponent } from './components/faculty-profile/faculty-profile.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { RegSelectinComponent } from './components/reg-selectin/reg-selectin.com
     StudentVerficationComponent,
     ErrorComponent,
     PlacementDetailsComponent,
-    RegSelectinComponent
+    RegSelectinComponent,
+    FacultyProfileComponent
   ],
   imports: [
     CommonModule,
@@ -58,7 +61,8 @@ import { RegSelectinComponent } from './components/reg-selectin/reg-selectin.com
     MatProgressBarModule,
     MatButtonModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTableModule
   ],
   providers: [ProfileService],
   bootstrap: [LazyComponent]
