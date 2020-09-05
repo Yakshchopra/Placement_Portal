@@ -26,6 +26,14 @@ export class RegisterComponent implements OnInit {
     );
   }
 
+  ishidden = true;
+  nothidden = !this.ishidden;
+ 
+  toggleDisplay() {
+    this.ishidden = !this.ishidden;
+    this.nothidden = true
+  }
+
   ngOnInit(): void {
 
   }

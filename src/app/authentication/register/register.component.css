@@ -91,7 +91,7 @@ hr{
     width: 50%;
     height: 80%;
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 3%;
 }
 
@@ -163,7 +163,9 @@ hr{
     -webkit-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
 -moz-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
 box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
+cursor: pointer;
 }
+
 
 .overlay{
     width: 60px;
@@ -189,4 +191,17 @@ h3{
     font-size: 20px;
     font-weight: 500;
     margin-top: 30px;
+}
+
+.upl{
+    background-color: #7d81ff;
+    font-size: 15px;
+    padding: 10px 30px;
+    color: white;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.two{
+    top: 15%;
 }

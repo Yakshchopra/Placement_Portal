@@ -86,7 +86,7 @@
 </section> -->
 
 <section class="main">
-     <div class="whole container">
+     <div class="whole container one" [hidden] = 'nothidden'>
         <div class="headline">
           <h1>
             Let's get you started !
@@ -179,7 +179,7 @@
 
           <h3>Just one more step left to go to get you going.</h3>
 
-          <div class="next" (click)='register()'>
+          <div class="next" (click)='register()' (click) = toggleDisplay()>
             <i class="fas fa-arrow-right icon"></i>
             <div class="overlay"></div>
 
@@ -187,5 +187,82 @@
 
      </div>
      </div>
+
+
+     <!-- second-form -->
+     <div class="whole container two" [hidden]='ishidden'>
+      <div class="headline">
+        <h1>
+          Just this last step !
+        </h1>
+      </div>
+      <div class="reg-form-1">
+
+        <form [formGroup]='registerForm'>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Department</mat-label>
+                  <input formControlName='dept' type="text" id="dept" matInput>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Faculty Advisor</mat-label>
+                  <mat-select>
+                    <mat-option value="option">Mr. Prabushankar K.C.</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Acadamic Advisor</mat-label>
+                  <mat-select>
+                    <mat-option value="option">Mr. Prabushankar K.C.</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <!-- <mat-form-field appearance="outline">
+                  <mat-label>Choose a date</mat-label>
+                  <input matInput [matDatepicker]="picker">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field> -->
+              </div>
+            </div>
+
+          </div>
+
+          <button class="upl" mat-button><i class="fas fa-cloud-upload-alt up"></i> Upload your photograph</button>
+
+        </form>
+
+        <h3>You are all set to go.</h3>
+
+        <div class="next finish" (click)='register()'>
+          <i class="fas fa-arrow-right icon"></i>
+          <div class="overlay"></div>
+
+      </div>
+
+   </div>
+   </div>
+
+   
 
 </section>
