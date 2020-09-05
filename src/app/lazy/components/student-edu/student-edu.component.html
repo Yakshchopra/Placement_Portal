@@ -7,24 +7,45 @@
                     <hr>
                 </h1>
             </div>
-            <div class="container" *ngFor='let student of school'>
+            <div class="container" >
                 <div class="row"  >
                   <div class="col-sm">
-                    {{student.class}}
+                    class 10
                   </div>
                   <div class="col-sm">
-                    {{student.percentage}}
+                    <input class="inlinedit" [(ngModel)]="school.X.percentage" [disabled]="!index[5]">
+
+                    <mat-icon class="edit"  *ngIf="!index[5]"  (click)="index[5] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[5]" (click)="index[5] = false">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class='btn btn-primary' (click)='openDialog(student.name)'>Upload File</button>
+                    <button class='btn btn-primary' (click)='openDialog("10")'>Upload File</button>
+                  </div>
+                  <div class="col-sm">
+                    <i class="far fa-check-circle icon"></i><span> Verified</span>
+                  </div>
+                </div>
+                <br>
+                <div class="row"  >
+                  <div class="col-sm">
+                    class 12
+                  </div>
+                  <div class="col-sm">
+                    <input class="inlinedit" [(ngModel)]="school.XII.percentage" [disabled]="!index[6]">
+
+                    <mat-icon class="edit"  *ngIf="!index[6]"  (click)="index[6] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[6]" (click)="index[6] = false">save</mat-icon>
+                  </div>
+                  <div class="col-sm">
+                    <button class='btn btn-primary' (click)='openDialog("12")'>Upload File</button>
                   </div>
                   <div class="col-sm">
                     <i class="far fa-check-circle icon"></i><span> Verified</span>
                   </div>
                 </div>
               </div>
-              
-            
+
+
         </div>
 
         <!-- college -->
@@ -35,16 +56,73 @@
                     <hr>
                 </h1>
             </div>
-            <div class="container" *ngFor='let col of college'>
+            <div class="container" >
                 <div class="row">
                   <div class="col-sm">
-                     Semester-{{col.semester}}
+                     Semester- 1
                   </div>
                   <div class="col-sm">
-                    {{col.percentage}}
+                    <input class="inlinedit" [(ngModel)]="college.one.verified" [disabled]="!index[1]">
+
+                    <mat-icon class="edit"  *ngIf="!index[1]"  (click)="index[1] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[1]" (click)="index[1] = false">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog("semester-"+col.semester)'>Upload File</button>
+                    <button class="btn btn-primary" (click)='openDialog("semester-1")'>Upload File</button>
+                  </div>
+                  <div class="col-sm">
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> Verified</span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-sm">
+                     Semester- 2
+                  </div>
+                  <div class="col-sm">
+                    <input class="inlinedit" #two [(ngModel)]="college.two.verified" [disabled]="!index[2]" >
+
+                    <mat-icon class="edit"  *ngIf="!index[2]"  (click)="index[2] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[2]" (click)="index[2] = false">save</mat-icon>
+                  </div>
+                  <div class="col-sm">
+                    <button class="btn btn-primary" (click)='openDialog("semester-2")'>Upload File</button>
+                  </div>
+                  <div class="col-sm">
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> Verified</span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-sm">
+                     Semester- 3
+                  </div>
+                  <div class="col-sm">
+                    <input class="inlinedit" [(ngModel)]="college.three.verified" [disabled]="!index[3]">
+
+                    <mat-icon class="edit"  *ngIf="!index[3]"  (click)="index[3] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[3]" (click)="index[3] = false">save</mat-icon>
+                  </div>
+                  <div class="col-sm">
+                    <button class="btn btn-primary" (click)='openDialog("semester-3")'>Upload File</button>
+                  </div>
+                  <div class="col-sm">
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> Verified</span>
+                  </div>
+                </div>
+                <br>
+                <div class="row">
+                  <div class="col-sm">
+                     Semester- 4
+                  </div>
+                  <div class="col-sm">
+                    <input class="inlinedit" [(ngModel)]="college.four.verified" [disabled]="!index[4]">
+
+                    <mat-icon class="edit"  *ngIf="!index[4]"  (click)="index[4] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[4]" (click)="index[4] = false">save</mat-icon>
+                  </div>
+                  <div class="col-sm">
+                    <button class="btn btn-primary" (click)='openDialog("semester-4")'>Upload File</button>
                   </div>
                   <div class="col-sm">
                     <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> Verified</span>
@@ -52,8 +130,8 @@
                 </div>
               </div>
 
-              
-            
+
+
         </div>
         <!-- college-end -->
         <div class="highlights">
@@ -68,12 +146,12 @@
             <h2>
                 Standing Arrears: 0
             </h2>
-        </div>    
+        </div>
         <div class="illustartion">
             <img class="ills" src="../../../../assets/images/undraw_book_lover_mkck.svg" alt="">
         </div>
-    
+
     </div>
-    
-    
+
+
 

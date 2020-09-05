@@ -7,6 +7,7 @@
     width: 90%;
     margin-left: 9%;
     overflow: hidden;
+
 }
 
 .school{
@@ -40,8 +41,8 @@ hr{
 .ver_icon{
     font-size: 20px;
     color: green;
-    
-    
+
+
 }
 .btn-primary {
     border-radius: 15px;
@@ -50,7 +51,7 @@ hr{
     margin-top: -10px;
     outline:none;
     border:none;
-    
+
 }
 .btn-primary:active{
     background-color: #686dfc !important;
@@ -68,7 +69,7 @@ span{
 .highlights{
     position: absolute;
     top: 0;
-    background-color: #FFDBE1;    
+    background-color: #FFDBE1;
     background-image: url(../../../../assets/images/bg.png);
     background-size: cover;
     width: 21%;
@@ -89,7 +90,7 @@ span{
 }
 
 
-/* 
+/*
 .coll{
     height: 230px;
     overflow-y: scroll;
@@ -125,4 +126,17 @@ h2{
     top: 54%;
     width: 21%;
     z-index: -1;
+}
+.inlinedit {
+  border: none;
+  outline: none;
+  background-color:#ECECFF;
+  width: 40px;
+
+}
+.edit {
+  color:#7D81FF ;
+  position: absolute;
+  font-size: 20px;
+  cursor: pointer;
 }

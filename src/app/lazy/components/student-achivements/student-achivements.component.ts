@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { StudentVerficationComponent } from '../../popups/student-verfication/student-verfication.component';
 import { AchievmentsService } from './achievments.service';
-import { SubSink } from 'subsink';
 
 
 declare var $: any;
@@ -17,7 +16,7 @@ interface file {
   styleUrls: ['./student-achivements.component.css']
 })
 export class StudentAchivementsComponent implements OnInit, OnDestroy {
-  sub = new SubSink();
+
   constructor(private diaglogref: MatDialog, private acv_service: AchievmentsService) { }
   courses: file[];
   workshops: file[];

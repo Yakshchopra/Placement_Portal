@@ -81,7 +81,7 @@
 
 
 
-      
+
 
 </section> -->
 
@@ -106,19 +106,21 @@
                   <span class='error'  *ngIf='f.controls.name.errors?.required && (f.controls.name.touched || submitted)'>please enter valid name </span>
                 </div>
               </div>
-  
+
               <div class="col">
                 <div class="form-group">
                   <mat-form-field appearance="outline" class="field">
                     <mat-label>Registration Number</mat-label>
                     <input matInput formControlName='registrationNumber' type="text">
                   </mat-form-field>
-                  <span class="error" *ngIf='f.controls.registrationNumber.errors?.required && (f.controls.registrationNumber.touched || submitted)'>please enter valid registration Number </span>
+                  <span class="error" *ngIf='f.controls.registrationNumber.errors?.required && (f.controls.registrationNumber.touched || submitted)'>this field is mandatory </span>
+                  <span class='error'  *ngIf='f.controls.email.errors?.registrationNumber && (f.controls.registrationNumber .touched || submitted) && !f.controls.registrationNumber.errors?.required'>please enter valid email id </span>
+
                 </div>
               </div>
-  
+
             </div>
-  
+
             <div class="row">
               <div class="col">
                 <div class="form-group">
@@ -126,22 +128,25 @@
                     <mat-label>Email</mat-label>
                     <input formControlName='email' type="email" matInput>
                   </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>please enter valid email id </span>
+                  <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>this field is mandatory </span>
+                  <span class='error'  *ngIf='f.controls.email.errors?.email && (f.controls.email.touched || submitted) && !f.controls.email.errors?.required'>please enter valid email id </span>
                 </div>
               </div>
-  
+
               <div class="col">
                 <div class="form-group">
                   <mat-form-field appearance="outline" class="field">
                     <mat-label>Contact Number</mat-label>
                     <input formControlName='number' type="number" matInput>
                   </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>please enter valid Contact Number </span>
+                  <span class='error'  *ngIf='f.controls.number.errors?.minLength && (f.controls.number.touched || submitted)'>please enter valid Contact Number </span>
+
+                  <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>this field is mandatory </span>
                 </div>
               </div>
-  
+
             </div>
-  
+
             <div class="row">
               <div class="col">
                 <div class="form-group">
@@ -152,7 +157,7 @@
                   <span class='error'  *ngIf='f.controls.password.errors?.required && (f.controls.password.touched || submitted)'>please enter valid password  </span>
                 </div>
               </div>
-  
+
               <div class="col">
                 <div class="form-group">
                   <mat-form-field appearance="outline" class="field">
@@ -162,11 +167,11 @@
                   <span class='error'  *ngIf='f.controls.conf_pass.errors?.ConfirmedValidator && (f.controls.conf_pass.touched || submitted)'>Password did not match </span>
                 </div>
               </div>
-  
+
             </div>
 
           </form>
-          
+
           <!-- <div class="legend">
             <div class="first"><div class="active"></div></div>
             <div class="second"></div>
@@ -174,13 +179,13 @@
 
           <h3>Just one more step left to go to get you going.</h3>
 
-          <div class="next">
+          <div class="next" (click)='register()'>
             <i class="fas fa-arrow-right icon"></i>
             <div class="overlay"></div>
-            
+
         </div>
 
      </div>
      </div>
-     
+
 </section>

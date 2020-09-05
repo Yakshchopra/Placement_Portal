@@ -14,11 +14,11 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group(
       {
         name: [ '', [Validators.required]],
-        registrationNumber: ['', [Validators.required]],
-        email: ['', [Validators.required]],
+        registrationNumber: ['', [Validators.required,Validators.pattern(/^RA[0-9]{13}$/)]],
+        email: ['', [Validators.required,Validators.email]],
         password: ['', [Validators.required]],
         conf_pass: ['', [Validators.required]],
-        number: ['', [Validators.required]],
+        number: ['', [Validators.required, Validators.minLength(10)]],
       },
       {
         validator: this.ConfirmedValidator('password', 'conf_pass'),
@@ -53,7 +53,7 @@ export class RegisterComponent implements OnInit {
 
   // Register Function
   register() {
-
+   if( this.registerForm.valid) {
       const form = this.registerForm.value;
       delete form.conf_pass;
       this.auth.register(form).subscribe(
@@ -63,5 +63,7 @@ export class RegisterComponent implements OnInit {
         (err) => {}
       );
     }
+    }
+
 
 }

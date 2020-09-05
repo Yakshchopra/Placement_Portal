@@ -1,33 +1,68 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UploadFileComponent } from '../../popups/upload-file/upload-file.component';
 import { ProfileService } from '../profile/profile.service';
 
+interface school  {
+  X: {
+    percentage:string,verified:string
+  },
+  XII: {
+    percentage:string,verified:string
+  }
+}
+interface college {
+  one: {
+    percentage:string,verified:string
+  },
+  two: {
+    percentage:string,verified:string
+  },
+  three: {
+    percentage:string,verified:string
+  },
+  four: {
+    percentage:string,verified:string
+  },
+}
 @Component({
   selector: 'app-student-edu',
   templateUrl: './student-edu.component.html',
-  styleUrls: ['./student-edu.component.css']
+  styleUrls: ['./student-edu.component.css'],
+
 })
 export class StudentEduComponent implements OnInit,OnDestroy{
-
+  index = Array(8).fill(false);
   constructor(private dialog: MatDialog, private srv: ProfileService) { }
-  school = [
-    { class: 'class X', percentage: '9.8', verified: false, name: '10thmarksheet' },
-    { class: 'class X', percentage: '9.8', verified: false, name: '12thmarksheet' }
-  ];
-  college = [
-    { semester: 1, percentage: '9.8', verified: true },
-    { semester: 1, percentage: '9.8', verified: false },
-    { semester: 1, percentage: '9.8', verified: false },
-    { semester: 1, percentage: '9.8', verified: false },
-    { semester: 1, percentage: '9.8', verified: false },
-  ];
+  school:school = {
+    X: {
+      percentage:'96',verified:'pending'
+    },
+    XII: {
+      percentage:'96',verified:'pending'
+    }
+  }
+  college:college = {
+    one: {
+      percentage: "no", verified: "no"
+    },
+    two: {
+      percentage: "no", verified: "no"
+    },
+    three: {
+      percentage: "no", verified: "no"
+    },
+    four: {
+      percentage: "", verified: "no"
+    },
+  };
 
   srvUns;
   ngOnInit(): void {
     this.srvUns = this.srv.getEducation()
       .subscribe(res => {
         console.log(res);
+        this.school = res.school
       }, err => {
           console.log(err);
     })
