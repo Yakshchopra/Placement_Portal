@@ -16,7 +16,7 @@
     margin-top: 1.5%;
     padding: 20px;
     border-radius: 20px;
-    width: 70%;
+    width: 67%;
 }
 
 .header h1{
@@ -37,7 +37,7 @@
 
 .tiles{
     width: 60%;
-    margin-top: 40px;
+    margin-top: 30px;
     text-align: center;
     color: white;
 }
@@ -73,11 +73,10 @@
     background-color: #ECECFF;
     padding: 20px;
     width: 75%;
-    margin-top: 20px;
+    margin-top: 30px;
     border-radius: 20px;
     max-height: 260px;
     overflow-y: scroll;
-   
 }
 
 
@@ -129,4 +128,115 @@
 
 h3{
     font-size: 20px;
+}
+
+.field p{
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.placement::-webkit-scrollbar {
+    width: 3px;
+    padding: 30px 0;
+    
+  }
+  
+  /* Track */
+  .placement::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  .placement::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 30px;
+    height: 100px !important;
+  }
+  
+  /* Handle on hover */
+  .placement::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+  .id-crd{
+    position: absolute;
+    right: 1%;
+    top: 20px;
+}
+
+.yc__headline{
+    margin-top: 1.5%;
+    background-color: #7D81FF;
+    padding: 20px;
+    border-radius: 20px;
+    width: 75%;
+    
+}
+
+
+
+.yc__headline h1{
+    margin-top: 12px;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+.avatar{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: white;
+    float: right;
+}
+
+.id{
+    width: 270px;
+    height: 350px;
+    border: solid #7D81FF;
+    float: right;
+    margin-right: 15px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+svg{
+    position: absolute;
+    width: 100%;
+    top: -30px;
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50px;
+    border: solid white;
+}
+
+.desc{
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    top: 175px;
+    color: slategray;
+}
+
+.desc h1{
+    font-weight: 500 !important;
+}
+
+.desc h4{
+    font-weight: 400;
+}
+
+.desc span{
+    margin-left: 10px;
 }
