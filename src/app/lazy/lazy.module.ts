@@ -22,6 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatListModule} from '@angular/material/list';
+
 
 // Service
 import { ProfileService } from './components/profile/profile.service';
@@ -66,7 +68,8 @@ import { StudentListComponent } from './components/student-list/student-list.com
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatListModule
   ],
   providers: [ProfileService],
   bootstrap: [LazyComponent]

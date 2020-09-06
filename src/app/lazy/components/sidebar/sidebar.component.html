@@ -1,20 +1,20 @@
-
-
-
 <section class="yc-nav">
         <div class="logo">
             <img class="yc-logo" src="../../../../assets/images/Srmseal.png" alt="Logo">
         </div>
         <div class="item" routerLink='/student/profile' routerLinkActive #badge1='routerLinkActive'>
           <i class="fas fa-id-badge icon" ></i>
+          <p>Profile</p>
           <div class="block" *ngIf="badge1.isActive"></div>
       </div>
         <div class="item" routerLink='/student/education' routerLinkActive #book='routerLinkActive'>
             <i class="fas fa-book-open icon" ></i>
+            <p>Education</p>
             <div class="block" *ngIf="book.isActive"></div>
         </div>
         <div class="item" routerLink='/student/certifications' routerLinkActive #trophy='routerLinkActive'>
             <i class="fas fa-trophy icon"></i>
+            <p class="cert">Certifications</p>
             <div class="block" *ngIf='trophy.isActive'></div>
         </div>
 

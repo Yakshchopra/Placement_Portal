@@ -4,6 +4,13 @@
     margin-left: 9%;
 }
 
+.fac-img{
+    position: absolute;
+    top: 65%;
+    right: 1%;
+    width: 300px;
+}
+
 .main{
     height: 100vh;
     width: 100%;
@@ -17,6 +24,8 @@
     padding: 20px;
     border-radius: 20px;
     width: 67%;
+    background-image: url(../../../../assets/images/anotherbg.png);
+    background-size: cover;
 }
 
 .header h1{
@@ -30,7 +39,7 @@
 .col{
     background-color: #7D81FF;
     opacity: 1;
-    margin: 0 30px;
+    margin: 0 40px;
     border-radius: 15px;
     padding: 10px;
 }
@@ -38,6 +47,7 @@
 .tiles{
     width: 60%;
     margin-top: 30px;
+    margin-left: 30px;
     text-align: center;
     color: white;
 }
@@ -71,14 +81,16 @@
 
 .placement{
     background-color: #ECECFF;
-    padding: 20px;
-    width: 75%;
+    padding: 20px;    
     margin-top: 30px;
     border-radius: 20px;
-    max-height: 260px;
+    height: 260px;
     overflow-y: scroll;
 }
 
+.act{
+    width: 67%;
+}
 
 .placement hr{
     margin-top: 0px !important;
@@ -192,7 +204,7 @@ h3{
 
 .id{
     width: 270px;
-    height: 350px;
+    height: 360px;
     border: solid #7D81FF;
     float: right;
     margin-right: 15px;
@@ -237,6 +249,10 @@ svg{
     font-weight: 400;
 }
 
-.desc span{
+span{
     margin-left: 10px;
+}
+
+.msg{
+    width: 100%;
 }

@@ -41,7 +41,8 @@
     padding: 20px;
     border-radius: 20px;
     width: 75%;
-    
+    background-image: url(../../../../assets/images/anotherbg.png);    
+    background-size: cover;
 }
 
 
