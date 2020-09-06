@@ -38,6 +38,8 @@ import { PlacementDetailsComponent } from './popups/placement-details/placement-
 import { RegSelectinComponent } from './components/reg-selectin/reg-selectin.component';
 import { FacultyProfileComponent } from './components/faculty-profile/faculty-profile.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { VerificationComponent } from './components/verification/verification.component';
+import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +54,9 @@ import { StudentListComponent } from './components/student-list/student-list.com
     PlacementDetailsComponent,
     RegSelectinComponent,
     FacultyProfileComponent,
-    StudentListComponent
+    StudentListComponent,
+    VerificationComponent,
+    FacultySidebarComponent
   ],
   imports: [
     CommonModule,
