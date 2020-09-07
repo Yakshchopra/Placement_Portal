@@ -79,3 +79,8 @@
 .row{
     padding: 0 10px;
 }
+
+.filter{
+    width: 100%;
+    margin-top: 5px;
+}
