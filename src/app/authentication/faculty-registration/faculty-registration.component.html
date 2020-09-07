@@ -1,0 +1,196 @@
+<!-- <section class="form">
+    <form [formGroup]='registerForm' class="container cont">
+        <h1 class="header">Register</h1>
+        <hr>
+        <div class="first">
+          <div class="form-row">
+            <div class="col">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input formControlName='name' type="text" class="form-control" id="name" required>
+                  <span class='error'  *ngIf='f.controls.name.errors?.required && (f.controls.name.touched || submitted)'>please enter valid name </span>
+                </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                  <label for="r.no">Register Number</label>
+                  <input formControlName='registrationNumber' type="text" class="form-control" id="r.no" required>
+                  <span class="error" *ngIf='f.controls.registrationNumber.errors?.required && (f.controls.registrationNumber.touched || submitted)'>please enter valid registration Number </span>
+
+                </div>
+            </div>
+          </div>
+          <div class="form-row">
+              <div class="col">
+                  <div class="form-group">
+                      <label for="email">Email</label>
+                      <input formControlName='email' type="email" class="form-control" id="email" required>
+                      <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>please enter valid email id </span>
+                    </div>
+              </div>
+              <div class="col">
+                  <div class="form-group">
+                      <label for="phone">Contact Number</label>
+                      <input formControlName='number' type="number" class="form-control" id="phone" required>
+                      <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>please enter valid email id </span>
+                    </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                  <div class="form-group">
+                      <label for="pass">Password</label>
+                      <input formControlName='password' type="password" class="form-control" id="pass" required>
+                      <span class='error'  *ngIf='f.controls.password.errors?.required && (f.controls.password.touched || submitted)'>please enter valid password  </span>
+                    </div>
+              </div>
+              <div class="col">
+                  <div class="form-group">
+                      <label for="cmp">Confirm Password</label>
+                      <input formControlName='conf_pass' type="password" class="form-control" id="cmp" required>
+                      <span class='error'  *ngIf='f.controls.conf_pass.errors?.ConfirmedValidator && (f.controls.conf_pass.touched || submitted)'>Password did not match </span>
+
+                    </div>
+              </div>
+            </div>
+            <button class="btn btn-primary" type="submit" (click)='register()'>Next</button>
+
+            <div class="dots">
+
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm">
+                    <div class="dot-1">
+                        <div class="active">
+
+                        </div>
+                    </div>
+                  </div>
+                  <div class="col-sm">
+                    <div class="dot-2">
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+        </div>
+
+      </form>
+
+
+
+
+
+</section> -->
+
+<section class="main">
+    <div class="whole container one">
+       <div class="headline">
+         <h1>
+           Let's get you started !
+         </h1>
+       </div>
+       <div class="reg-form-1">
+
+         <form [formGroup]='registerForm'>
+
+           <div class="row">
+             <div class="col">
+               <div class="form-group">
+                 <mat-form-field appearance="outline" class="field">
+                   <mat-label>Name</mat-label>
+                   <input formControlName='name' type="text" id="name" matInput>
+                 </mat-form-field>
+                 <span class='error'  *ngIf='f.controls.name.errors?.required && (f.controls.name.touched || submitted)'>please enter valid name </span>
+                 
+               </div>
+             </div>
+
+             <div class="col">
+               <div class="form-group">
+                 <mat-form-field appearance="outline" class="field">
+                   <mat-label>Faculty ID</mat-label>
+                   <input formControlName='facultyNumber' matInput type="text">
+                 </mat-form-field>
+                 <span class="error" *ngIf='f.controls.facultyNumber.errors?.required && (f.controls.facultyNumber.touched || submitted)'>this field is mandatory </span>
+                  <span class='error'  *ngIf='f.controls.email.errors?.facultyNumber && (f.controls.facultyNumber .touched || submitted) && !f.controls.facultyNumber.errors?.required'>please enter valid email id </span>                
+
+               </div>
+             </div>
+
+           </div>
+
+           <div class="row">
+             <div class="col">
+               <div class="form-group">
+                 <mat-form-field appearance="outline" class="field">
+                   <mat-label>Email</mat-label>
+                   <input formControlName='email' type="email" matInput>
+                 </mat-form-field>
+                 <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>this field is mandatory </span>
+                 <span class='error'  *ngIf='f.controls.email.errors?.email && (f.controls.email.touched || submitted) && !f.controls.email.errors?.required'>please enter valid email id </span>
+                 
+               </div>
+             </div>
+
+             <div class="col">
+               <div class="form-group">
+                 <mat-form-field appearance="outline" class="field">
+                   <mat-label>Contact Number</mat-label>
+                   <input formControlName='number' type="number" matInput>
+                 </mat-form-field>
+                 <span class='error'  *ngIf='f.controls.number.errors?.minLength && (f.controls.number.touched || submitted)'>please enter valid Contact Number </span>
+                  <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>this field is mandatory </span>
+                </div>
+             </div>
+
+           </div>
+
+           <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Password</mat-label>
+                  <input formControlName='password' type="password" matInput>
+                </mat-form-field>
+                <span class='error'  *ngIf='f.controls.password.errors?.required && (f.controls.password.touched || submitted)'>please enter valid password  </span>
+                
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <mat-form-field appearance="outline" class="field">
+                  <mat-label>Confirm Password</mat-label>
+                  <input formControlName='conf_pass' type="password" matInput>
+                </mat-form-field>
+                <span class='error'  *ngIf='f.controls.conf_pass.errors?.ConfirmedValidator && (f.controls.conf_pass.touched || submitted)'>Password did not match </span>
+               </div>
+            </div>
+
+          </div>
+
+          
+
+         
+
+
+         </form>
+
+         <button class="upl" mat-button><i class="fas fa-cloud-upload-alt up"></i> Upload your photograph</button>
+              
+
+       <div class="next finish">
+         <i class="fas fa-arrow-right icon"></i>
+         <div class="overlay"></div>
+
+     </div>
+
+  </div>
+  </div>
+
+  
+
+</section>

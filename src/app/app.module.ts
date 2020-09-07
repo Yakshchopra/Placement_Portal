@@ -36,8 +36,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatStepperModule } from '@angular/material/stepper';
+
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatStepperModule} from '@angular/material/stepper';
+import { FacultyRegistrationComponent } from './authentication/faculty-registration/faculty-registration.component';
 
 
 @NgModule({
@@ -47,6 +49,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     RegisterComponent,
     DetailsformComponent,
     EmailVerifyComponent,
+    FacultyRegistrationComponent,
   ],
   imports: [
     BrowserModule,

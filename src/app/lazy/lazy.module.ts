@@ -22,6 +22,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
+import {MatListModule} from '@angular/material/list';
+
 
 // Service
 import { ProfileService } from './components/profile/profile.service';
@@ -36,6 +38,8 @@ import { PlacementDetailsComponent } from './popups/placement-details/placement-
 import { RegSelectinComponent } from './components/reg-selectin/reg-selectin.component';
 import { FacultyProfileComponent } from './components/faculty-profile/faculty-profile.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
+import { VerificationComponent } from './components/verification/verification.component';
+import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-sidebar.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,9 @@ import { StudentListComponent } from './components/student-list/student-list.com
     PlacementDetailsComponent,
     RegSelectinComponent,
     FacultyProfileComponent,
-    StudentListComponent
+    StudentListComponent,
+    VerificationComponent,
+    FacultySidebarComponent
   ],
   imports: [
     CommonModule,
@@ -66,7 +72,8 @@ import { StudentListComponent } from './components/student-list/student-list.com
     MatInputModule,
     MatFormFieldModule,
     MatTableModule,
-    MatSortModule
+    MatSortModule,
+    MatListModule
   ],
   providers: [ProfileService],
   bootstrap: [LazyComponent]

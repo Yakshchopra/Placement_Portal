@@ -10,6 +10,8 @@ import { AuthGuard } from './securityTools/auth.guard';
 import { RegSelectinComponent } from './lazy/components/reg-selectin/reg-selectin.component';
 import { FacultyProfileComponent } from './lazy/components/faculty-profile/faculty-profile.component';
 import { StudentListComponent } from './lazy/components/student-list/student-list.component';
+import { FacultyRegistrationComponent } from './authentication/faculty-registration/faculty-registration.component';
+import { VerificationComponent } from './lazy/components/verification/verification.component';
 
 // Note-: Add other routes to lazyRouting
 const routes: Routes = [
@@ -19,6 +21,8 @@ const routes: Routes = [
   {path: 'select', component: RegSelectinComponent},
   {path: 'faculty', component: FacultyProfileComponent},
   {path: 'list', component: StudentListComponent},
+  {path:'verify', component: VerificationComponent},
+  {path: 'freg', component: FacultyRegistrationComponent},
   { path: 'student/register/:token', component: EmailVerifyComponent },  
   { path: '**' , component: ErrorComponent}
 ];

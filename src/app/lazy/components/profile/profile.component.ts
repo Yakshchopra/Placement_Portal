@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProfileService } from './profile.service';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatChipInputEvent} from '@angular/material/chips';
+
 import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
 import { PlacementDetailsComponent} from '../../popups/placement-details/placement-details.component';
@@ -13,6 +16,9 @@ interface userdetail {
   number: number,
   registrationNumber:String
 }
+
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -20,6 +26,7 @@ interface userdetail {
 })
 
 export class ProfileComponent implements OnInit,OnDestroy {
+
   sub1;
   profile: userdetail;
   errormessage;
@@ -31,9 +38,13 @@ export class ProfileComponent implements OnInit,OnDestroy {
       }, err => {
           this.errormessage = err.error.message;
     })
+
+    
   }
   ngOnDestroy() {
     this.sub1.unsubscribe();
   }
+
+  
 
 }

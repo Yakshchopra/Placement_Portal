@@ -1,0 +1,81 @@
+.verify{
+    height: 100vh;
+    width: 100%;
+   overflow: hidden ;
+}
+
+.main{
+    width: 90%;
+    margin-left: 9%;
+    height: 100vh;
+    
+}
+
+.header{
+    width: 100%;
+    background-color: #7D81FF;
+    color: white;
+    margin-top: 1.5%;
+    padding: 20px;
+    border-radius: 20px;
+    background-image: url(../../../../assets/images/anotherbg.png);
+    background-size: cover;
+}
+.header h1{
+    margin-top: 12px;
+    font-size: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+.tiles .col-sm{
+    height: 200px;
+    background-color: #7D81FF;
+    margin-top: 20px;
+    margin-left: 20px;
+    border-radius: 15px;
+}
+
+.tiles{
+    margin-top: 15px;
+}
+
+.tables{
+    background-color: #ECECFF;
+    margin-top: 20px;
+    padding: 15px;
+    height: 450px;
+    overflow-y: scroll ;
+    border-radius: 15px;
+}
+
+.mat-z8{
+    width: 100%;
+    background-color: #ECECFF;
+}
+
+.tables h1{
+    margin: 0 !important;
+    padding: 0;
+}
+
+.tables .name hr{
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.tiles h1{
+    margin-top: 40%;
+    transform: translateY(-50%);
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.col-sm:hover{
+    transform: rotate(5deg);
+}
+
+.row{
+    padding: 0 10px;
+}

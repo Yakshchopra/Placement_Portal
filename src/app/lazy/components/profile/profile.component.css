@@ -41,7 +41,8 @@
     padding: 20px;
     border-radius: 20px;
     width: 75%;
-    
+    background-image: url(../../../../assets/images/anotherbg.png);    
+    background-size: cover;
 }
 
 
@@ -231,4 +232,5 @@ h3{
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari 3-8 */
     transform: scale(1.1); 
+    transition: 0.1s ease;
 }

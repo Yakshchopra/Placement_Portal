@@ -1,8 +1,5 @@
 import {Component, OnInit } from '@angular/core';
 
-
-Name: 'Yaksh'
-
 @Component({
   selector: 'app-faculty-profile',
   templateUrl: './faculty-profile.component.html',
