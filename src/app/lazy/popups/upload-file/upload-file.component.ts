@@ -15,14 +15,17 @@ export class UploadFileComponent implements OnInit {
               @Inject(MAT_DIALOG_DATA) public data: any, private acv_service: AchievmentsService) { }
   fileUrl;
   errormessage;
+  formData = new FormData();
   file = false;
   public files: NgxFileDropEntry[] = [];
 
   ngOnInit(): void {
   }
-  upload(file) {
-    this.acv_service.uploadFile(file)
+  upload() {
+
+    this.acv_service.uploadFile(this.formData)
       .subscribe(res => {
+        console.log(res)
         const response: any = res;
         this.fileUrl = response.fileurl;
         this.dialogRef.close(this.fileUrl);
@@ -52,9 +55,9 @@ export class UploadFileComponent implements OnInit {
 
 
           // You could upload it like this:
-          const formData = new FormData();
-          formData.append(this.data.name, file, droppedFile.relativePath);
-          this.upload(formData);
+
+          this.formData.append('certificates', file, droppedFile.relativePath);
+
 
           // Headers
 

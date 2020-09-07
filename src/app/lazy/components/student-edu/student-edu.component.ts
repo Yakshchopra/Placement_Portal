@@ -62,7 +62,8 @@ export class StudentEduComponent implements OnInit,OnDestroy{
     this.srvUns = this.srv.getEducation()
       .subscribe(res => {
         console.log(res);
-        this.school = res.school
+        this.school = res.school;
+        this.college = res.college;
       }, err => {
           console.log(err);
     })
@@ -76,6 +77,9 @@ export class StudentEduComponent implements OnInit,OnDestroy{
   }
   ngOnDestroy() {
     this.srvUns.unsubscribe();
+  }
+  updateschool(school) {
+    this.srv
   }
 
 

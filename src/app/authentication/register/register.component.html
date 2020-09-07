@@ -85,7 +85,7 @@
 
 </section> -->
 
-<section class="main">
+<section class="main" *ngIf='!uploaded'>
      <div class="whole container one" [hidden] = 'nothidden'>
         <div class="headline">
           <h1>
@@ -179,7 +179,7 @@
 
           <h3>Just one more step left to go to get you going.</h3>
 
-          <div class="next" (click)='register()' (click) = toggleDisplay()>
+          <div class="next" (click) = toggleDisplay()>
             <i class="fas fa-arrow-right icon"></i>
             <div class="overlay"></div>
 
@@ -198,7 +198,7 @@
       </div>
       <div class="reg-form-1">
 
-        <form [formGroup]='registerForm'>
+        <form [formGroup]='registerForm2'>
 
           <div class="row">
             <div class="col">
@@ -214,7 +214,7 @@
               <div class="form-group">
                 <mat-form-field appearance="outline" class="field">
                   <mat-label>Faculty Advisor</mat-label>
-                  <mat-select>
+                  <mat-select formControlName='faculty'>
                     <mat-option value="option">Mr. Prabushankar K.C.</mat-option>
                   </mat-select>
                 </mat-form-field>
@@ -228,8 +228,8 @@
               <div class="form-group">
                 <mat-form-field appearance="outline" class="field">
                   <mat-label>Acadamic Advisor</mat-label>
-                  <mat-select>
-                    <mat-option value="option">Mr. Prabushankar K.C.</mat-option>
+                  <mat-select formControlName='acad'>
+                    <mat-option value="Mr. Prabushankar K.C">Mr. Prabushankar K.C.</mat-option>
                   </mat-select>
                 </mat-form-field>
               </div>
@@ -237,18 +237,18 @@
 
             <div class="col">
               <div class="form-group">
-                <!-- <mat-form-field appearance="outline">
+                <mat-form-field appearance="outline">
                   <mat-label>Choose a date</mat-label>
-                  <input matInput [matDatepicker]="picker">
+                  <input matInput [matDatepicker]="picker" formControlName='date'>
                   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                   <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field> -->
+                </mat-form-field>
               </div>
             </div>
 
           </div>
 
-          <button class="upl" mat-button><i class="fas fa-cloud-upload-alt up"></i> Upload your photograph</button>
+          <button class="upl" mat-button  (click)='openDialof()'><i class="fas fa-cloud-upload-alt up"></i> Upload your photograph</button>
 
         </form>
 
@@ -263,6 +263,9 @@
    </div>
    </div>
 
-   
+
 
 </section>
+<div *ngIf='uploaded'>
+  Please check you email for verification link
+</div>
