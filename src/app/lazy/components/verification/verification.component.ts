@@ -5,12 +5,12 @@ import {MatTableDataSource} from '@angular/material/table';
 export interface PeriodicElement {
   name: string;
   position: number;
-  weight: number;
+  percentage: number;
   symbol: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
+  {position: 1, name: 'Hydrogen', percentage: 1, symbol: 'H'},
 ];
 
 
@@ -21,6 +21,12 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 
 export class VerificationComponent implements OnInit {
+
+
+
+  displayedColumns: string[] = ['position', 'name', 'percentage', 'symbol']
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
 
   showPlacement = false;
   showCollege = true;
@@ -55,9 +61,7 @@ export class VerificationComponent implements OnInit {
      this.showTwelth = false;
   }
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-
+ 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -66,6 +70,7 @@ export class VerificationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

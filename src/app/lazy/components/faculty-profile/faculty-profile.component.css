@@ -254,5 +254,13 @@ span{
 }
 
 .msg{
-    width: 100%;
+    width: 85%;
 }
+
+.icon{
+    font-size: 30px;
+    color: #7D81FF;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
