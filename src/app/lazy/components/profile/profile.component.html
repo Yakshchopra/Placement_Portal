@@ -12,7 +12,7 @@
                 <div class="nm">
                   <span><i class="fas fa-pen-nib tr"><div class="over"></div></i></span><span class="txt">CGPA</span>
                 </div>
-                <h1>9.8</h1>
+                <h1>{{cgpa}}</h1>
               </div>
             </div>
             <div class="col">
@@ -20,7 +20,7 @@
                 <div class="nm">
                   <span><i class="fas fa-scroll tr"><div class="over"></div></i></span><span class="txt">Applied</span>
                 </div>
-                <h1>1</h1>
+                <h1>{{otherAchivements}}</h1>
               </div>
             </div>
             <div class="col">
@@ -28,7 +28,7 @@
                 <div class="nm">
                   <span><i class="fas fa-certificate tr"><div class="over"></div></i></span><span class="txt">Certifications</span>
                 </div>
-                <h1>9.8</h1>
+                <h1>{{totalCertifications}}</h1>
               </div>
             </div>
           </div>
@@ -70,34 +70,7 @@
               </div>
           </div>
 
-          <!-- tiles -->
-          <!-- <div class="tiles">
-            <div class="row">
-              <div class="col">
-                 <h1>
-                   9.8
-                 </h1>
-                 <hr>
-                 <p>CGPA</p>
-              </div>
-              <div class="col">
-                <h1>
-                  5
-                </h1>
-                <hr>
-                <p>Applied</p>
-              </div>
-              <div class="col">
-                <h1>
-                  3
-                </h1>
-                <hr>
-                <p>Certifications</p>
-              </div>
-            </div>
-          </div> -->
-
-          
+                
           
 
           <!-- /tiles -->
@@ -187,5 +160,25 @@
       <!-- <div class="ill">
         <img class="image" src="../../../../assets/images/undraw_checking_boxes_2ibd.svg" alt="">
       </div> -->
+
+      <div class="ill">
+        <h1>Skills</h1>
+        <hr class="line">
+        <mat-form-field class="example-chip-list">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                     [removable]="removable" (removed)="remove(fruit)">
+              {{fruit.name}}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Add Skills ..."
+                   [matChipInputFor]="chipList"
+                   [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                   [matChipInputAddOnBlur]="addOnBlur"
+                   (matChipInputTokenEnd)="add($event)">
+          </mat-chip-list>
+        </mat-form-field>
+        
+      </div>
 
 </section>
