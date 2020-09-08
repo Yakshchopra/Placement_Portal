@@ -1,11 +1,13 @@
 .main{
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 }
 
 .content{
-    width: 85%;
+    width: 90%;
     margin-left: 9%;
+
 }
 
 .header{
@@ -16,6 +18,9 @@
     border-radius: 20px;
     
 }
+::-webkit-scrollbar {
+    display: none;    
+  }
 
 .header h1{
     margin-top: 12px;
@@ -26,7 +31,7 @@
 
 .table{
     margin-top: 30px;
-    width: 85%;
+    width: 90%;
     margin-left: 9%;
     max-height: 420px !important;
     padding: 20px;
@@ -35,12 +40,12 @@
     -moz-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
     box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
     border-radius: 20px;
-    background-color: #ECECFF;
+    background-color: #f7f7f8;
 }
 
 .mat-z8{
     width: 100%;
-    background-color: #ECECFF;
+    background-color: #f7f7f8;
     
 }
 
@@ -98,5 +103,5 @@
   }
 
   .search{
-      width: 90%;
+      width: 100%;
   }

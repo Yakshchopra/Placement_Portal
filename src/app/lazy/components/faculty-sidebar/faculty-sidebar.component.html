@@ -2,20 +2,20 @@
     <div class="logo">
         <img class="yc-logo" src="../../../../assets/images/Srmseal.png" alt="Logo">
     </div>
-    <div class="item">
-        <i class="fas fa-chalkboard-teacher icon"></i>
+    <div class="item" routerLink='/faculty' routerLinkActive #teach='routerLinkActive'>
+        <i class="fas fa-chalkboard-teacher icon" ></i>
       <p>Profile</p>
-      <div class="block"></div>
+      <div class="block" *ngIf="teach.isActive"></div>
   </div>
-    <div class="item">
+    <div class="item" routerLink='/faculty/list' routerLinkActive #verify='routerLinkActive'>
         <i class="fas fa-clipboard-list icon"></i>
         <p>Class List</p>
-        <div class="block"></div>
+        <div class="block" *ngIf="verify.isActive"></div>
     </div>
-    <div class="item">
+    <div class="item" routerLink='/faculty/verify' routerLinkActive #cert='routerLinkActive'>
         <i class="fas fa-user-check icon"></i>
         <p class="cert">Verification</p>
-        <div class="block"></div>
+        <div class="block" *ngIf="cert.isActive"></div>
     </div>
 
     <div class="item">

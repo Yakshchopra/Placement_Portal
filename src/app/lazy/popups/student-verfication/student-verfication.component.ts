@@ -3,6 +3,7 @@ import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AchievmentsService } from '../../components/student-achivements/achievments.service';
 import { SubSink } from 'subsink';
+
 interface certification {
   name: string;
   url: string;
@@ -75,7 +76,4 @@ export class StudentVerficationComponent implements OnInit, OnDestroy {
     this.subs.unsubscribe();
     this.form = { name: '', doc: '', url: '' };
   }
-
-
-
 }
