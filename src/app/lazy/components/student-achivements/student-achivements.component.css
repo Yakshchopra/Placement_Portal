@@ -7,10 +7,12 @@
 
 .courses{
     padding: 20px;
-    background-color: #ECECFF;
+    background-color: #f7f7f8;
     margin-top: 20px;
     border-radius: 20px;
     width: 75%;
+    height: 285px;
+    overflow-y: scroll;
 }
 
 .col-2{
@@ -68,7 +70,7 @@ hr{
 }
 
 .achive{
-    width: 45%;
+    width: 100%;
 }
 
 .highlights{
@@ -78,7 +80,7 @@ hr{
     background-size: cover;
     width: 21%;
     right: 0.75%;
-    height: 40vh;
+    height: 50vh;
     border-radius: 0 0 35px 35px;
     padding: 20px;
     -webkit-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
@@ -97,9 +99,83 @@ hr{
 
 img{
     position: absolute;
-    top: 0;
-    width: 40%;
-    right: 0;
-    top: 47%;
+    width: 20%;
+    right: 1%;
+    top: 57%;
     z-index: -1;
 }
+
+.yc-ach{
+    width: 75%;
+}
+
+.trial{
+    background-color: #f7f7f8;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 6px 0px silver;
+    -moz-box-shadow: 0px 0px 6px 0px silver;
+    box-shadow: 0px 0px 6px 0px silver;
+    padding: 5px;
+    margin-top: 27px;
+    width: 100%;
+    height: 120px;
+}
+
+.nm{
+    background-color: #FF485B;
+    font-size: 25px;
+    color: white;
+    padding: 10px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+.tr{
+    margin-right: 40px;
+    margin-left: 10px;
+    position: relative;
+}
+
+.txt{
+    margin-right: 70px;
+}
+
+.over{
+    position: absolute;
+    background-color: white;
+    height: 150%;
+    width: 150%;
+    top: -25%;
+    left: -25%;
+    opacity: 0.3;
+    border-radius: 10px;
+}
+
+.trial h1{
+    font-size: 40px;
+    text-align: center;
+    margin-top: 17px;
+}
+
+.two .tr{
+    margin-right: 0;
+}
+
+.two .txt{
+    margin-right: 0;
+    margin-left: 20px;
+}
+
+.two .nm{
+    background-color: #60C3FC;
+}
+
+.trial:hover{
+    transform: rotate(2deg);
+    transition: 0.1s ease;
+}
+
+.courses::-webkit-scrollbar {
+    display: none;    
+  }
