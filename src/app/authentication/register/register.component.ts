@@ -20,8 +20,8 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group(
       {
         name: [ '', [Validators.required]],
-        registrationNumber: ['', [Validators.required,Validators.pattern(/^RA[0-9]{13}$/)]],
-        email: ['', [Validators.required,Validators.email]],
+        registrationNumber: ['', [Validators.required, Validators.pattern(/^RA[0-9]{13}$/)]],
+        email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required]],
 
         conf_pass: ['', [Validators.required]],
@@ -36,10 +36,10 @@ export class RegisterComponent implements OnInit {
     this.registerForm2 = this.fb.group({
       dept: ['', [Validators.required]],
       faculty: ['', [Validators.required]],
-      acad: ["", [Validators.required]],
+      acad: ['', [Validators.required]],
       date: ['', [Validators.required]],
-      profile_url:['',[Validators.required]]
-    })
+      profile_url: ['', [Validators.required]]
+    });
   }
 
   ishidden = true;
@@ -48,7 +48,7 @@ export class RegisterComponent implements OnInit {
   toggleDisplay() {
 
     this.ishidden = !this.ishidden;
-    this.nothidden = true
+    this.nothidden = true;
   }
 
   ngOnInit(): void {
@@ -78,14 +78,14 @@ export class RegisterComponent implements OnInit {
 
   // Register Function
   register() {
-    console.log('yoyo')
-      let form1 = this.registerForm.value;
+    console.log('yoyo');
+    const form1 = this.registerForm.value;
     delete form1.conf_pass;
-    let form3 = this.registerForm2.value;
+    const form3 = this.registerForm2.value;
     form3.profile_url = this.profile_url;
-    let from2 = { ...form1, ...form3 };
+    const from2 = { ...form1, ...form3 };
     console.log(from2);
-      this.auth.register(from2).subscribe(
+    this.auth.register(from2).subscribe(
         (res) => {
           this.uploaded = true;
           console.log(res);
@@ -98,14 +98,14 @@ export class RegisterComponent implements OnInit {
 
   }
   openDialof() {
-    let med = this.dialog.open(UploadFileComponent, {
+    const med = this.dialog.open(UploadFileComponent, {
       width: '250px',
-      data:{name:'Profile'}
-    })
+      data: {name: 'Profile'}
+    });
     med.afterClosed()
       .subscribe(res => {
         this.profile_url = res;
-    })
+    });
   }
 
 

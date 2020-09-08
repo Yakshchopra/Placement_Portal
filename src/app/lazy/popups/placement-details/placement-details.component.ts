@@ -12,9 +12,9 @@ import { ProfileService } from '../../components/profile/profile.service';
 export class PlacementDetailsComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<PlacementDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any,private acv_service: ProfileService,private mat_dialog: MatDialog) { }
+              @Inject(MAT_DIALOG_DATA) public data: any, private acv_service: ProfileService, private mat_dialog: MatDialog) { }
   form =  {
-    name:'',doc:'',url:''
+    name: '', doc: '', url: ''
   };
 
   ngOnInit(): void {

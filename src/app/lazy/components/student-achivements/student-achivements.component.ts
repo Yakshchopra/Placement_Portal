@@ -49,7 +49,7 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
 
    });
 
-      dialog.afterClosed()
+   dialog.afterClosed()
         .subscribe(res => {
           if (res.upload) {
             if (res.type === 'workshop') {

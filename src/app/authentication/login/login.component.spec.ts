@@ -25,5 +25,5 @@ describe('LoginComponent', () => {
   it('should login', () => {
 
 
-  })
+  });
 });

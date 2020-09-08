@@ -15,8 +15,8 @@ export class FacultyRegistrationComponent implements OnInit {
     this.registerForm = this.fb.group(
       {
         name: [ '', [Validators.required]],
-        facultyNumber: ['', [Validators.required,Validators.pattern(/^RA[0-9]{13}$/)]],
-        email: ['', [Validators.required,Validators.email]],
+        facultyNumber: ['', [Validators.required, Validators.pattern(/^RA[0-9]{13}$/)]],
+        email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required]],
         conf_pass: ['', [Validators.required]],
         number: ['', [Validators.required, Validators.minLength(10)]],

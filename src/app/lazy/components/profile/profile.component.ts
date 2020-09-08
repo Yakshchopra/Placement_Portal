@@ -10,11 +10,11 @@ import { PlacementDetailsComponent} from '../../popups/placement-details/placeme
 
 declare var $: any;
 interface userdetail {
-  name: string,
-  email: string,
-  faculty?: string,
-  number: number,
-  registrationNumber:String
+  name: string;
+  email: string;
+  faculty?: string;
+  number: number;
+  registrationNumber: String;
 }
 
 
@@ -25,7 +25,7 @@ interface userdetail {
   styleUrls: ['./profile.component.css']
 })
 
-export class ProfileComponent implements OnInit,OnDestroy {
+export class ProfileComponent implements OnInit, OnDestroy {
 
   sub1;
   profile: userdetail;
@@ -37,14 +37,14 @@ export class ProfileComponent implements OnInit,OnDestroy {
         this.profile = res;
       }, err => {
           this.errormessage = err.error.message;
-    })
+    });
 
-    
+
   }
   ngOnDestroy() {
     this.sub1.unsubscribe();
   }
 
-  
+
 
 }

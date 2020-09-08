@@ -25,7 +25,7 @@ export class UploadFileComponent implements OnInit {
 
     this.acv_service.uploadFile(this.formData)
       .subscribe(res => {
-        console.log(res)
+        console.log(res);
         const response: any = res;
         this.fileUrl = response.fileurl;
         this.dialogRef.close(this.fileUrl);

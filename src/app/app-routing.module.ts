@@ -15,15 +15,15 @@ import { VerificationComponent } from './lazy/components/verification/verificati
 
 // Note-: Add other routes to lazyRouting
 const routes: Routes = [
-  { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) , canActivate:[AuthGuard]},
+  { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) , canActivate: [AuthGuard]},
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'select', component: RegSelectinComponent},
   {path: 'faculty', component: FacultyProfileComponent},
   {path: 'list', component: StudentListComponent},
-  {path:'verify', component: VerificationComponent},
+  {path: 'verify', component: VerificationComponent},
   {path: 'freg', component: FacultyRegistrationComponent},
-  { path: 'student/register/:token', component: EmailVerifyComponent },  
+  { path: 'student/register/:token', component: EmailVerifyComponent },
   { path: '**' , component: ErrorComponent}
 ];
 

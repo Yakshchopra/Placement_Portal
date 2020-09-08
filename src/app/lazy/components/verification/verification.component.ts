@@ -24,7 +24,8 @@ export class VerificationComponent implements OnInit {
 
 
 
-  displayedColumns: string[] = ['position', 'name', 'percentage', 'symbol']
+  displayedColumns: string[] = ['position', 'name', 'percentage', 'symbol'];
+
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
 
@@ -42,26 +43,26 @@ export class VerificationComponent implements OnInit {
 
   toggleDisplay2(){
     this.showPlacement = true;
-     this.showCollege = false;
-     this.showTenth = true;
-     this.showTwelth = true;
+    this.showCollege = false;
+    this.showTenth = true;
+    this.showTwelth = true;
   }
 
   toggleDisplay3(){
     this.showPlacement = true;
-     this.showCollege = true;
-     this.showTenth = false;
-     this.showTwelth = true;
+    this.showCollege = true;
+    this.showTenth = false;
+    this.showTwelth = true;
   }
 
   toggleDisplay4(){
     this.showPlacement = true;
-     this.showCollege = true;
-     this.showTenth = true;
-     this.showTwelth = false;
+    this.showCollege = true;
+    this.showTenth = true;
+    this.showTwelth = false;
   }
 
- 
+
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
@@ -70,7 +71,7 @@ export class VerificationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+
   }
 
 }
