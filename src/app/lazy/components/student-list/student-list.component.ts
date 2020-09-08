@@ -4,7 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 
 export interface PeriodicElement {
   name: string;
-  position: String;
+  position: string;
   CGPA: number;
   XII: number;
   X: number;

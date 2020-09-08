@@ -37,46 +37,64 @@
 
 
         <!-- ach -->
-        <div class="courses achive" >
-            <h1>
-                Achivements
-            </h1>
-            <hr>
-            <div class="container" *ngFor='let cour of workshops'>
-                <div class="row">
-                    <div class="col-sm">
-                        {{cour.name}}
+
+        <div class="row yc-ach">
+            <div class="col-8">
+                <div class="courses achive" >
+                    <h1>
+                        Achivements
+                    </h1>
+                    <hr>
+                    <div class="container" *ngFor='let cour of workshops'>
+                        <div class="row">
+                            <div class="col-sm">
+                                {{cour.name}}
+                            </div>
+                            <div class="col-sm">
+                                Date: {{cour.doc}}
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center mt-3" *ngIf='!workshops'>
+                            <img src="../../../../assets/gifs/preloader.gif" width="100" height="100">
+                        </div>
                     </div>
-                    <div class="col-sm">
-                        Date: {{cour.doc}}
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-center mt-3" *ngIf='!workshops'>
-                    <img src="../../../../assets/gifs/preloader.gif" width="100" height="100">
+        
+                    <button class="add"  (click)='openDialog(false)'>
+                        Add Achivement
+                    </button>
+        
                 </div>
             </div>
-
-            <button class="add"  (click)='openDialog(false)'>
-                Add Achivement
-            </button>
-
+            <div class="col">
+                <div class="row">
+                    <div class="trial one">
+                        <div class="nm">
+                          <span><i class="fas fa-certificate tr"><div class="over"></div></i></span><span class="txt">Certifications</span>
+                        </div>
+                        <h1>9.8</h1>
+                      </div>
+                </div>
+                <div class="row">
+                    <div class="trial two">
+                        <div class="nm">
+                          <span><i class="fas fa-trophy tr"><div class="over"></div></i></span><span class="txt">Other Achivements</span>
+                        </div>
+                        <h1>9.8</h1>
+                      </div>
+                </div>
+            </div>
         </div>
+        
         <!-- /ach -->
         <div class="highlights">
             <h1>
-                Highlights
+                Notifications
             </h1>
             <hr>
-            <h3>
-                Total Certifications: 5
-            </h3>
-            <h3>
-                Total Achivements: 5
-            </h3>
         </div>
 
         <div class="ill">
-            <img src="../../../../assets/images/undraw_winners_ao2o.svg" alt="illustration">
+            <img src="../../../../assets/images/undraw_project_completed_w0oq.svg" alt="illustration">
         </div>
 
 

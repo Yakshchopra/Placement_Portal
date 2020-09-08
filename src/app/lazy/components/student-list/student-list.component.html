@@ -1,4 +1,5 @@
 <section class="main">
+  <app-faculty-sidebar></app-faculty-sidebar>
     <section class="content">
         <div class="header">
             <h1>Student List</h1>
@@ -15,7 +16,7 @@
 
             <!-- Position Column -->
             <ng-container matColumnDef="position">
-              <th class="num" mat-header-cell *matHeaderCellDef> Reg. No. </th>
+              <th class="num" mat-header-cell *matHeaderCellDef mat-sort-header> Reg. No. </th>
               <td class="td" mat-cell *matCellDef="let element"> {{element.position}} </td>
             </ng-container>
 
@@ -43,7 +44,7 @@
             </ng-container>
 
             <ng-container matColumnDef="details">
-                <th class="num" mat-header-cell *matHeaderCellDef mat-sort-header> </th>
+                <th class="num" mat-header-cell *matHeaderCellDef> </th>
                 <td class="td" mat-cell *matCellDef="let element"><button class="det-btn" mat-button>View Deatils <i class="fas fa-long-arrow-alt-right"></i></button></td>
               </ng-container>
 

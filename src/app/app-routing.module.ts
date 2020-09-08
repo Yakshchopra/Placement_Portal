@@ -19,9 +19,9 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'select', component: RegSelectinComponent},
-  {path: 'faculty', component: FacultyProfileComponent},
-  {path: 'list', component: StudentListComponent},
-  {path: 'verify', component: VerificationComponent},
+  {path: 'faculty/profile', component: FacultyProfileComponent},
+  {path: 'faculty/list', component: StudentListComponent},
+  {path:'faculty/verify', component: VerificationComponent},
   {path: 'freg', component: FacultyRegistrationComponent},
   { path: 'student/register/:token', component: EmailVerifyComponent },
   { path: '**' , component: ErrorComponent}

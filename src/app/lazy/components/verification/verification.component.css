@@ -3,7 +3,9 @@
     width: 100%;
    overflow: hidden ;
 }
-
+::-webkit-scrollbar {
+    display: none;    
+  }
 .main{
     width: 90%;
     margin-left: 9%;
@@ -18,7 +20,7 @@
     margin-top: 1.5%;
     padding: 20px;
     border-radius: 20px;
-    background-image: url(../../../../assets/images/anotherbg.png);
+    background-image: url(../../../../assets/images/hdr-big.png);
     background-size: cover;
 }
 .header h1{
@@ -78,4 +80,27 @@
 
 .row{
     padding: 0 10px;
+}
+
+.filter{
+    width: 100%;
+    margin-top: 5px;
+}
+
+.fas{
+    font-size: 20px;
+    margin-left: 10px;
+    color: green;
+    opacity: 0.8;
+}
+
+.fas:hover{
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+    transition: 0.1s ease;
+}
+
+.fa-times-circle{
+    color: red;
 }
