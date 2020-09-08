@@ -36,10 +36,10 @@ export class StudentEduComponent implements OnInit, OnDestroy{
   constructor(private dialog: MatDialog, private srv: ProfileService) { }
   school: school = {
     X: {
-      percentage: '96', verified: 'pending'
+      percentage: 'no', verified: 'pending'
     },
     XII: {
-      percentage: '96', verified: 'pending'
+      percentage: 'no', verified: 'pending'
     }
   };
   college: college = {

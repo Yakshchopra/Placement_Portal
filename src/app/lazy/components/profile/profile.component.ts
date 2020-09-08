@@ -2,10 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProfileService } from './profile.service';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
-
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';
-import { PlacementDetailsComponent} from '../../popups/placement-details/placement-details.component';
+import { PlacementDetailsComponent } from '../../popups/placement-details/placement-details.component';
 
 
 export interface Fruit {
@@ -22,7 +20,6 @@ interface userdetail {
 }
 
 
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -30,7 +27,10 @@ interface userdetail {
 })
 
 
+
+
 export class ProfileComponent implements OnInit,OnDestroy {
+
 
   totalCertifications = 0;
   cgpa = 0;
@@ -39,7 +39,14 @@ export class ProfileComponent implements OnInit,OnDestroy {
   sub1;
   profile: userdetail;
   errormessage;
-  constructor(private srv: ProfileService) {}
+
+  constructor(private srv: ProfileService, public dialog: MatDialog ) {}
+
+  openDialog(){
+    this.dialog.open(PlacementDetailsComponent);
+  }
+
+
   ngOnInit(): void {
    this.sub1 =  this.srv.getUserDetail()
       .subscribe(res => {
@@ -47,7 +54,6 @@ export class ProfileComponent implements OnInit,OnDestroy {
       }, err => {
           this.errormessage = err.error.message;
     });
-
 
   }
   ngOnDestroy() {

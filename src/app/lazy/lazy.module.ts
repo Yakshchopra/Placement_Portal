@@ -58,6 +58,7 @@ import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-si
     VerificationComponent,
     FacultySidebarComponent
   ],
+  entryComponents: [PlacementDetailsComponent],
   imports: [
     CommonModule,
     LazyRoutingModule,

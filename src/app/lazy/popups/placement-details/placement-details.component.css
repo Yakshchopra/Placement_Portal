@@ -1,0 +1,18 @@
+.inputs{
+    width: 500px;
+}
+
+h1{
+    color: #7D81FF;
+}
+
+.sbm{
+    background-color: #7D81FF;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    color: white;
+}
+
+.sbm:focus{
+    outline: none;
+}
