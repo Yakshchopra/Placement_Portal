@@ -1,89 +1,3 @@
-<!-- <section class="form">
-    <form [formGroup]='registerForm' class="container cont">
-        <h1 class="header">Register</h1>
-        <hr>
-        <div class="first">
-          <div class="form-row">
-            <div class="col">
-              <div class="form-group">
-                  <label for="name">Name</label>
-                  <input formControlName='name' type="text" class="form-control" id="name" required>
-                  <span class='error'  *ngIf='f.controls.name.errors?.required && (f.controls.name.touched || submitted)'>please enter valid name </span>
-                </div>
-            </div>
-            <div class="col">
-              <div class="form-group">
-                  <label for="r.no">Register Number</label>
-                  <input formControlName='registrationNumber' type="text" class="form-control" id="r.no" required>
-                  <span class="error" *ngIf='f.controls.registrationNumber.errors?.required && (f.controls.registrationNumber.touched || submitted)'>please enter valid registration Number </span>
-
-                </div>
-            </div>
-          </div>
-          <div class="form-row">
-              <div class="col">
-                  <div class="form-group">
-                      <label for="email">Email</label>
-                      <input formControlName='email' type="email" class="form-control" id="email" required>
-                      <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>please enter valid email id </span>
-                    </div>
-              </div>
-              <div class="col">
-                  <div class="form-group">
-                      <label for="phone">Contact Number</label>
-                      <input formControlName='number' type="number" class="form-control" id="phone" required>
-                      <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>please enter valid email id </span>
-                    </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col">
-                  <div class="form-group">
-                      <label for="pass">Password</label>
-                      <input formControlName='password' type="password" class="form-control" id="pass" required>
-                      <span class='error'  *ngIf='f.controls.password.errors?.required && (f.controls.password.touched || submitted)'>please enter valid password  </span>
-                    </div>
-              </div>
-              <div class="col">
-                  <div class="form-group">
-                      <label for="cmp">Confirm Password</label>
-                      <input formControlName='conf_pass' type="password" class="form-control" id="cmp" required>
-                      <span class='error'  *ngIf='f.controls.conf_pass.errors?.ConfirmedValidator && (f.controls.conf_pass.touched || submitted)'>Password did not match </span>
-
-                    </div>
-              </div>
-            </div>
-            <button class="btn btn-primary" type="submit" (click)='register()'>Next</button>
-
-            <div class="dots">
-
-              <div class="container">
-                <div class="row">
-                  <div class="col-sm">
-                    <div class="dot-1">
-                        <div class="active">
-
-                        </div>
-                    </div>
-                  </div>
-                  <div class="col-sm">
-                    <div class="dot-2">
-
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-        </div>
-
-      </form>
-
-
-
-
-
-</section> -->
 
 <section class="main" *ngIf='!uploaded'>
      <div class="whole container one" [hidden] = 'nothidden'>
@@ -260,6 +174,20 @@
 
 
 </section>
-<div *ngIf='uploaded'>
-  Please check you email for verification link
+<div *ngIf='uploaded' class="mailed">
+  <div class="container">
+    <div class="row">
+        <div class="col">
+            <img src="../../../assets/gifs/30816-mail-send-animation.gif" alt="mail-sent">
+        </div>
+        <div class="col">
+            <div class="mail">
+                <h1>We have sent you a verification mail.</h1>
+            <p>Check your mailbox to get going.</p>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>
 </div>

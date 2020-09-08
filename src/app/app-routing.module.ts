@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'select', component: RegSelectinComponent},
-  {path: 'faculty', component: FacultyProfileComponent},
+  {path: 'faculty/profile', component: FacultyProfileComponent},
   {path: 'faculty/list', component: StudentListComponent},
   {path:'faculty/verify', component: VerificationComponent},
   {path: 'freg', component: FacultyRegistrationComponent},
