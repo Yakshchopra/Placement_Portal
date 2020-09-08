@@ -1,5 +1,5 @@
 .yc-nav{
-    width: 95px;
+    width: 7%;
     height: 96vh;
     background-color: #7d81ff;
     margin-left: 10px;
@@ -17,6 +17,7 @@
     transform: translateX(-50%);
     margin-top: 10px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .icon{
