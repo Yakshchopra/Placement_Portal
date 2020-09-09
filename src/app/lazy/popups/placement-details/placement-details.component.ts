@@ -5,6 +5,12 @@ import { UploadFileComponent } from '../upload-file/upload-file.component';
 import { ProfileService } from '../../components/profile/profile.service';
 import { SubSink } from 'subsink';
 
+interface certification {
+  name: string;
+  url: string;
+  doc: string;
+}
+
 @Component({
   selector: 'app-placement-details',
   templateUrl: './placement-details.component.html',
@@ -16,6 +22,7 @@ export class PlacementDetailsComponent implements OnInit, OnDestroy {
     @Inject(MAT_DIALOG_DATA) public data: any,private acv_service: ProfileService,private mat_dialog: MatDialog) { }
 
 
+  
   ngOnInit(): void {
   }
   ngOnDestroy(): void{

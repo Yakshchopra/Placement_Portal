@@ -11,7 +11,7 @@
 }
 
 .school{
-    background-color: #ECECFF;
+    background-color: #f7f7f8;
     border-radius: 20px;
     margin-top: 20px;
     padding: 20px;
@@ -69,7 +69,7 @@ span{
 .highlights{
     position: absolute;
     top: 0;
-    background-color: #FFDBE1;
+    background-color:#f7f7f8;
     background-image: url(../../../../assets/images/bg.png);
     background-size: cover;
     width: 21%;
@@ -130,7 +130,7 @@ h2{
 .inlinedit {
   border: none;
   outline: none;
-  background-color:#ECECFF;
+  background-color:#f7f7f8;
   width: 40px;
 
 }

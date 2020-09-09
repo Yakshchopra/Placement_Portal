@@ -1,10 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 img{
     margin-left: 50%;
     transform: translateX(-50%);
-    
+    margin-top: -5%
 }
 
 .error{
     height: 100vh;
     overflow: hidden;
+}
+
+h1{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #7d81ff;
+    font-weight: 400;
+    font-family: 'Special Elite', cursive !important;
 }
