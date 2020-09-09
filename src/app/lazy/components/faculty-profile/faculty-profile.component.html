@@ -4,7 +4,7 @@
         <div class="header">
             <h1>Welcome Back!</h1>
         </div>
-        
+
         <div class="tiles">
           <div class="row">
             <div class="col">
@@ -34,7 +34,7 @@
           </div>
         </div>
 
-          
+
 
         <div class="row act">
           <div class="col-sm">
@@ -45,7 +45,7 @@
               <hr>
               <div class="entries">
                 <div class="field container">
-                    
+
                 </div>
               </div>
           </div>
@@ -53,7 +53,7 @@
           <div class="col-sm">
             <div class="placement">
               <h1>
-                <i class="fas fa-scroll"></i> <span>Announcements</span> 
+                <i class="fas fa-scroll"></i> <span>Announcements</span>
               </h1>
               <hr>
               <div class="entries">
@@ -61,8 +61,8 @@
                   <mat-form-field appearance="fill" class="msg">
                     <mat-label>Input</mat-label>
                     <input matInput>
-                    
-                  </mat-form-field> 
+
+                  </mat-form-field>
                   <i class="fas fa-paper-plane icon"></i>
                 </div>
               </div>
@@ -129,17 +129,17 @@
                </g>
              </svg>
                  <div class="circle">
-     
+
                  </div>
-     
+
                  <div class="desc">
-                   <h1>Prabushankar</h1>
-                   <h3>12345</h3>
+                   <h1>{{facultyDetail.name}}</h1>
+                   <h3>{{facultyDetail.facultyId}}</h3>
                    <h4>
-                     <i class="fas fa-envelope"></i> <span>abcd@efgh.kl</span>
+                     <i class="fas fa-envelope"></i> <span>{{facultyDetail.email}}</span>
                    </h4>
                    <h4>
-                     <i class="fas fa-phone-alt"></i> <span>9999999999</span>
+                     <i class="fas fa-phone-alt"></i> <span>{{facultyDetail.number}}</span>
                    </h4>
                  </div>
             </div>
@@ -148,6 +148,6 @@
            <div class="ill">
              <img class="fac-img" src="../../../../assets/images/undraw_quiz_nlyh.svg" alt="faculty">
            </div>
-           
+
     </div>
 </section>

@@ -27,6 +27,7 @@ import {MatListModule} from '@angular/material/list';
 
 // Service
 import { ProfileService } from './components/profile/profile.service';
+import { FacultyService } from './../faculty.service'
 
 // Other modules
 import { NgxFileDropModule } from 'ngx-file-drop';
@@ -75,7 +76,7 @@ import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-si
     MatSortModule,
     MatListModule
   ],
-  providers: [ProfileService],
+  providers: [ProfileService,FacultyService ],
   bootstrap: [LazyComponent]
 })
 export class LazyModule { }

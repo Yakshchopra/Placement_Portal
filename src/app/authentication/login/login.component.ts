@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FacultyService } from "./../../faculty.service";
 import { RegisterComponent } from '../register/register.component';
 declare var $: any;
 
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
     private auth: AuthService,
     private fb: FormBuilder,
     private route: Router,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private facultyService: FacultyService
   ) {}
   user = 0;
   errormessage;
@@ -71,5 +73,18 @@ export class LoginComponent implements OnInit {
       toastClass: 'alert alert-warning alert-with-icon',
       positionClass: 'toast-' + from + '-' + align,
     });
+  }
+  facultyLogin() {
+    let form = this.loginForm.value;
+    form.facultyId = form.registrationNumber;
+    this.facultyService.facultyLogin(form)
+      .subscribe(res => {
+        if (res.message === 'success') {
+          localStorage.setItem('token', res.token);
+          localStorage.setItem('user', res.user);
+          localStorage.setItem('id', res.id);
+          this.route.navigate(['/faculty/profile']);
+      }
+    })
   }
 }
