@@ -1,32 +1,44 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { FacultyService } from 'src/app/faculty.service';
 
-export interface PeriodicElement {
-  name: string;
-  position: string;
-  CGPA: number;
-  XII: number;
-  X: number;
+ interface PeriodicElement {
+   name: string;
+  registrationNumber: string;
+  CGPA: string;
+  XII: string;
+  X: string;
 
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 'RA1811032010048', name: 'Yaksh Chopra', CGPA: 10, XII: 93.2, X: 9.8 },
-];
+
 
 @Component({
   selector: 'app-student-list',
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
-export class StudentListComponent implements AfterViewInit {
-
-  displayedColumns: string[] = ['position', 'name', 'CGPA', 'XII', 'X',  'details'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+export class StudentListComponent implements OnInit, AfterViewInit {
+  constructor(private srv: FacultyService) { }
+  data:PeriodicElement[];
+   ELEMENT_DATA: PeriodicElement[] = [
+    {registrationNumber: 'RA1811032010048', name: 'Yaksh Chopra', CGPA: '10', XII: '93.2', X:'9.8' }
+  ];
+  displayedColumns: string[] = ['registrationNumber', 'name', 'CGPA', 'XII', 'X',  'details'];
+  dataSource;
 
   @ViewChild(MatSort) sort: MatSort;
+  ngOnInit() {
+    this.srv.getFacultystudentDetail()
+      .subscribe(res => {
+        console.log(res);
+        this.data = res;
+        this.ELEMENT_DATA = res;
+       this. dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
+    })
+}
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

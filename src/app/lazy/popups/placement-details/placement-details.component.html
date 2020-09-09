@@ -1,19 +1,19 @@
 <div class="main">
-    <form>
+
         <h1>
             Company Details
         </h1>
         <hr>
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Company Name</mat-label>
-            <input matInput>
+            <input matInput [(ngModel)]='name'>
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" class="inputs">
             <mat-label>Status of Application</mat-label>
-            <textarea matInput></textarea>
+            <textarea matInput  [(ngModel)]='status'></textarea>
         </mat-form-field>
         <br>
-        <button class="sbm" mat-raised-button>Submit</button>
-    </form>
+        <button class="sbm" mat-raised-button (click)='submit()'>Submit</button>
+
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
+import { FacultyService } from 'src/app/faculty.service';
 
 
 
@@ -8,12 +9,11 @@ export interface College {
   name: string;
   reg: string;
   sem: number;
+  CGPA: string;
   attachment: string;
 }
 
-const COLLEGE_DATA: College[] = [
-  {name: 'Yaksh Chopra', reg: 'RA1811032010048', sem: 4, attachment:'yaksh.pdf'},
-];
+
 
 // college dataset end
 
@@ -25,9 +25,7 @@ export interface Placement{
   details: string;
 }
 
-const PLACEMENT_DATA: Placement[] = [
-  {name: 'Yaksh', reg: 'RA1811032010048', details: 'Selected for round 2', company: 'Google'}
-]
+
 // placement dataset end
 
 // tenth dataSource
@@ -39,9 +37,7 @@ const PLACEMENT_DATA: Placement[] = [
     attachment: string;
   }
 
-  const TENTH_DATA: Tenth[]  = [
-    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2', attachment: 'pqrst.pdf'}
-  ]
+
 // tenthDataSource end
 
 // twelthdatasource
@@ -52,9 +48,7 @@ export interface Twelth{
   attachment: string;
 }
 
-const TWELTH_DATA: Twelth[]  = [
-  {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2', attachment: 'abcdef.pdf'}
-]
+
 // twelthdatasource end
 
 @Component({
@@ -65,16 +59,89 @@ const TWELTH_DATA: Twelth[]  = [
 
 export class VerificationComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private faculty_srv: FacultyService) { }
+ TWELTH_DATA: Twelth[]  = [
+    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2', attachment: 'abcdef.pdf'}
+  ]
+ TENTH_DATA: Tenth[]  = [
+    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2', attachment: 'pqrst.pdf'}
+  ]
+   PLACEMENT_DATA: Placement[] = [
+    {name: 'Yaksh', reg: 'RA1811032010048', details: 'Selected for round 2', company: 'Google'}
+  ]
+  COLLEGE_DATA: College[] = [
+    {name: 'Yaksh Chopra', reg: 'RA1811032010048', sem: 4, CGPA:'9.2',attachment:'yaksh.pdf'},
+  ];
+  dataSourceTwelth;
+  dataSourceTenth;
+  dataSourcePlacement;
+  dataSourceCollege;
+  collegelist = [];
   ngOnInit(): void {
+    this.faculty_srv.gettwelve()
+      .subscribe(res => {
+        console.log(res);
+        this.TWELTH_DATA =  res.map(item => {
+          if (item.attachment != '' && item.percentage!='')
+            return item;
+        });;
+        this.dataSourceTwelth = new MatTableDataSource(this.TWELTH_DATA);
+    })
+    this.faculty_srv.gettenth()
+    .subscribe(res => {
+      console.log(res);
+      this.TENTH_DATA = res.map(item => {
+        if (item.attachment != '' && item.percentage!='')
+          return item;
+      });
+      this.dataSourceTenth = new MatTableDataSource(this.TENTH_DATA);
+    })
+    this.faculty_srv.getPlacVer()
+    .subscribe(res => {
+      console.log(res);
+      this.TENTH_DATA = res;
+      let response = res;
+      let placementlist = [];
+      response = response.map(item => {
+        item.placementDetails.map(value => {
+          if (value.verified === 'pending')
+            placementlist.push({ reg: item.registrationNumber, name: item.name, company: value.name, details: value.status });
+        })
+      })
+      console.log(placementlist);
+      this.PLACEMENT_DATA = placementlist;
+      this.dataSourcePlacement = new MatTableDataSource(this.PLACEMENT_DATA);
+    })
+    this.faculty_srv.getCollege()
+    .subscribe(res => {
+
+      let response = res;
+      console.log(res);
+      response.map(item => {
+        console.log(item);
+         if ( item.college["one"]["verified"] === 'pending') {
+           this.collegelist.push({ reg: item.reg, name: item.name, sem: 1, attachment: item.college.one.url, CGPA: item.college.one.percentage })
+         }
+          if (item.college.two.verified === 'pending')
+          this.collegelist.push({ reg: item.reg, name: item.name, sem: 2, attachment: item.college.two.url, CGPA: item.college.two.percentage })
+          if (item.college.three.verified === 'pending')
+          this.collegelist.push({ reg: item.reg, name: item.name, sem: 3, attachment: item.college.three.url, CGPA: item.college.three.percentage })
+          if (item.college.four.verified === 'pending')
+          this.collegelist.push({reg:item.reg,name:item.name,sem:4,attachment:item.college.four.url,CGPA:item.collegefour.percentage})
+      })
+      console.log(this.collegelist);
+      this.COLLEGE_DATA = this.collegelist;
+      this.dataSourceCollege = new MatTableDataSource(this.COLLEGE_DATA);
+    })
+
+
 
   }
 
   // college table
 
-  displayedColumnsCollege: string[] = ['reg', 'name', 'sem', 'attachment', 'verify']
-  dataSourceCollege = new MatTableDataSource(COLLEGE_DATA);
+  displayedColumnsCollege: string[] = ['reg', 'name', 'sem', 'attachment','CGPA', 'verify']
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -86,7 +153,7 @@ export class VerificationComponent implements OnInit {
   // placement table
 
   displayedColumnsPlacement: string[] = ['reg', 'name', 'company', 'details', 'verify']
-  dataSourcePlacement = new MatTableDataSource(PLACEMENT_DATA);
+
 
   applyFilterPlacement(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -97,7 +164,7 @@ export class VerificationComponent implements OnInit {
 
   // tenth table
     displayedColumnsTenth: string[] = ['reg', 'name', 'percentage','attachment', 'verify']
-    dataSourceTenth = new MatTableDataSource(TENTH_DATA);
+
 
     applyFilterTenth(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
@@ -107,7 +174,7 @@ export class VerificationComponent implements OnInit {
 
   // twelth table
     displayedColumnsTwelth: string[] = ['reg', 'name', 'percentage', 'attachment', 'verify']
-    dataSourceTwelth = new MatTableDataSource(TWELTH_DATA);
+
 
     applyFilterTwelth(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
@@ -115,7 +182,8 @@ export class VerificationComponent implements OnInit {
     }
 
   // twelth table end
-
+  rejected = 'rejected';
+  accepted = 'accepted';
   showPlacement = false;
   showCollege = true;
   showTenth = true;
@@ -147,6 +215,49 @@ export class VerificationComponent implements OnInit {
     this.showCollege = true;
     this.showTenth = true;
     this.showTwelth = false;
+  }
+  verifyPlacement(data, response) {
+    data.response = response;
+    this.faculty_srv.placementVerify(data)
+      .subscribe(res => {
+        let elem = this.PLACEMENT_DATA.indexOf(data);
+        this.PLACEMENT_DATA.splice(elem, 1);
+        this.dataSourcePlacement = new MatTableDataSource(this.PLACEMENT_DATA);
+        console.log(res);
+    })
+  }
+  verifyTwelve(data, response) {
+    data.response = response;
+    this.faculty_srv.twelveVerify(data)
+      .subscribe(res => {
+        let elem = this.TWELTH_DATA.indexOf(data);
+        this.TWELTH_DATA.splice(elem, 1);
+        this.dataSourceTwelth = new MatTableDataSource(this.TWELTH_DATA);
+        console.log(res);
+      })
+
+  }
+  verifyTen(data, response) {
+    data.response = response;
+    this.faculty_srv.tenVerify(data)
+      .subscribe(res => {
+        let elem = this.TENTH_DATA.indexOf(data);
+        this.TENTH_DATA.splice(elem, 1);
+        this.dataSourceTenth = new MatTableDataSource(this.TENTH_DATA);
+        console.log(res);
+      })
+
+  }
+  verifyCollege(data, response) {
+    data.response = response;
+    this.faculty_srv.collegeVerify(data)
+      .subscribe(res => {
+        let elem = this.COLLEGE_DATA.indexOf(data);
+        this.COLLEGE_DATA.splice(elem, 1);
+        this.dataSourceCollege = new MatTableDataSource(this.COLLEGE_DATA);
+        console.log(res);
+      })
+
   }
 
 

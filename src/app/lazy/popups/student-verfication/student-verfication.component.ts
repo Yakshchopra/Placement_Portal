@@ -39,11 +39,12 @@ export class StudentVerficationComponent implements OnInit, OnDestroy {
     console.log(event);
     this.file = event.target.files[0];
     console.log(this.file);
-  }  submit() {
+  }
+  submit() {
     console.log(this.data);
     const formdata = new FormData();
     formdata.append('certificates', this.file, this.reg_no + this.form.name + (this.data.name ? 'course' : 'workshop') + '.pdf');
-    this.subs.add(
+
     this.acv_service.uploadFile(formdata)
       .subscribe(res => {
         console.log(res);
@@ -52,28 +53,28 @@ export class StudentVerficationComponent implements OnInit, OnDestroy {
         const form = {};
 
         if (this.data.name === true) {
-          this.subs.add(
+
             this.acv_service.submitCourse(this.form)
               .subscribe(check => {
                 this.dialogRef.close({ upload: true, type: 'course' });
 
               }, err => {
                 this.errormessage = err.error.message;
-              }));
+              });
         } else {
-          this.subs.add(
+
             this.acv_service.submitworkshop(this.form)
               .subscribe(check => {
                 this.dialogRef.close({ upload: true, type: 'workshop' });
               }, err => {
                 this.errormessage = err.error.message;
-              }));
+              });
         }
-      }));
+      });
 
   }
   ngOnDestroy() {
-    this.subs.unsubscribe();
+
     this.form = { name: '', doc: '', url: '' };
   }
 }

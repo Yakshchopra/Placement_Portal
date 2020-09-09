@@ -55,27 +55,27 @@
                     </div>
                   </div>
 
-                  <div class="row field">
+                  <div class="row field" *ngFor='let ko of all_placements'>
                     <div class="col-sm-3">
-                       <p>AWS</p>
+                       <p>{{ko.name}}</p>
                     </div>
                     <div class="col-sm">
-                       <p>Selected for round-2 <span><i class="fas fa-pencil-alt edit"></i></span></p>
+                       <p>{{ko.status}} <span><i class="fas fa-pencil-alt edit"></i></span></p>
                     </div>
                     <div class="col-sm">
-                        <p><i class="fas fa-check-circle"></i><span> Pending</span></p>
+                        <p><i class="fas fa-check-circle"></i><span> {{ko.verified | titlecase}}</span></p>
                     </div>
                   </div>
                 </div>
               </div>
           </div>
 
-                
-          
+
+
 
           <!-- /tiles -->
 
-          
+
 
 
       <!-- Id-start -->
@@ -152,11 +152,11 @@
               </h4>
             </div>
 
-            
+
        </div>
       </div>
 
-      
+
       <!-- <div class="ill">
         <img class="image" src="../../../../assets/images/undraw_checking_boxes_2ibd.svg" alt="">
       </div> -->
@@ -178,7 +178,7 @@
                    (matChipInputTokenEnd)="add($event)">
           </mat-chip-list>
         </mat-form-field>
-        
+
       </div>
 
 </section>

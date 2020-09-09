@@ -21,11 +21,24 @@ export class PlacementDetailsComponent implements OnInit, OnDestroy {
   constructor(public dialogRef: MatDialogRef<PlacementDetailsComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,private acv_service: ProfileService,private mat_dialog: MatDialog) { }
 
+  name;
+  status;
 
-  
   ngOnInit(): void {
   }
+  save() {
+
+}
   ngOnDestroy(): void{
+
+  }
+  submit() {
+    console.log({ name: this.name, status: this.status });
+    this.acv_service.addPlacements({ name: this.name, status: this.status })
+      .subscribe(res => {
+        console.log(res);
+        this.dialogRef.close({ name: this.name, status: this.status });
+    })
 
   }
 }

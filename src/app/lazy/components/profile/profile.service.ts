@@ -31,6 +31,16 @@ export class ProfileService{
     const URL = this.BaseURL + 'education/get';
     return this.http.get<any>(URL);
   }
+  getPlacements() {
+    const URL = this.BaseURL + 'placements/get';
+    return this.http.get<any>(URL);
+  }
+  addPlacements(data) {
+    const URL = this.BaseURL + 'placements/add';
+    return this.http.post<any>(URL, data);
+  }
+
+
 
 
 }

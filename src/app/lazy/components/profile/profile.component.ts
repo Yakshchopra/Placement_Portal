@@ -39,11 +39,21 @@ export class ProfileComponent implements OnInit,OnDestroy {
   sub1;
   profile: userdetail;
   errormessage;
-
+all_placements = []
   constructor(private srv: ProfileService, public dialog: MatDialog ) {}
 
   openDialog(){
-    this.dialog.open(PlacementDetailsComponent);
+    let dialo = this.dialog.open(PlacementDetailsComponent);
+    dialo.afterClosed()
+      .subscribe(res => {
+        console.log(res);
+        this.srv.getPlacements()
+        .subscribe(res => {
+          this.all_placements = res;
+        }, err => {
+            this.errormessage = err.error.message;
+        })
+      })
   }
 
 
@@ -53,7 +63,18 @@ export class ProfileComponent implements OnInit,OnDestroy {
         this.profile = res;
       }, err => {
           this.errormessage = err.error.message;
-    });
+      });
+      this.srv.getPlacements()
+      .subscribe(res => {
+        this.all_placements = res;
+      }, err => {
+          this.errormessage = err.error.message;
+      })
+    this.srv.getSkills()
+      .subscribe(res => {
+        this.fruits = res;
+    })
+
 
   }
   ngOnDestroy() {
@@ -70,18 +91,8 @@ export class ProfileComponent implements OnInit,OnDestroy {
   ];
 
   add(event: MatChipInputEvent): void {
-    const input = event.input;
-    const value = event.value;
-
-    // Add our fruit
-    if ((value || '').trim()) {
-      this.fruits.push({name: value.trim()});
-    }
-
-    // Reset the input value
-    if (input) {
-      input.value = '';
-    }
+    this.addSkill(event.value);
+    this.fruits.push({ name: event.value });
   }
 
   remove(fruit: Fruit): void {
@@ -90,6 +101,12 @@ export class ProfileComponent implements OnInit,OnDestroy {
     if (index >= 0) {
       this.fruits.splice(index, 1);
     }
+  }
+  addSkill(name) {
+    this.srv.submitSkills({ name: name })
+      .subscribe(res => {
+        console.log(res);
+    })
   }
 
 
