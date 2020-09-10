@@ -37,12 +37,11 @@ hr{
 
 .icon{
     font-size: 20px;
+    color: yellow;
 }
 .ver_icon{
     font-size: 20px;
     color: green;
-
-
 }
 .btn-primary {
     border-radius: 15px;
@@ -142,7 +141,7 @@ h2{
 }
 
 .col{
-    
+
     margin: 0 10px;
 }
 
@@ -178,7 +177,7 @@ h2{
 
 .trial{
     background-color: #f7f7f8;
-    
+
     border-radius: 15px;
     -webkit-box-shadow: 0px 0px 6px 0px silver;
     -moz-box-shadow: 0px 0px 6px 0px silver;
@@ -250,5 +249,5 @@ h2{
 .three .over{
     width: 350% !important;
     left: -125%;
-    
+
 }

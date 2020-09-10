@@ -12,7 +12,7 @@
                 <div class="nm">
                   <span><i class="fas fa-pen-nib tr"><div class="over"></div></i></span><span class="txt">CGPA</span>
                 </div>
-                <h1>{{profile.CGPA}}</h1>
+                <h1>{{profile.CGPA?profile.CGPA: '0'}}</h1>
               </div>
             </div>
             <div class="col">
@@ -76,6 +76,8 @@
           <!-- /tiles -->
 
 
+
+
       <!-- Id-start -->
       <div class="id-crd" *ngIf='profile'>
        <div class="id">
@@ -136,7 +138,7 @@
           </g>
         </svg>
             <div class="circle">
-
+              <img src={{profile.profile_url}} height="100" width="100" class="circle" style="margin-top: -55px;">
             </div>
 
             <div class="desc">

@@ -127,7 +127,7 @@ export class VerificationComponent implements OnInit {
           if (item.college.three.verified === 'pending')
           this.collegelist.push({ reg: item.reg, name: item.name, sem: 3, attachment: item.college.three.url, CGPA: item.college.three.percentage })
           if (item.college.four.verified === 'pending')
-          this.collegelist.push({reg:item.reg,name:item.name,sem:4,attachment:item.college.four.url,CGPA:item.collegefour.percentage})
+          this.collegelist.push({reg:item.reg,name:item.name,sem:4,attachment:item.college.four.url,CGPA:item.college.four.percentage})
       })
       console.log(this.collegelist);
       this.COLLEGE_DATA = this.collegelist;

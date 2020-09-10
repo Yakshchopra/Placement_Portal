@@ -7,7 +7,8 @@ interface userdetail {
   faculty?: string;
   number: number;
   registrationNumber: string;
-  CGPA:string
+  CGPA: string,
+  profile_url: string;
 }
 @Injectable({
   providedIn: 'root'
