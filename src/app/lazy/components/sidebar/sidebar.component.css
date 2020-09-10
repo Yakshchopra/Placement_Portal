@@ -41,6 +41,14 @@
     box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
 }
 
+.logo:focus{
+    outline: none;
+}
+
+.logo{
+    cursor: pointer;
+}
+
 .item:hover{
     -ms-transform: scale(1.1); /* IE 9 */
     -webkit-transform: scale(1.1); /* Safari 3-8 */

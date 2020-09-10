@@ -222,6 +222,8 @@ svg{
     transform: translateX(-50%);
     top: 50px;
     border: solid white;
+    background-image: url(../../../../assets/images/teach.svg);
+    background-size: cover;
 }
 
 .desc{

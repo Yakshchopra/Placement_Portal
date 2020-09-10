@@ -26,7 +26,14 @@
 .tile{
     height: 100px;
     width: 90%;
-    background-color: black;
+    border-radius: 20px;
+}
+
+
+.new{
+    height: 100px;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .courses h2{
@@ -101,7 +108,7 @@ hr{
     font-size: 20px;
 }
 
-img{
+.ill img{
     position: absolute;
     width: 20%;
     right: 1%;
