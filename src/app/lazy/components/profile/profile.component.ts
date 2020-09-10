@@ -17,6 +17,7 @@ interface userdetail {
   faculty?: string;
   number: number;
   registrationNumber: String;
+  CGPA:string
 }
 
 

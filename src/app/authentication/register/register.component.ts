@@ -104,7 +104,7 @@ export class RegisterComponent implements OnInit {
     });
     med.afterClosed()
       .subscribe(res => {
-        this.profile_url = res;
+        this.profile_url = res.url;
     });
   }
 

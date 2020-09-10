@@ -14,7 +14,7 @@ interface PeriodicElement {
   providedIn: 'root'
 })
 export class FacultyService {
-  facultyId = localStorage.getItem('id');
+  facultyId = localStorage.getItem('faculty_id');
   constructor(private http: HttpClient) { }
   BaseURL = environment.BaseUrl;
   facultyLogin(data) {
@@ -83,6 +83,10 @@ export class FacultyService {
   }
   collegeVerify(data) {
     let URL = this.BaseURL +'college/verify';
+    return this.http.post<any>(URL, { facultyId: this.facultyId ,...data});
+  }
+  facultyaccess(data) {
+    let URL = this.BaseURL +'faculty/access';
     return this.http.post<any>(URL, { facultyId: this.facultyId ,...data});
   }
 }

@@ -28,7 +28,7 @@ export class UploadFileComponent implements OnInit {
         console.log(res);
         const response: any = res;
         this.fileUrl = response.fileurl;
-        this.dialogRef.close(this.fileUrl);
+        this.dialogRef.close({ url: this.fileUrl });
       }, err => {
           this.errormessage = err.error.message;
     });

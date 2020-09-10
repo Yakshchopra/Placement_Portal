@@ -1,6 +1,6 @@
 
     <div class="content">
-      
+
         <div class="school">
             <div class="headline">
                 <h1>
@@ -16,14 +16,14 @@
                   <div class="col-sm">
                     <input class="inlinedit" [(ngModel)]="school.X.percentage" [disabled]="!index[5]">
 
-                    <mat-icon class="edit"  *ngIf="!index[5]"  (click)="index[5] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[5]" (click)="index[5] = false">save</mat-icon>
+                    <mat-icon class="edit"  *ngIf="!index[5] && school.X.verified != 'accepted'"  (click)="index[5] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[5]" (click)="updatepercentage(educationDetails+school_string+'.X'+percentage,school.X.percentage,5)">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class='btn btn-primary' (click)='openDialog("10")'>Upload File</button>
+                    <button class='btn btn-primary' (click)='openDialog(school_string+".X")'>Upload File</button>
                   </div>
                   <div class="col-sm">
-                    <i class="far fa-check-circle icon"></i><span>Pending</span>
+                    <i class="far fa-check-circle icon"></i><span>{{school.X.verified}}</span>
                   </div>
                 </div>
                 <br>
@@ -34,14 +34,14 @@
                   <div class="col-sm">
                     <input class="inlinedit" [(ngModel)]="school.XII.percentage" [disabled]="!index[6]">
 
-                    <mat-icon class="edit"  *ngIf="!index[6]"  (click)="index[6] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[6]" (click)="index[6] = false">save</mat-icon>
+                    <mat-icon class="edit"  *ngIf="!index[6] && school.XII.verified != 'accepted'"  (click)="index[6] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[6]" (click)="updatepercentage(educationDetails+school_string+'.XII'+percentage,school.XII.percentage,6)">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class='btn btn-primary' (click)='openDialog("12")'>Upload File</button>
+                    <button class='btn btn-primary' (click)='openDialog(school_string+".XII")'>Upload File</button>
                   </div>
                   <div class="col-sm">
-                    <i class="far fa-check-circle icon"></i><span>Pending</span>
+                    <i class="far fa-check-circle icon"></i><span>{{school.XII.verified}}</span>
                   </div>
                 </div>
               </div>
@@ -49,7 +49,7 @@
 
         </div>
 
-        
+
 
         <!-- college -->
         <div class="school coll">
@@ -65,16 +65,16 @@
                      Semester- 1
                   </div>
                   <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="college.one.verified" [disabled]="!index[1]">
+                    <input class="inlinedit" [(ngModel)]="college.one.percentage" [disabled]="!index[1]">
 
-                    <mat-icon class="edit"  *ngIf="!index[1]"  (click)="index[1] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[1]" (click)="index[1] = false">save</mat-icon>
+                    <mat-icon class="edit"  *ngIf="!index[1] && college.one.verified != 'accepted'"  (click)="index[1] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[1] " (click)="updatepercentage(educationDetails+college_string+'.one'+percentage,college.one.percentage,1)">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog("semester-1")'>Upload File</button>
+                    <button class="btn btn-primary" (click)='openDialog(college_string+".one")'>Upload File</button>
                   </div>
                   <div class="col-sm">
-                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span>Pending</span>
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span>{{college.one.verified}}</span>
                   </div>
                 </div>
                 <br>
@@ -83,16 +83,16 @@
                      Semester- 2
                   </div>
                   <div class="col-sm">
-                    <input class="inlinedit" #two [(ngModel)]="college.two.verified" [disabled]="!index[2]" >
+                    <input class="inlinedit" #two [(ngModel)]="college.two.percentage" [disabled]="!index[2]" >
 
-                    <mat-icon class="edit"  *ngIf="!index[2]"  (click)="index[2] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[2]" (click)="index[2] = false">save</mat-icon>
+                    <mat-icon class="edit"  *ngIf="!index[2] && college.two.verified != 'accepted'"  (click)="index[2] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[2] " (click)="updatepercentage(educationDetails+college_string+'.two'+percentage,college.two.percentage,2)">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog("semester-2")'>Upload File</button>
+                    <button class="btn btn-primary" (click)='openDialog(college_string+".two")'>Upload File</button>
                   </div>
                   <div class="col-sm">
-                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span>Pending</span>
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span>{{college.two.verified}}</span>
                   </div>
                 </div>
                 <br>
@@ -101,16 +101,16 @@
                      Semester- 3
                   </div>
                   <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="college.three.verified" [disabled]="!index[3]">
+                    <input class="inlinedit" [(ngModel)]="college.three.percentage" [disabled]="!index[3]">
 
-                    <mat-icon class="edit"  *ngIf="!index[3]"  (click)="index[3] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[3]" (click)="index[3] = false">save</mat-icon>
+                    <mat-icon class="edit"  *ngIf="!index[3] && college.three.verified != 'accepted'"  (click)="index[3] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[3] " (click)="updatepercentage(educationDetails+college_string+'.three'+percentage,college.three.percentage,3)">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog("semester-3")'>Upload File</button>
+                    <button class="btn btn-primary" (click)='openDialog(college_string+".three")'>Upload File</button>
                   </div>
                   <div class="col-sm">
-                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span>Pending</span>
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span>{{college.three.verified}}</span>
                   </div>
                 </div>
                 <br>
@@ -119,16 +119,16 @@
                      Semester- 4
                   </div>
                   <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="college.four.verified" [disabled]="!index[4]">
+                    <input class="inlinedit" [(ngModel)]="college.four.percentage" [disabled]="!index[4]">
 
-                    <mat-icon class="edit"  *ngIf="!index[4]"  (click)="index[4] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[4]" (click)="index[4] = false">save</mat-icon>
+                    <mat-icon class="edit"  *ngIf="!index[4] && college.four.verified != 'accepted'"  (click)="index[4] = true">edit</mat-icon>
+                    <mat-icon class="edit" *ngIf="index[4] " (click)="updatepercentage(educationDetails+college_string+'.four'+percentage,college.four.percentage,4)">save</mat-icon>
                   </div>
                   <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog("semester-4")'>Upload File</button>
+                    <button class="btn btn-primary" (click)='openDialog(college_string+".four")'>Upload File</button>
                   </div>
                   <div class="col-sm">
-                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> Pending</span>
+                    <i class="far fa-check-circle " ngClass='col.verified?"ver_icon":"icon"'></i><span> {{college.four.verified}}</span>
                   </div>
                 </div>
               </div>
@@ -145,7 +145,7 @@
                 <div class="nm">
                   <span><i class="fas fa-pen-nib tr"><div class="over"></div></i></span><span class="txt">CGPA</span>
                 </div>
-                <h1>9.8</h1>
+                <h1>{{CGPA}}</h1>
               </div>
             </div>
             <div class="col">

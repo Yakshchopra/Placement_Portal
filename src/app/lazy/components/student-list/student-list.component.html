@@ -45,7 +45,7 @@
 
             <ng-container matColumnDef="details">
                 <th class="num" mat-header-cell *matHeaderCellDef> </th>
-                <td class="td" mat-cell *matCellDef="let element"><button class="det-btn" mat-button>View Details <i class="fas fa-long-arrow-alt-right"></i></button></td>
+                <td class="td" mat-cell *matCellDef="let element"><button class="det-btn" mat-button (click)='OpenProfile(element.registrationNumber)'>View Details <i class="fas fa-long-arrow-alt-right"></i></button></td>
               </ng-container>
 
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

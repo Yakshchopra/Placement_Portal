@@ -7,6 +7,7 @@ interface userdetail {
   faculty?: string;
   number: number;
   registrationNumber: string;
+  CGPA:string
 }
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,10 @@ export class ProfileService{
   }
   addPlacements(data) {
     const URL = this.BaseURL + 'placements/add';
+    return this.http.post<any>(URL, data);
+  }
+  updatePercentage(data) {
+    const URL = this.BaseURL + 'collegescholl/update';
     return this.http.post<any>(URL, data);
   }
 

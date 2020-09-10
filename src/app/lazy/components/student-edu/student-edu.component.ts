@@ -33,6 +33,11 @@ interface college {
 })
 export class StudentEduComponent implements OnInit, OnDestroy{
   index = Array(8).fill(false);
+  educationDetails = 'educationDetails';
+  college_string = '.college';
+  school_string = '.school';
+  percentage = '.percentage';
+
   constructor(private dialog: MatDialog, private srv: ProfileService) { }
   school: school = {
     X: {
@@ -56,7 +61,7 @@ export class StudentEduComponent implements OnInit, OnDestroy{
       percentage: '', verified: 'no'
     },
   };
-
+  CGPA;
   srvUns;
   ngOnInit(): void {
     this.srvUns = this.srv.getEducation()
@@ -64,6 +69,26 @@ export class StudentEduComponent implements OnInit, OnDestroy{
         console.log(res);
         this.school = res.school;
         this.college = res.college;
+
+        if (this.college.one.percentage != 'nan' && this.college.two.percentage != 'nan' && this.college.three.percentage != 'nan' && this.college.four.percentage != 'nan')
+        {
+          try {
+            let sem1CGPA = parseFloat(this.college.one.percentage);
+            let sem2CGPA = parseFloat(this.college.two.percentage);
+            let sem3CGPA = parseFloat(this.college.three.percentage);
+            let sem4CGPA = parseFloat(this.college.four.percentage);
+            let creditsSem1 = 20.0;
+          let creditsSem2 = 21.0;
+          let creditsSem3 = 24.0;
+            let creditsSem4 = 26.0;
+            this.CGPA = ((sem1CGPA*creditsSem1 + sem2CGPA * creditsSem2 + sem3CGPA * creditsSem3 + sem4CGPA*creditsSem4)/(creditsSem1+creditsSem2+creditsSem3+creditsSem4)).toFixed(2)
+          } catch {
+            console.log('failed');
+          }
+          this.updatepercentage('CGPA', `${this.CGPA}`);
+
+
+          }
       }, err => {
           console.log(err);
     });
@@ -74,12 +99,24 @@ export class StudentEduComponent implements OnInit, OnDestroy{
 
       data: { name }
     });
+    dialogRef.afterClosed()
+      .subscribe(res => {
+        this.updatepercentage(this.educationDetails + name + '.url', res.url);
+        this.updatepercentage(this.educationDetails +  name + '.verified', 'pending');
+    })
   }
   ngOnDestroy() {
     this.srvUns.unsubscribe();
   }
-  updateschool(school) {
-    this.srv;
+  updatepercentage(type, data, i?) {
+    if(i)
+    this.index[i] = false;
+    console.log('yo');
+    let response = { sem: type, response: data };
+    this.srv.updatePercentage(response)
+      .subscribe(res => {
+        console.log(res);
+    })
   }
 
 

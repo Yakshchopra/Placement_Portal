@@ -71,7 +71,7 @@
                         <div class="nm">
                           <span><i class="fas fa-certificate tr"><div class="over"></div></i></span><span class="txt">Certifications</span>
                         </div>
-                        <h1>{{courses.length}}</h1>
+                        <h1>{{courses.length ?courses.length:0}}</h1>
                       </div>
                 </div>
                 <div class="row">
@@ -79,7 +79,7 @@
                         <div class="nm">
                           <span><i class="fas fa-trophy tr"><div class="over"></div></i></span><span class="txt">Other Achivements</span>
                         </div>
-                        <h1>{{workshops.length}}</h1>
+                        <h1>{{workshops.length || 0}}</h1>
                       </div>
                 </div>
             </div>

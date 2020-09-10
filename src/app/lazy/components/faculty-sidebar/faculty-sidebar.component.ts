@@ -11,5 +11,11 @@ export class FacultySidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('faculty_id');
+    localStorage.removeItem('user');
+    window.location.reload();
+  }
 
 }

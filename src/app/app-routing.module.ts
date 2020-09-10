@@ -12,6 +12,7 @@ import { FacultyProfileComponent } from './lazy/components/faculty-profile/facul
 import { StudentListComponent } from './lazy/components/student-list/student-list.component';
 import { FacultyRegistrationComponent } from './authentication/faculty-registration/faculty-registration.component';
 import { VerificationComponent } from './lazy/components/verification/verification.component';
+import { FacultyGuard } from './faculty.guard';
 
 // Note-: Add other routes to lazyRouting
 const routes: Routes = [
@@ -19,9 +20,9 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'select', component: RegSelectinComponent},
-  {path: 'faculty/profile', component: FacultyProfileComponent},
-  {path: 'faculty/list', component: StudentListComponent},
-  {path:'faculty/verify', component: VerificationComponent},
+  {path: 'faculty/profile', component: FacultyProfileComponent, canActivate:[FacultyGuard]},
+  {path: 'faculty/list', component: StudentListComponent, canActivate:[FacultyGuard]},
+  {path:'faculty/verify', component: VerificationComponent, canActivate:[FacultyGuard]},
   {path: 'freg', component: FacultyRegistrationComponent},
   { path: 'student/register/:token', component: EmailVerifyComponent },
   { path: '**' , component: ErrorComponent}

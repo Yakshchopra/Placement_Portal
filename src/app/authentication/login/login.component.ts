@@ -80,10 +80,14 @@ export class LoginComponent implements OnInit {
     this.facultyService.facultyLogin(form)
       .subscribe(res => {
         if (res.message === 'success') {
-          localStorage.setItem('token', res.token);
           localStorage.setItem('user', res.user);
-          localStorage.setItem('id', res.id);
-          this.route.navigate(['/faculty/profile']);
+          localStorage.setItem('faculty_id', res.id);
+          if(!!localStorage.getItem('faculty_id'))
+            this.route.navigate(['/faculty/profile']);
+          setTimeout(() => {
+            window.location.reload();
+          }, 100);
+
       }
     })
   }
