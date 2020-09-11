@@ -21,7 +21,8 @@
                   </div>
 
                   <div class="col-sm">
-                    <i class="far fa-check-circle " [ngClass]='school.X.verified == "accepted"?"ver_icon":"icon"'></i><span>{{school.X.verified}}</span>
+                    <i class="far fa-times-circle" *ngIf="school.X.verified=='rejected'"></i><i class="far fa-check-circle " [ngClass]='school.X.verified == "accepted"?"ver_icon":"icon"' *ngIf='school.X.verified !="" && school.X.verified!="rejected"'></i><span>{{school.X.verified}}</span>
+                    
                   </div>
                 </div>
                 <br>
@@ -37,7 +38,7 @@
                   </div>
 
                   <div class="col-sm">
-                    <i class="far fa-check-circle " [ngClass]='school.XII.verified == "accepted"?"ver_icon":"icon"' *ngIf='school.XII.verified!=""'></i><span>{{school.XII.verified }}</span>
+                    <i class="far fa-times-circle" *ngIf="school.XII.verified=='rejected'"></i><i class="far fa-check-circle " [ngClass]='school.XII.verified == "accepted"?"ver_icon":"icon"' *ngIf='school.XII.verified!="" && school.XII.verified !="rejected"'></i><span>{{school.XII.verified }}</span>
                   </div>
                 </div>
               </div>

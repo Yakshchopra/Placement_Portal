@@ -39,6 +39,11 @@ hr{
     font-size: 20px;
     color: yellow;
 }
+
+.fa-times-circle{
+    color: red;
+    font-size: 20px;
+}
 .ver_icon{
     font-size: 20px;
     color: green;

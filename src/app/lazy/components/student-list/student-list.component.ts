@@ -24,7 +24,7 @@ export class StudentListComponent implements OnInit, AfterViewInit {
   constructor(private srv: FacultyService, private route:Router) { }
   data:PeriodicElement[];
    ELEMENT_DATA: PeriodicElement[] = [
-    {registrationNumber: 'RA1811032010048', name: 'Yaksh Chopra', CGPA: '10', XII: '93.2', X:'9.8' }
+   
   ];
   displayedColumns: string[] = ['registrationNumber', 'name', 'CGPA', 'XII', 'X',  'details'];
   dataSource;
