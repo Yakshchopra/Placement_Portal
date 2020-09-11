@@ -93,26 +93,7 @@ export class StudentEduComponent implements OnInit, OnDestroy{
           console.log(err);
     });
   }
-  openDialog(name) {
-    const dialogRef = this.dialog.open(UploadFileComponent, {
-      width: '250px',
 
-      data: { name }
-    });
-    dialogRef.afterClosed()
-      .subscribe(async (res) => {
-       this.updatepercentage(this.educationDetails + name + '.url', res.url);
-        await this.updatepercentage(this.educationDetails + name + '.verified', 'pending');
-        this.srvUns = this.srv.getEducation()
-          .subscribe(res => {
-            console.log(res);
-            this.school = res.school;
-            this.college = res.college;
-          });
-
-
-    })
-  }
   ngOnDestroy() {
     this.srvUns.unsubscribe();
   }
@@ -123,6 +104,7 @@ export class StudentEduComponent implements OnInit, OnDestroy{
     let response = { sem: type, response: data };
     this.srv.updatePercentage(response)
       .subscribe(res => {
+
         console.log(res);
     })
   }
