@@ -1,183 +1,31 @@
-
-    <div class="content">
-
-        <div class="school">
-            <div class="headline">
-                <h1>
-                    School Education
-                    <hr>
-                </h1>
-            </div>
-            <div class="container" >
-                <div class="row"  >
-                  <div class="col-sm">
-                    class 10
-                  </div>
-                  <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="school.X.percentage" [disabled]="!index[5]">
-
-                    <mat-icon class="edit"  *ngIf="!index[5] && school.X.verified != 'accepted'"  (click)="index[5] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[5]" (click)="updatepercentage(educationDetails+school_string+'.X'+percentage,school.X.percentage,5)">save</mat-icon>
-                  </div>
-                  <div class="col-sm">
-                    <button class='btn btn-primary' (click)='openDialog(school_string+".X")'>Upload File</button>
-                  </div>
-                  <div class="col-sm">
-                    <i class="far fa-times-circle" *ngIf="school.X.verified=='rejected'"></i><i class="far fa-check-circle " [ngClass]='school.X.verified == "accepted"?"ver_icon":"icon"' *ngIf='school.X.verified !="" && school.X.verified!="rejected"'></i><span>{{school.X.verified}}</span>
-                    
-                  </div>
-                </div>
-                <br>
-                <div class="row"  >
-                  <div class="col-sm">
-                    class 12
-                  </div>
-                  <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="school.XII.percentage" [disabled]="!index[6]">
-
-                    <mat-icon class="edit"  *ngIf="!index[6] && school.XII.verified != 'accepted'"  (click)="index[6] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[6]" (click)="updatepercentage(educationDetails+school_string+'.XII'+percentage,school.XII.percentage,6)">save</mat-icon>
-                  </div>
-                  <div class="col-sm">
-                    <button class='btn btn-primary' (click)='openDialog(school_string+".XII")'>Upload File</button>
-                  </div>
-                  <div class="col-sm">
-                    <i class="far fa-times-circle" *ngIf="school.XII.verified=='rejected'"></i><i class="far fa-check-circle " [ngClass]='school.XII.verified == "accepted"?"ver_icon":"icon"' *ngIf='school.XII.verified!="" && school.XII.verified !="rejected"'></i><span>{{school.XII.verified }}</span>
-                  </div>
-                </div>
-              </div>
-
-
+<section class="main">
+  <div class="content">
+    <div class="school">
+      <h1>School Education</h1>
+      <hr>
+      <div class="row container title">
+        <div class="col">
+          <h2>Class</h2>
         </div>
-
-
-
-        <!-- college -->
-        <div class="school coll">
-            <div class="headline">
-                <h1>
-                    College Education
-                    <hr>
-                </h1>
-            </div>
-            <div class="container" >
-                <div class="row">
-                  <div class="col-sm">
-                     Semester- 1
-                  </div>
-                  <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="college.one.percentage" [disabled]="!index[1]">
-
-                    <mat-icon class="edit"  *ngIf="!index[1] && college.one.verified != 'accepted'"  (click)="index[1] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[1] " (click)="updatepercentage(educationDetails+college_string+'.one'+percentage,college.one.percentage,1)">save</mat-icon>
-                  </div>
-                  <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog(college_string+".one")'>Upload File</button>
-                  </div>
-                  <div class="col-sm">
-                    <i class="far fa-check-circle " [ngClass]='college.one.verified == "accepted"?"ver_icon":"icon"' *ngIf='college.one.verified!=""'></i><span>{{college.one.verified || 'Upload First'}}</span>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-sm">
-                     Semester- 2
-                  </div>
-                  <div class="col-sm">
-                    <input class="inlinedit" #two [(ngModel)]="college.two.percentage" [disabled]="!index[2]" >
-
-                    <mat-icon class="edit"  *ngIf="!index[2] && college.two.verified != 'accepted'"  (click)="index[2] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[2] " (click)="updatepercentage(educationDetails+college_string+'.two'+percentage,college.two.percentage,2)">save</mat-icon>
-                  </div>
-                  <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog(college_string+".two")'>Upload File</button>
-                  </div>
-                  <div class="col-sm">
-                    <i class="far fa-check-circle " [ngClass]='college.two.verified == "accepted"?"ver_icon":"icon"'  *ngIf='college.two.verified!=""'></i><span>{{college.two.verified  || 'Upload First'}}</span>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-sm">
-                     Semester- 3
-                  </div>
-                  <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="college.three.percentage" [disabled]="!index[3]">
-
-                    <mat-icon class="edit"  *ngIf="!index[3] && college.three.verified != 'accepted'"  (click)="index[3] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[3] " (click)="updatepercentage(educationDetails+college_string+'.three'+percentage,college.three.percentage,3)">save</mat-icon>
-                  </div>
-                  <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog(college_string+".three")'>Upload File</button>
-                  </div>
-                  <div class="col-sm">
-                    <i class="far fa-check-circle " n[ngClass]='college.three.verified == "accepted"?"ver_icon":"icon"' *ngIf='college.three.verified!=""'></i><span>{{college.three.verified || 'Upload First'}}</span>
-                  </div>
-                </div>
-                <br>
-                <div class="row">
-                  <div class="col-sm">
-                     Semester- 4
-                  </div>
-                  <div class="col-sm">
-                    <input class="inlinedit" [(ngModel)]="college.four.percentage" [disabled]="!index[4]">
-
-                    <mat-icon class="edit"  *ngIf="!index[4] && college.four.verified != 'accepted'"  (click)="index[4] = true">edit</mat-icon>
-                    <mat-icon class="edit" *ngIf="index[4] " (click)="updatepercentage(educationDetails+college_string+'.four'+percentage,college.four.percentage,4)">save</mat-icon>
-                  </div>
-                  <div class="col-sm">
-                    <button class="btn btn-primary" (click)='openDialog(college_string+".four")'>Upload File</button>
-                  </div>
-                  <div class="col-sm">
-                    <i class="far fa-check-circle " [ngClass]='college.four.verified == "accepted"?"ver_icon":"icon"'  *ngIf='college.four.verified!=""'></i><span> {{college.four.verified || 'Upload First'}}</span>
-                  </div>
-                </div>
-              </div>
-
-
-
+        <div class="col">
+          <h2>Percentage</h2>
         </div>
-        <!-- college-end -->
-
-        <div class="tiles">
-          <div class="row">
-            <div class="col">
-              <div class="trial one">
-                <div class="nm">
-                  <span><i class="fas fa-pen-nib tr"><div class="over"></div></i></span><span class="txt">CGPA</span>
-                </div>
-                <h1>{{CGPA}}</h1>
-              </div>
-            </div>
-            <div class="col">
-              <div class="trial two">
-                <div class="nm">
-                  <span><i class="fas fa-scroll tr"><div class="over"></div></i></span><span class="txt">Total Arrears</span>
-                </div>
-                <h1>0</h1>
-              </div>
-            </div>
-            <div class="col">
-              <div class="trial three">
-                <div class="nm">
-                  <span><i class="fas fa-exclamation tr"><div class="over"></div></i></span><span class="txt">Standing Arrears</span>
-                </div>
-                <h1>0</h1>
-              </div>
-            </div>
-          </div>
+        <div class="col">
+          <h2>Verification</h2>
         </div>
-
-
-        <div class="highlights">
-            <h1>Notifications</h1>
-            <hr>
+      </div>
+      <div class="row container">
+        <div class="col">
+          X
         </div>
-        <div class="illustartion">
-            <img class="ills" src="../../../../assets/images/undraw_book_lover_mkck.svg" alt="">
+        <div class="col">
+          XII
         </div>
+        <div class="col">
+          
+        </div>
+      </div>    
 
     </div>
-
-
-
+  </div>
+</section>

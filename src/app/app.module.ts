@@ -68,7 +68,8 @@ import { FacultyRegistrationComponent } from './authentication/faculty-registrat
     MatSelectModule,
     MatDatepickerModule,
     MatStepperModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatStepperModule
   ],
   providers: [AuthService, HttpCacheService,
     {

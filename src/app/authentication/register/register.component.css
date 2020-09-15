@@ -2,150 +2,33 @@
 .main{
     width: 100%;
     height: 100vh;
-    background-image: url(../../../assets/images/regbg.png);
-    background-size: cover;
     overflow: hidden;
+    /* background-image: url(../../../assets/images/regbg.png);
+    background-size: cover; */
 }
 
-.mailed{
+.col-6{
     height: 100vh;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: white;
 }
 
-.mail{
-    margin-top: 65%;
-    transform: translateY(-50%);
+
+.image{
+    margin-right: 20px;
 }
 
-.mail{
-    color: #7d81ff;
-}
-
-.mail p{
-    color: slategray;
+.headline{
+    line-height: 50px;
+    font-size: 45px;
     font-weight: 500;
+    color: #85B6FF;
+    margin-left: 60px;
+    margin-top: 40px;
 }
 
-.whole{
-    width: 50%;
-    height: 80%;
-    position: absolute;
-    top: 15%;
-    left: 3%;
+.form{
+    margin-left: 30px;
 }
 
-.headline h1{
-    font-size: 40px;
-    font-weight: 500;
-    color: slategray;
-}
-
-.field{
+.inputs{
     width: 100%;
 }
-
-.reg-form-1{
-    margin-top: 70px;
-}
-
-.form-group{
-    position: relative;
-}
-
-.error{
-    position: absolute;
-    font-size: small;
-    color: red;
-    top: 80%;
-    width: 100%;
-    left: 0;
-}
-
-.legend{
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
-.first, .second{
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    border: solid #7d81ff;
-    display: inline-block; 
-    margin-left: 50px;  
-    margin-top: 50px;
-}
-
-.second{
-    margin-left: 200px;
-}
-
-.active{
-    height: 70%;
-    width: 70%;
-    border-radius: 50%;
-    background-color: #7d81ff;
-    margin-top: 50%;
-    margin-left: 10%;
-    transform: translateY(-50%);
-}
-
-.next{
-    position: absolute;
-    top: 70%;
-    height: 100px;
-    width: 100px;
-    background-color: #FFCB3E;
-    transform: rotate(33deg);
-    border-radius: 20px;
-    left: 115%;
-    -webkit-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
--moz-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
-box-shadow: 7px 7px 11px -7px rgba(0,0,0,0.75);
-cursor: pointer;
-}
-
-
-.overlay{
-    width: 60px;
-    height: 60px;
-    border-radius: 40%;
-    background-color: white;
-    float: right;
-    opacity: 0.3;
-}
-
-.icon{
-    font-size: 70px;
-    transform: rotate(-33deg);
-    position: absolute;
-    margin-top: 17%;
-    margin-left: 23%;
-    color: white;
-    text-shadow: 0px 2px 5px #234D3C;
-}
-
-h3{
-    color: #7d81ff;
-    font-size: 20px;
-    font-weight: 500;
-    margin-top: 30px;
-}
-
-.upl{
-    background-color: #7d81ff;
-    font-size: 15px;
-    padding: 10px 30px;
-    color: white;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-
-.two{
-    top: 15%;
-}
-

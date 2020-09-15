@@ -1,193 +1,186 @@
-
-<section class="main" *ngIf='!uploaded'>
-     <div class="whole container one" [hidden] = 'nothidden'>
-        <div class="headline">
-          <h1>
-            Let's get you started !
-          </h1>
-        </div>
-        <div class="reg-form-1">
-
-          <form [formGroup]='registerForm'>
-
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                  <mat-form-field appearance="outline" class="field">
-                    <mat-label>Name</mat-label>
-                    <input formControlName='name' type="text" id="name" matInput>
-                  </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.name.errors?.required && (f.controls.name.touched || submitted)'>please enter valid name </span>
+<section class="main">
+  <div>
+    <div class="row">
+      <div class="col-6">
+        <h1 class="headline">Looks like you are<br> new here!</h1>
+        <!-- STEPER -->
+        <mat-horizontal-stepper [linear]="isLinear" #stepper class="form">
+          <mat-step [stepControl]="firstFormGroup">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Personal Details</ng-template>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>First Name</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Registration Name</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
                 </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <mat-form-field appearance="outline" class="field">
-                    <mat-label>Registration Number</mat-label>
-                    <input matInput formControlName='registrationNumber' type="text">
-                  </mat-form-field>
-                  <span class="error" *ngIf='f.controls.registrationNumber.errors?.required && (f.controls.registrationNumber.touched || submitted)'>this field is mandatory </span>
-                  <span class='error'  *ngIf='f.controls.email.errors?.registrationNumber && (f.controls.registrationNumber .touched || submitted) && !f.controls.registrationNumber.errors?.required'>please enter valid email id </span>
-
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>College Email</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Personal Email</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
                 </div>
-              </div>
 
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Contact Number</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Alternate Number</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+          <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Class Details</ng-template>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Department</mat-label>
+                      <mat-select>
+                        <mat-option value="option">CSE</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Specialization</mat-label>
+                      <mat-select>
+                        <mat-option value="option">IoT</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Year Co-ordinator</mat-label>
+                      <mat-select>
+                        <mat-option value="option">Mr. K.C. Prabushnkar</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Faculty Advisor</mat-label>
+                      <mat-select>
+                        <mat-option value="option">Mr. K.C. Prabushnkar</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Section</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>NRI Student</mat-label>
+                      <mat-select>
+                        <mat-option value="option">Yes</mat-option>
+                        <mat-option value="option">No</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+            <form [formGroup]="firstFormGroup">
+              <ng-template matStepLabel>Miscelanious</ng-template>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Father's Contact Number</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Mother's Contact Number</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Date of Birth</mat-label>
+                      <input matInput [matDatepicker]="picker">
+                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                      <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Gender</mat-label>
+                      <mat-select>
+                        <mat-option value="option">Male</mat-option>
+                        <mat-option value="option">Female</mat-option>
+                        <mat-option value="option">Other</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+
+              <div>
+                <button mat-button matStepperNext>Next</button>
+              </div>
+            </form>
+          </mat-step>
+
+          <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            <p>You are now done.</p>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button (click)="stepper.reset()">Reset</button>
             </div>
+          </mat-step>
+        </mat-horizontal-stepper>        
 
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                  <mat-form-field appearance="outline" class="field">
-                    <mat-label>Email</mat-label>
-                    <input formControlName='email' type="email" matInput>
-                  </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.email.errors?.required && (f.controls.email.touched || submitted)'>this field is mandatory </span>
-                  <span class='error'  *ngIf='f.controls.email.errors?.email && (f.controls.email.touched || submitted) && !f.controls.email.errors?.required'>please enter valid email id </span>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <mat-form-field appearance="outline" class="field">
-                    <mat-label>Contact Number</mat-label>
-                    <input formControlName='number' type="number" matInput>
-                  </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.number.errors?.minLength && (f.controls.number.touched || submitted)'>please enter valid Contact Number </span>
-
-                  <span class='error'  *ngIf='f.controls.number.errors?.required && (f.controls.number.touched || submitted)'>this field is mandatory </span>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                  <mat-form-field appearance="outline" class="field">
-                    <mat-label>Password</mat-label>
-                    <input formControlName='password' type="password" matInput>
-                  </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.password.errors?.required && (f.controls.password.touched || submitted)'>please enter valid password  </span>
-                </div>
-              </div>
-
-              <div class="col">
-                <div class="form-group">
-                  <mat-form-field appearance="outline" class="field">
-                    <mat-label>Confirm Password</mat-label>
-                    <input formControlName='conf_pass' type="password" matInput>
-                  </mat-form-field>
-                  <span class='error'  *ngIf='f.controls.conf_pass.errors?.ConfirmedValidator && (f.controls.conf_pass.touched || submitted)'>Password did not match </span>
-                </div>
-              </div>
-
-            </div>
-
-          </form>
-
-          <h3>Just one more step left to go to get you going.</h3>
-
-          <div class="next" (click) = toggleDisplay()>
-            <i class="fas fa-arrow-right icon"></i>
-            <div class="overlay"></div>
-
-        </div>
-
-     </div>
-     </div>
-
-
-     <!-- second-form -->
-     <div class="whole container two" [hidden]='ishidden'>
-      <div class="headline">
-        <h1>
-          Just this last step !
-        </h1>
+        <!-- STEPER END -->
       </div>
-      <div class="reg-form-1">
-
-        <form [formGroup]='registerForm2'>
-
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <mat-form-field appearance="outline" class="field">
-                  <mat-label>Department</mat-label>
-                  <input formControlName='dept' type="text" id="dept" matInput>
-                </mat-form-field>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <mat-form-field appearance="outline" class="field">
-                  <mat-label>Faculty Advisor</mat-label>
-                  <mat-select formControlName='faculty'>
-                    <mat-option value="option">Mr. Prabushankar K.C.</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <mat-form-field appearance="outline" class="field">
-                  <mat-label>Acadamic Advisor</mat-label>
-                  <mat-select formControlName='acad'>
-                    <mat-option value="Mr. Prabushankar K.C">Mr. Prabushankar K.C.</mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
-            </div>
-
-            <div class="col">
-              <div class="form-group">
-                <mat-form-field appearance="outline" class="field">
-                  <mat-label>Date of birth</mat-label>
-                  <input matInput [matDatepicker]="picker" formControlName='date'>
-                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                  <mat-datepicker #picker></mat-datepicker>
-                </mat-form-field>
-              </div>
-            </div>
-
-          </div>
-
-          <button class="upl" mat-button  (click)='openDialof()'><i class="fas fa-cloud-upload-alt up"></i> Upload your photograph</button>
-
-        </form>
-
-        <h3>You are all set to go.</h3>
-
-        <div class="next finish" (click)='register()'>
-          <i class="fas fa-arrow-right icon"></i>
-          <div class="overlay"></div>
+      <div class="col-6">
+        <img class="image" src="../../../assets/images/final/clip-the-student-is-meditating.png" alt="student">
       </div>
-
-   </div>
-   </div>
-
-
+    </div>
+  </div>
 
 </section>
-<div *ngIf='uploaded' class="mailed">
-  <div class="container">
-    <div class="row">
-        <div class="col">
-            <img src="../../../assets/gifs/30816-mail-send-animation.gif" alt="mail-sent">
-        </div>
-        <div class="col">
-            <div class="mail">
-                <h1>We have sent you a verification mail.</h1>
-            <p>Check your mailbox to get going.</p>
-            </div>
-            
-        </div>
-    </div>
-    
-</div>
-</div>

@@ -1,25 +1,31 @@
-<section class="yc-nav">
-        <div class="logo" routerLink='/faculty/profile'>
-            <img class="yc-logo" src="../../../../assets/images/Srmseal.png" alt="Logo">
-        </div>
-        <div class="item" routerLink='/student/profile' routerLinkActive #badge1='routerLinkActive'>
-          <i class="fas fa-id-badge icon" ></i>
-          <p>Profile</p>
-          <div class="block" *ngIf="badge1.isActive"></div>
-      </div>
-        <div class="item" routerLink='/student/education' routerLinkActive #book='routerLinkActive'>
-            <i class="fas fa-book-open icon" ></i>
-            <p>Education</p>
-            <div class="block" *ngIf="book.isActive"></div>
-        </div>
-        <div class="item" routerLink='/student/certifications' routerLinkActive #trophy='routerLinkActive'>
-            <i class="fas fa-trophy icon"></i>
-            <p class="cert">Certifications</p>
-            <div class="block" *ngIf='trophy.isActive'></div>
-        </div>
+<div class="main">
+    <div class="logo">
+        <img src="../../../../assets/images/Srmseal.png" alt="SRMIST">
+    </div>
+    <div class="list">
+        <h2>Overview</h2>
+    </div>
+    <div class="list">
+        <h2>Education</h2>
+    </div>
+    <div class="list">
+        <h2>Certifications</h2>
+    </div>
+    <div class="list">
+        <h2>Achivements</h2>
+    </div>
+    <div class="list">
+        <h2>Placements</h2>
+    </div>
 
-        <div class="item" (click)="logout()">
-            <i class="fas fa-sign-out-alt icon"></i>
-        </div>
-    </section>
+    <div class="image">
+        <img src="../../../../assets/images/final/clip-reading-books.png" alt="">
+    </div>
+    <div class="list log">
+        <h2>Logout</h2>
+    </div>
+    <div class="division">
+        
+    </div>
 
+</div>
