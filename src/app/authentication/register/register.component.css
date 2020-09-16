@@ -20,15 +20,39 @@
     line-height: 50px;
     font-size: 45px;
     font-weight: 500;
-    color: #85B6FF;
-    margin-left: 60px;
-    margin-top: 40px;
+    color: #8498FF;
+    margin-left: 80px;
+    margin-top: 60px;
 }
 
 .form{
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 .inputs{
     width: 100%;
+}
+
+.support{
+    margin-left: 80px;
+    color: #FF8585;
+}
+
+.fas{
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+.next{
+    color:#673ab7;
+    font-size: 20px;
+}
+
+.next:focus, .reset:focus{
+    outline: none;
+}
+
+.reset{
+    color: #FF8585;
+    font-size: 20px;
 }

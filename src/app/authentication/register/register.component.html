@@ -2,7 +2,8 @@
   <div>
     <div class="row">
       <div class="col-6">
-        <h1 class="headline">Looks like you are<br> new here!</h1>
+        <h1 class="headline">Looks like you are new here!</h1>
+        <h2 class="support">Just go through some simple steps to get going.</h2>
         <!-- STEPER -->
         <mat-horizontal-stepper [linear]="isLinear" #stepper class="form">
           <mat-step [stepControl]="firstFormGroup">
@@ -53,7 +54,7 @@
                 </div>
 
               <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button class="next" matStepperNext>Next<i class="fas fa-long-arrow-alt-right"></i></button>
               </div>
             </form>
           </mat-step>
@@ -116,7 +117,7 @@
                 </div>
 
               <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button class="next" matStepperNext>Next<i class="fas fa-long-arrow-alt-right"></i></button>
               </div>
             </form>
           </mat-step>
@@ -158,27 +159,33 @@
                     </mat-form-field>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Total Arrears</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" class="inputs">
+                      <mat-label>Standing Arrears</mat-label>
+                      <input matInput>
+                    </mat-form-field>
+                  </div>
+                </div>
 
               <div>
-                <button mat-button matStepperNext>Next</button>
+                <button mat-button matStepperNext class="next">Submit</button>
+                <button mat-button (click)="stepper.reset()" class="reset">Reset</button>
               </div>
             </form>
-          </mat-step>
-
-          <mat-step>
-            <ng-template matStepLabel>Done</ng-template>
-            <p>You are now done.</p>
-            <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button (click)="stepper.reset()">Reset</button>
-            </div>
           </mat-step>
         </mat-horizontal-stepper>        
 
         <!-- STEPER END -->
       </div>
       <div class="col-6">
-        <img class="image" src="../../../assets/images/final/clip-the-student-is-meditating.png" alt="student">
+        <img class="image" src="../../../assets/gifs/23844-concept-man-flying-with-books.gif" alt="student">
       </div>
     </div>
   </div>

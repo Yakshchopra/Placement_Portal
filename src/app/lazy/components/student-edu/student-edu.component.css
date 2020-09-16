@@ -4,7 +4,7 @@
     height: 100vh;
     width: 100%;
     background-color: #f7f7f8;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .content{
@@ -18,10 +18,10 @@
     background-color: white;
     border-radius: 30px;
     height: 200px;
-    width: 75%;
+    width: 70%;
     min-width: 700px;
     margin-left: 30px;
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 15px 20px;
     -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
     -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
@@ -41,4 +41,71 @@ hr{
 .title{
     margin-top: 10px;
     color: #AAAAAA;
+}
+
+.title h2{
+    font-weight: 400 !important;
+
+}
+
+h4{
+    font-size: 18px;
+}
+
+.far{
+    margin-right: 10px;
+}
+
+.college{
+    height: 290px;
+    margin-top: 30px;
+}
+
+.side{
+    position: absolute;
+    top: 50px;
+    right: 2.5%;
+    width: 18%;
+}
+
+.tiles{
+   
+    height: 150px;
+    width: 100%;
+    background-color: white;   
+  
+    border-radius: 25px;
+    padding: 7px;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
+}
+
+.head h1{
+    color: black;
+    background-color:#FF8585;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 15px;
+    color: white;
+    
+}
+
+.head h2{
+    font-size: 55px;
+    text-align: center;
+    margin-top: 25px;
+    color: #AAAAAA;
+}
+
+.two , .three{
+    margin-top: 30px;
+}
+
+.two h1{
+    background-color: #4AC8E2;
+}
+
+.three h1{
+    background-color: #FFCB3E;
 }
