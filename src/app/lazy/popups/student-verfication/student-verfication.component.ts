@@ -32,7 +32,6 @@ export class StudentVerficationComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
   }
   closerDialog() {
-
     this.dialogRef.close();
   }
   change(event) {

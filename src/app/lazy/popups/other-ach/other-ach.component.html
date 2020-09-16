@@ -1,0 +1,50 @@
+<div class="cont">        
+    <h1>Enter the achivement details.<i (click)='closerDialog()' class="fas fa-times"></i></h1>
+    <hr>
+        <!-- <div class="form-group">
+            <div class="d-flex justify-content-between">
+                <label for="name">Name</label>
+                <mat-icon style="cursor: pointer;" (click)='closerDialog()'>clear</mat-icon>
+            </div>
+            <input type="text" class="form-control" id="name" [(ngModel)]='form.name'>
+        </div>
+        <div class="form-group">
+            <label for="date">Date of Completion</label>
+            <input type="date" class="form-control" id="date" [(ngModel)]='form.doc'>
+        </div>
+        <div class="form-group custom-file">
+            <input type="file" class="custom-file-input" id="customFile" (change)='change($event)'>
+            <label class="custom-file-label" for="customFile">Attach Proof</label>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)='submit()'>Submit</button> -->
+        <form action="">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" class="fields">
+                            <mat-label>Name</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Enter the duration</mat-label>
+                            <mat-date-range-input [rangePicker]="picker">
+                              <input matStartDate placeholder="Start date">
+                              <input matEndDate placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                          </mat-form-field>
+                    </div>
+                </div>
+                <mat-form-field appearance="fill" class="fields">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput></textarea>
+                  </mat-form-field>
+                  <button class="enter" mat-flat-button color="primary" type="submit">Submit</button>
+            </div>
+        </form>
+        
+      
+</div>

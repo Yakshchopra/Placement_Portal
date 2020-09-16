@@ -1,0 +1,34 @@
+<div class="cont">        
+    <h1>Enter the coding contest details.<i (click)='closerDialog()' class="fas fa-times"></i></h1>
+    <hr>
+        <form action="">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" class="fields">
+                            <mat-label>Name</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="fill" class="fields">
+                            <mat-label>Select starting and ending date</mat-label>
+                            <mat-date-range-input [rangePicker]="picker">
+                              <input matStartDate placeholder="Start date">
+                              <input matEndDate placeholder="End date">
+                            </mat-date-range-input>
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                          </mat-form-field>                     
+                    </div>
+                </div>
+                <mat-form-field appearance="fill" class="fields">
+                    <mat-label>Position</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                  <button class="enter" mat-flat-button color="primary" type="submit">Submit</button>
+            </div>
+        </form>
+        
+      
+</div>
