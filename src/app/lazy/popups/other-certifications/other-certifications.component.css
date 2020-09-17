@@ -1,0 +1,29 @@
+
+h1{
+    color: #673ab7;
+}
+
+.btn{
+    margin-top: 20px;
+}
+
+
+.fields{
+    width: 100%;
+}
+
+.enter{
+    margin-left:50%;
+    transform: translateX(-50%);
+}
+
+.enter:focus{
+    outline: none;
+}
+
+.fas{
+    float: right;
+    font-size: 20px;
+    color: #aaaaaa;
+    cursor: pointer;
+}

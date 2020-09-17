@@ -1,0 +1,31 @@
+<div class="cont">        
+    <h1>Enter the certification details.<i class="fas fa-times"></i></h1>
+    <hr>
+        <form action="">
+            <div class="form-group">
+                <mat-form-field appearance="fill" class="fields">
+                    <mat-label>Title</mat-label>
+                    <input matInput>
+                </mat-form-field>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field appearance="fill" class="fields">
+                            <mat-label>Issuing Authority</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field appearance="fill" class="fields">
+                            <mat-label>Date of completion</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>                   
+                    </div>
+                </div>
+                  <button class="enter" mat-flat-button color="primary" type="submit">Submit</button>
+            </div>
+        </form>
+        
+      
+</div>
