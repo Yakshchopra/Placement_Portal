@@ -1,102 +1,129 @@
+<section class="main">
     <div class="content">
-        <div class="courses" >
-            <h1>
-                Certifications
-            </h1>
+        <div class="projects">
+            <h1>Projects <span (click)='openDialog()'><i class="fas fa-plus-circle"></i> Add Entry</span> </h1>
             <hr>
-            <div class="container" *ngFor='let course of courses'>
-                <div class="row">
-                    <div class="col-2">
-                        <div class="tile">
-                            <img class="new" src="../../../../assets/images/two.svg" alt="">
-                        </div>
+            <div class="container">
+                <div class="row title">
+                    <div class="col">
+                        <h2>Name</h2>
                     </div>
                     <div class="col">
-                        <div class="name">
-                            <h2>
-                                {{course.name}}
-                            </h2>
-                            <h3>
-                                Completed on {{course.doc}}
-                            </h3>
-                            <h4>
-                                <a href={{course.url}} target="_blank">Open Certificate</a>
-                            </h4>
-                        </div>
+                        <h2>Description</h2>
+                    </div>
+                    <div class="col">
+                        <h2>Tech Stack</h2>
+                    </div>
+                    <div class="col">
+                        <h2>Link</h2>
                     </div>
                 </div>
-                <div class="row d-flex justify-content-center mt-3" *ngIf='!courses'>
-                    <img src="../../../../assets/gifs/preloader.gif" width="100" height="100">
-                  </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>Go-Co Tracker</h3>
+                    </div>
+                    <div class="col">
+                        <h3>MEAN built web-app</h3>
+                    </div>
+                    <div class="col">
+                        <h3>MEAN</h3>
+                    </div>
+                    <div class="col">
+                        <h3>N/A</h3>
+                    </div>
+                </div>
+               
             </div>
-            <button class="add" (click)='openDialog(true)'>
-                Add Certifications
-            </button>
-
-
-
         </div>
 
+        <!-- projects end -->
 
-        <!-- ach -->
-
-        <div class="row yc-ach">
-            <div class="col-8">
-                <div class="courses achive" >
-                    <h1>
-                        Achivements
-                    </h1>
+        <div class="ach container">
+            <div class="row">
+                <div class="col hack">
+                    <h1>Hackathons<span (click)='openDialogHack()'><i class="fas fa-plus-circle"></i> Add Entry</span></h1>
                     <hr>
-                    <div class="container" *ngFor='let cour of workshops'>
-                        <div class="row">
-                            <div class="col-sm">
-                                {{cour.name}}
-                            </div>
-                            <div class="col-sm">
-                                Date: {{cour.doc}}
-                            </div>
+                    <div class="row title container">
+                        <div class="col">
+                            <h2>Name</h2>
                         </div>
-                        <div class="row d-flex justify-content-center mt-3" *ngIf='!workshops'>
-                            <img src="../../../../assets/gifs/preloader.gif" width="100" height="100">
+                        <div class="col">
+                            <h2>Position</h2>
+                        </div>
+                        <div class="col">
+                            <h2>Duration</h2>
                         </div>
                     </div>
-
-                    <button class="add"  (click)='openDialog(false)'>
-                        Add Achivement
-                    </button>
-
-                </div>
-            </div>
-            <div class="col">
-                <div class="row">
-                    <div class="trial one">
-                        <div class="nm">
-                          <span><i class="fas fa-certificate tr"><div class="over"></div></i></span><span class="txt">Certifications</span>
+                    <div class="row container">
+                        <div class="col">
+                            <h3>HackOn</h3>
                         </div>
-                        <h1>{{courses.length ?courses.length:0}}</h1>
-                      </div>
-                </div>
-                <div class="row">
-                    <div class="trial two">
-                        <div class="nm">
-                          <span><i class="fas fa-trophy tr"><div class="over"></div></i></span><span class="txt">Other Achivements</span>
+                        <div class="col">
+                            <h3>IBM Special</h3>
                         </div>
-                        <h1>{{workshops.length || 0}}</h1>
-                      </div>
+                        <div class="col">
+                            <h3>14-03-2020</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col code">
+                    <h1>Coding Contests<span (click)='openDialogCode()'><i class="fas fa-plus-circle"></i> Add Entry</span></h1>
+                    <hr>
+                    <div class="row title container">
+                        <div class="col">
+                            <h2>Name</h2>
+                        </div>
+                        <div class="col">
+                            <h2>Position</h2>
+                        </div>
+                        <div class="col">
+                            <h2>Duration</h2>
+                        </div>
+                    </div>
+                    <div class="row container">
+                        <div class="col">
+                            <h3>HackOn</h3>
+                        </div>
+                        <div class="col">
+                            <h3>IBM Special</h3>
+                        </div>
+                        <div class="col">
+                            <h3>14-03-2020</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- /ach -->
-        <div class="highlights">
-            <h1>
-                Notifications
-            </h1>
+        <!-- hacks and coding contests end -->
+        <div class="projects other">
+            <h1>Other Achivements <span (click)='openDialogAch()'><i class="fas fa-plus-circle"></i> Add Entry</span> </h1>
             <hr>
+            <div class="container">
+                <div class="row title">
+                    <div class="col">
+                        <h2>Name</h2>
+                    </div>
+                    <div class="col">
+                        <h2>Description</h2>
+                    </div>
+                    <div class="col">
+                        <h2>Date of Completion</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h3>Test</h3>
+                    </div>
+                    <div class="col">
+                        <h3>Test description</h3>
+                    </div>
+                    <div class="col">
+                        <h3>20-05-2000</h3>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="ill">
-            <img src="../../../../assets/images/undraw_project_completed_w0oq.svg" alt="illustration">
-        </div>
 
-
+    </div>
+</section>

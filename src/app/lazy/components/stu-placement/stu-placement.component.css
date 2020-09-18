@@ -1,82 +1,12 @@
-.content{
-    margin-left: 9%;
-    width: 90%;
-    height: 100vh;
-}
-
-.placement-table{
-    background-color: #ECECFF;
-    width: 75%;
-    padding: 20px;
-    border-radius: 20px;
-    margin-top: 20px;
-}
-
-.placement-table h2{
-    font-weight: 500;
-    color: #7d81ff;
-}
-
-.icon-add{
-    font-size: 20px;
-    color: #7d81ff;
-}
-.add span{
-    font-size: 17px;
-    font-weight: 500;
-    margin-left: 5px;
-}
-
-.add{
-    margin-top: 20px;
-}
-
-.form{
+.main{
     height: 100vh;
     width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-image: url(../../../../assets/images/certi.png);
+    background-color: #f7f7f8;
+    overflow: hidden;
 }
 
-.cont{
-    width: 40%;
-    background-color: white;
-    padding: 30px;
-    border-radius: 20px;
-    border: solid #7d81ff;
-    margin-left: 50%;
-    margin-top: 10%;
-    transform: translateX(-50%);
-}
-
-.cross-1{
-    float: right;
-}
-
-.highlights{
-    position: absolute;
-    top: 0;
-    background-image: url(../../../../assets/images/bg.png);
-    background-size: cover;
-    width: 21%;
-    right: 0.75%;
-    height: 40vh;
-    border-radius: 0 0 35px 35px;
-    padding: 20px;
-    -webkit-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
-    -moz-box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
-    box-shadow: 0px 0px 6px 0px rgba(209,205,209,1);
-}
-
-.highlights h1{
-    color: white;
-    font-weight: 500;
-}
-
-.highlights li{
-    color: white;
-    font-size: 20px;
-    margin: 10px;
+.content{
+    height: 100vh;
+    width: 84%;
+    margin-left: 16%;
 }

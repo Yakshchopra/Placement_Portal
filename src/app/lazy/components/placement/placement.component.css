@@ -1,0 +1,96 @@
+.main{
+    height: 100vh;
+    width: 100%;
+    background-color: #f7f7f8;
+    overflow: hidden;
+}
+
+.content{
+    height: 100vh;
+    width: 84%;
+    margin-left: 16%;
+}
+
+.select{
+  
+    background-color: white;
+    width: 72%;
+    margin-left: 3%;
+    margin-top: 30px;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
+    padding: 15px 20px;
+}
+
+h1{
+    color: #FCA8A8;
+    margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+hr{
+    margin: 0;
+}
+
+.selection{
+    text-align: center;
+    color: white;
+}
+
+.selection h2{
+    background-color: #98A8FC;
+    padding: 10px 5px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.place{
+    height: 350px;
+    background-color: white;
+    border-radius: 30px;
+    margin-left: 3%;
+    width: 72%;
+    margin-top: 30px;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
+    padding: 15px 20px;
+}
+
+.title{
+    margin-top: 10px;
+    color: #AAAAAA;
+}
+
+.title h2{
+    font-weight: 400 !important;
+    font-size: 18px;
+}
+
+.skills{
+    width: 18%;
+    height: 260px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    right: 1.75%;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
+    margin-top: 30px;
+    padding: 15px 20px;
+}
+
+.skl{
+    width: 100%;
+    margin-top: 10px;
+}
+
+.companies{
+    top: 46%;
+}

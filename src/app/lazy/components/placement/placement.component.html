@@ -1,0 +1,82 @@
+<section class="main">
+    <div class="content">
+        <div class="container">
+            <div class="select">
+                <h1>Preference</h1>
+                <hr>
+                <div class="selection container">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Placements</h2>
+                        </div>
+                        <div class="col">
+                            <h2>Higher Studies</h2>
+                        </div>
+                        <div class="col">
+                            <h2>Startup</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="place">
+                <h1>
+                    Placements
+                </h1>
+                <hr>
+                <div class="row title container">
+                    <div class="col">
+                        <h2>Company</h2>
+                    </div>
+                    <div class="col">
+                        <h2>Status</h2>
+                    </div>
+                    <div class="col">
+                        <h2>Verification</h2>
+                    </div>
+                </div>
+            </div>
+
+        </div>     
+        
+        <div class="skills">
+            <h1>Skills</h1>
+            <hr>
+            <mat-form-field class="example-chip-list" class="skl">
+                <mat-chip-list #chipList aria-label="Skill selection">
+                  <mat-chip *ngFor="let skill of skills" [selectable]="selectable"
+                           [removable]="removable" (removed)="remove(skill)">
+                    {{skill.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input placeholder="Add Skill..."
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+              
+        </div>
+
+        <!-- <div class="skills companies">
+            <h1>Aimed Companies</h1>
+            <hr>
+            <mat-form-field class="example-chip-list" class="skl">
+                <mat-chip-list #chipList aria-label="Skill selection">
+                  <mat-chip *ngFor="let skill of skills" [selectable]="selectable"
+                           [removable]="removable" (removed)="remove(skill)">
+                    {{skill.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input placeholder="Add Skill..."
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+              
+        </div> -->
+    </div>
+</section>

@@ -23,6 +23,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 // Service
@@ -41,6 +43,14 @@ import { FacultyProfileComponent } from './components/faculty-profile/faculty-pr
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { VerificationComponent } from './components/verification/verification.component';
 import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-sidebar.component';
+import { HackathonComponent } from './popups/hackathon/hackathon.component';
+import { CodingComponent } from './popups/coding/coding.component';
+import { OtherAchComponent } from './popups/other-ach/other-ach.component';
+import { CertificationsComponent } from './components/certifications/certifications.component';
+import { InternationalCertificationsComponent } from './popups/international-certifications/international-certifications.component';
+import { OtherCertificationsComponent } from './popups/other-certifications/other-certifications.component';
+import { InternshipsComponent } from './popups/internships/internships.component';
+import { PlacementComponent } from './components/placement/placement.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +67,15 @@ import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-si
     FacultyProfileComponent,
     StudentListComponent,
     VerificationComponent,
-    FacultySidebarComponent
+    FacultySidebarComponent,
+    HackathonComponent,
+    CodingComponent,
+    OtherAchComponent,
+    CertificationsComponent,
+    InternationalCertificationsComponent,
+    OtherCertificationsComponent,
+    InternshipsComponent,
+    PlacementComponent
   ],
   entryComponents: [PlacementDetailsComponent],
   imports: [
@@ -75,7 +93,8 @@ import { FacultySidebarComponent } from './components/faculty-sidebar/faculty-si
     MatFormFieldModule,
     MatTableModule,
     MatSortModule,
-    MatListModule
+    MatListModule,
+    MatDatepickerModule
   ],
   providers: [ProfileService,FacultyService ],
   bootstrap: [LazyComponent]

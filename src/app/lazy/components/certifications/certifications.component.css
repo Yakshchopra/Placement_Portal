@@ -11,18 +11,28 @@
     margin-left: 16%;
 }
 
-.projects{
-    height: 170px;
+.certi{
     width: 90%;
-    background-color: white;
-    border-radius: 30px;
     margin-left: 4%;
     margin-top: 30px;
-    padding: 10px 20px;
+}
+
+.inter, .npt{
+    background-color: white;
+    height: 260px;
+    border-radius: 30px;
+    padding: 15px 20px;
     -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
     -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
     box-shadow: 0px 3px 6px 0px #dbdbdb;
-    overflow-y: scroll;
+}
+
+.inter{
+    margin-right: 10px;
+}
+
+.npt{
+    margin-left: 10px;
 }
 
 h1{
@@ -35,44 +45,16 @@ hr{
     margin: 0;
 }
 
-.title{
-    margin-top: 10px;
-    color: #AAAAAA;
-}
-
-.title h2{
-    font-weight: 400 !important;
-
-}
-
-.ach{
-    width: 90%;
+.intern{
+    width: 100%;
+    background-color: white;
+    padding: 15px 20px;
     margin-top: 20px;
     border-radius: 30px;
-    margin-left: 4%;
-}
-
-.hack, .code{
-    height: 170px;
-    background-color: white;
-    border-radius: 30px;
-    padding: 15px 20px;
+    height: 270px;
     -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
     -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
     box-shadow: 0px 3px 6px 0px #dbdbdb;
-    overflow-y: scroll;
-}
-
-.hack{
-    margin-right: 10px;
-}
-
-.code{
-    margin-left: 10px;
-}
-
-.other{
-    margin-top: 20px;
 }
 
 span{
@@ -81,5 +63,15 @@ span{
     margin-right: 15px;
     color: #8498FF;
     cursor: pointer;
+}
+
+.title{
+    margin-top: 10px;
+    color: #AAAAAA;
+}
+
+.title h2{
+    font-weight: 400 !important;
+    font-size: 18px;
 }
 

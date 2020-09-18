@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { CodingComponent } from '../../popups/coding/coding.component';
+import { HackathonComponent } from '../../popups/hackathon/hackathon.component';
+import { OtherAchComponent } from '../../popups/other-ach/other-ach.component';
 import { StudentVerficationComponent } from '../../popups/student-verfication/student-verfication.component';
 import { AchievmentsService } from './achievments.service';
 
@@ -17,7 +20,7 @@ interface file {
 })
 export class StudentAchivementsComponent implements OnInit, OnDestroy {
 
-  constructor(private diaglogref: MatDialog, private acv_service: AchievmentsService) { }
+  constructor(public dialog: MatDialog, private acv_service: AchievmentsService) { }
   courses: file[];
   workshops: file[];
 
@@ -41,25 +44,39 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
       this.workshops = respone.workshops;
   });
   }
-  openDialog(state) {
-   const dialog =  this.diaglogref.open(StudentVerficationComponent, {
-      width: '50%',
-      data: {name: state}
 
-
-   });
-
-   dialog.afterClosed()
-        .subscribe(res => {
-          if (res.upload) {
-            if (res.type === 'workshop') {
-              this.retrieveworkshops();
-            } else {
-              this.retrievecourse();
-            }
-          }
-        });
+  openDialog(){
+    this.dialog.open(StudentVerficationComponent)
   }
+
+  openDialogHack(){
+    this.dialog.open(HackathonComponent)
+  }
+
+  openDialogCode(){
+    this.dialog.open(CodingComponent)
+  }
+
+  openDialogAch(){
+    this.dialog.open(OtherAchComponent)
+  }
+  // openDialog(state) {
+  //  const dialog =  this.diaglogref.open(StudentVerficationComponent, {
+  //     width: '50%',
+  //     data: {name: state}
+  //  });
+
+  //  dialog.afterClosed()
+  //       .subscribe(res => {
+  //         if (res.upload) {
+  //           if (res.type === 'workshop') {
+  //             this.retrieveworkshops();
+  //           } else {
+  //             this.retrievecourse();
+  //           }
+  //         }
+  //       });
+  // }
   ngOnDestroy() {
 
   }
