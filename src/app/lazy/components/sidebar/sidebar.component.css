@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500&family=Fira+Sans:wght@500&display=swap');
+
+
+
 .main{
     width: 16%;
     background-color: #f7f7f8;
@@ -24,14 +28,53 @@
 .list{
     text-align: left;
     margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.block{
+    position: absolute;
+    left: 0;
+    top: -10%;
+    height: 120%;
+    width: 6px;
+    background-color: #8A9DFF;
+}
+
+.wht{
+    position: absolute;
+    width: 85%;
+    height: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    z-index: -1;
+    top: -15%;
+    border-radius: 10px;
+}
+
+.list:focus{
+    outline: none;
 }
 
 .list h2{
     font-weight: 500;
-    color: #8A9DFF;
-    margin-left: 50%;
-    transform: translateX(-50%);
+    color: hsl(230, 100%, 77%);
+    margin-left: 16%;
+    position: relative;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 540;
 }
+
+.icon{
+    margin-right: 5px;
+}
+
+/* .material-icons{
+    position: absolute;
+    left: -30px;
+    top: 3px;
+  } */
 
 .image{
     margin-left: 5%;
@@ -51,3 +94,4 @@
 .log h2{
     padding: 5px 0px;
 }
+

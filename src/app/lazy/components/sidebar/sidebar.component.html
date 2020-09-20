@@ -2,20 +2,30 @@
     <div class="logo">
         <img src="../../../../assets/images/Srmseal.png" alt="SRMIST">
     </div>
-    <div class="list">
-        <h2>Overview</h2>
+    <div class="list" routerLink = '/student/profile' routerLinkActive #over='routerLinkActive'>
+        <h2><i class="fas fa-columns icon"></i> Overview</h2>
+        <div class="block" *ngIf="over.isActive"></div>
+        <div class="wht" *ngIf="over.isActive"></div>
     </div>
-    <div class="list">
-        <h2>Education</h2>
+    <div class="list" routerLink = '/student/education' routerLinkActive #edu='routerLinkActive'>
+        <h2><i class="fas fa-book-open icon"></i> Education</h2>
+        <div class="block" *ngIf="edu.isActive"></div>
+        <div class="wht" *ngIf="edu.isActive"></div>
     </div>
-    <div class="list">
-        <h2>Certifications</h2>
+    <div class="list" routerLink = '/student/certifications' routerLinkActive #certi='routerLinkActive'>
+        <h2><i class="fas fa-stamp icon"></i> Certifications</h2>
+        <div class="block" *ngIf="certi.isActive"></div>
+        <div class="wht" *ngIf="certi.isActive"></div>
     </div>
-    <div class="list">
-        <h2>Achivements</h2>
+    <div class="list" routerLink = '/student/achivements' routerLinkActive #ach='routerLinkActive'>
+        <h2><i class="fas fa-trophy icon"></i> Achivements</h2>
+        <div class="block" *ngIf="ach.isActive"></div>
+        <div class="wht" *ngIf="ach.isActive"></div>
     </div>
-    <div class="list">
-        <h2>Placements</h2>
+    <div class="list" routerLink = '/student/placements' routerLinkActive #place='routerLinkActive'>
+        <h2><i class="fas fa-user-graduate icon"></i> Placements</h2>
+        <div class="block" *ngIf="place.isActive"></div>
+        <div class="wht" *ngIf="place.isActive"></div>
     </div>
 
     <div class="image">
