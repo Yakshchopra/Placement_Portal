@@ -1,71 +1,97 @@
-.yc-nav{
-    width: 7%;
-    height: 96vh;
-    background-color: #7d81ff;
-    margin-left: 10px;
-    border-radius: 15px;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:wght@500&family=Fira+Sans:wght@500&display=swap');
+
+
+
+.main{
+    width: 16%;
+    background-color: #f7f7f8;
+    height: 100vh;
     position: fixed;
-    top: 2%;
-    background-image: url(../../../../assets/images/navi.png);
-    background-size: cover;
-    overflow-x: hidden;
 }
 
-.yc-logo{
-    width: 90%;
+.division{
+    position: absolute;
+    width: 2px;
+    height: 95%;
+    right: 0;
+    background-color: #E6E6E6;
+    top: 2.5%;
+}
+
+.logo img{
+    width: 100px;
     margin-left: 50%;
     transform: translateX(-50%);
+    margin-top: 15px
+}
+
+.list{
+    text-align: left;
     margin-top: 10px;
-    margin-bottom: 15px;
     cursor: pointer;
+    position: relative;
+}
+
+.block{
+    position: absolute;
+    left: 0;
+    top: -10%;
+    height: 120%;
+    width: 6px;
+    background-color: #8A9DFF;
+}
+
+.wht{
+    position: absolute;
+    width: 85%;
+    height: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    z-index: -1;
+    top: -15%;
+    border-radius: 10px;
+}
+
+.list:focus{
+    outline: none;
+}
+
+.list h2{
+    font-weight: 500;
+    color: hsl(230, 100%, 77%);
+    margin-left: 16%;
+    position: relative;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 540;
 }
 
 .icon{
-    font-size: 35px;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    margin-top: 20px;
+    margin-right: 5px;
 }
 
-.block {
-    height: 50px;
+/* .material-icons{
     position: absolute;
-    width: 10px;
-    background-color: white;
-    margin-top: -80px;
-    margin-left: 82% ;
-    border-radius: 10px 0 0 10px;
-    -webkit-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
-    -moz-box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
-    box-shadow: inset 2px 2px 5px -1px rgba(143,143,143,1);
+    left: -30px;
+    top: 3px;
+  } */
+
+.image{
+    margin-left: 5%;
 }
 
-.item:hover{
-    -ms-transform: scale(1.1); /* IE 9 */
-    -webkit-transform: scale(1.1); /* Safari 3-8 */
-    transform: scale(1.1); 
-    transition: 0.1s ease;
-}
-
-
-
-.item {
-    border:none;
-    padding:10px;
-    cursor: pointer;
-}
-
-.item:focus {
-border:none !important;
-outline:none !important;
-}
-
-
-
-p{
+.log{
     text-align: center;
-    color: white;
-    padding: 5px;
-    font-weight: 500;
+    background-color: white;
+    margin: 10px 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
 }
+
+.log h2{
+    padding: 5px 0px;
+}
+

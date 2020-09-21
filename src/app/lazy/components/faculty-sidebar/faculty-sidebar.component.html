@@ -1,25 +1,31 @@
-<section class="yc-nav">
+<div class="main">
     <div class="logo">
-        <img class="yc-logo" src="../../../../assets/images/Srmseal.png" alt="Logo">
+        <img src="../../../../assets/images/Srmseal.png" alt="SRMIST">
     </div>
-    <div class="item" routerLink='/faculty/profile' routerLinkActive #teach='routerLinkActive'>
-        <i class="fas fa-chalkboard-teacher icon" ></i>
-      <p>Profile</p>
-      <div class="block" *ngIf="teach.isActive"></div>
-  </div>
-    <div class="item" routerLink='/faculty/list' routerLinkActive #verify='routerLinkActive'>
-        <i class="fas fa-clipboard-list icon"></i>
-        <p>Class List</p>
-        <div class="block" *ngIf="verify.isActive"></div>
+    <div class="list" routerLink = '/faculty/profile' routerLinkActive #over='routerLinkActive'>
+        <h2><i class="fas fa-columns icon"></i> Overview</h2>
+        <div class="block" *ngIf="over.isActive"></div>
+        <div class="wht" *ngIf="over.isActive"></div>
     </div>
-    <div class="item" routerLink='/faculty/verify' routerLinkActive #cert='routerLinkActive'>
-        <i class="fas fa-user-check icon"></i>
-        <p class="cert">Verification</p>
-        <div class="block" *ngIf="cert.isActive"></div>
+    <div class="list" routerLink = '/faculty/verify' routerLinkActive #edu='routerLinkActive'>
+        <h2><i class="fas fa-book-open icon"></i> Verification</h2>
+        <div class="block" *ngIf="edu.isActive"></div>
+        <div class="wht" *ngIf="edu.isActive"></div>
+    </div>
+    <div class="list" routerLink = '/faculty/list' routerLinkActive #certi='routerLinkActive'>
+        <h2><i class="fas fa-stamp icon"></i> Class List</h2>
+        <div class="block" *ngIf="certi.isActive"></div>
+        <div class="wht" *ngIf="certi.isActive"></div>
     </div>
 
-    <div class="item" (click)='logout()'>
-        <i class="fas fa-sign-out-alt icon"></i>
+    <div class="image">
+        <img src="../../../../assets/images/final/clip-reading-books.png" alt="">
     </div>
-</section>
+    <div class="list log">
+        <h2>Logout</h2>
+    </div>
+    <div class="division">
+        
+    </div>
 
+</div>
