@@ -1,153 +1,81 @@
 <section class="main">
   <app-faculty-sidebar></app-faculty-sidebar>
-    <div class="content" *ngIf='facultyDetail'>
-        <div class="header">
-            <h1>Welcome Back!</h1>
-        </div>
-
-        <div class="tiles">
-          <div class="row">
-            <div class="col">
-              <div class="trial one">
-                <div class="nm">
-                  <span><i class="fas fa-pen-nib tr"><div class="over"></div></i></span><span class="txt">Total Students</span>
-                </div>
-                <h1>{{facultyDetail.totalstudents}}</h1>
-              </div>
-            </div>
-            <div class="col">
-              <div class="trial two">
-                <div class="nm">
-                  <span><i class="fas fa-user-check tr"><div class="over"></div></i></span><span class="txt">Registered</span>
-                </div>
-                <h1>{{registeredUser}}</h1>
-              </div>
-            </div>
-            <div class="col">
-              <div class="trial three">
-                <div class="nm">
-                  <span><i class="fas fa-certificate tr"><div class="over"></div></i></span><span class="txt">Verifications Due</span>
-                </div>
-                <h1>{{verification}}</h1>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <div class="row act">
-          <div class="col-sm">
-            <div class="placement">
-              <h1>
-                Updates
-              </h1>
-              <hr>
-              <div class="entries">
-                <div class="field container">
-
-                </div>
-              </div>
-          </div>
-          </div>
-          <div class="col-sm">
-            <div class="placement">
-              <h1>
-                <i class="fas fa-scroll"></i> <span>Announcements</span>
-              </h1>
-              <hr>
-              <div class="entries">
+  <div class="content">
+    <div class="row">
+        <div class="col-8">
+            <div class="name">
                 <div class="container">
-                  <mat-form-field appearance="fill" class="msg">
-                    <mat-label>Input</mat-label>
-                    <input matInput>
-
-                  </mat-form-field>
-                  <i class="fas fa-paper-plane icon"></i>
+                    <div class="row">
+                        <div class="col">
+                            <h1>Welcome Back!</h1>
+                            <h3>Pickup from where you left.</h3>
+                        </div>
+                        <div class="col second" >
+                            <img class="welcome-image" src="../../../../assets/images/final/clip-schoolteacher-teaches-pupil.png" alt="Welcome">
+                        </div>
+                    </div>
                 </div>
+               
+            </div>
+
+            <div class="over">
+              <div class="row">
+                <div class="col">
+                  <div class="tiles one">
+                    <div class="head">
+                      <h1>Registered Students</h1>
+                      <h2>123</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col">
+                  <div class="tiles two">
+                    <div class="head">
+                      <h1>Pending Verifications</h1>
+                      <h2>123</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="upd">
+                  <h1>Updates</h1>
+                  <hr>
+                </div>
+                
               </div>
-          </div>
-          </div>
+            </div>
+
+           
+
+        </div>
+        <div class="col-4">
+            <div class="profile-side">
+                <div class="circle"></div>
+                <h1>Yaksh Chopra</h1>
+                <h3>RA1811032010048</h3>
+                <h2>
+                    Email
+                </h2>
+               
+                <hr>
+                <p>yakshchopra@gmail.com</p>
+                <h2>
+                  Deparment
+              </h2>             
+              <hr>
+               <p>Computer Science</p>
+
+               <h2>
+                Section
+            </h2>             
+            <hr>
+             <p>N1</p>
+            </div>
         </div>
 
-          <div class="id-crd">
-            <div class="id">
-             <svg xmlns="http://www.w3.org/2000/svg" width="348" height="220" viewBox="0 0 348 220">
-               <g id="Group_12" data-name="Group 12" transform="translate(-829 -136)">
-                 <path id="Path_8" data-name="Path 8" d="M0,0H348V118.91L0,220Z" transform="translate(829 136)" fill="#7d81ff" opacity="0.27"/>
-                 <path id="Path_7" data-name="Path 7" d="M0,0H348V108.03L0,174Z" transform="translate(829 136)" fill="#7d81ff"/>
-                 <g id="Group_9" data-name="Group 9">
-                   <g id="Polygon_8" data-name="Polygon 8" transform="translate(837 144)" fill="none" opacity="0.22">
-                     <path d="M23,0,46,40H0Z" stroke="none"/>
-                     <path d="M 23 16.04908752441406 L 13.82822418212891 32 L 32.17177581787109 32 L 23 16.04908752441406 M 23 0 L 46 40 L 0 40 L 23 0 Z" stroke="none" fill="#fff"/>
-                   </g>
-                   <g id="Rectangle_41" data-name="Rectangle 41" transform="matrix(0.839, 0.545, -0.545, 0.839, 896.295, 197.867)" fill="none" stroke="#fff" stroke-width="7" opacity="0.25">
-                     <rect width="32" height="32" stroke="none"/>
-                     <rect x="3.5" y="3.5" width="25" height="25" fill="none"/>
-                   </g>
-                   <g id="Ellipse_10" data-name="Ellipse 10" transform="translate(837 240)" fill="none" stroke="#fff" stroke-width="8" opacity="0.27">
-                     <circle cx="17" cy="17" r="17" stroke="none"/>
-                     <circle cx="17" cy="17" r="13" fill="none"/>
-                   </g>
-                 </g>
-                 <g id="Group_10" data-name="Group 10" transform="translate(931 144)">
-                   <g id="Polygon_8-2" data-name="Polygon 8" transform="translate(46 130) rotate(180)" fill="none" opacity="0.22">
-                     <path d="M23,0,46,40H0Z" stroke="none"/>
-                     <path d="M 22.9999828338623 16.04909515380859 L 13.82822036743164 32 L 32.17174530029297 32 L 22.9999828338623 16.04909515380859 M 22.9999828338623 0 L 45.99996948242188 40 L -3.814697265625e-06 40 L 22.9999828338623 0 Z" stroke="none" fill="#fff"/>
-                   </g>
-                   <g id="Rectangle_41-2" data-name="Rectangle 41" transform="matrix(0.839, -0.545, 0.545, 0.839, 41.867, 49.295)" fill="none" stroke="#fff" stroke-width="7" opacity="0.25">
-                     <rect width="32" height="32" stroke="none"/>
-                     <rect x="3.5" y="3.5" width="25" height="25" fill="none"/>
-                   </g>
-                   <g id="Ellipse_10-2" data-name="Ellipse 10" transform="translate(0)" fill="none" stroke="#fff" stroke-width="8" opacity="0.27">
-                     <ellipse cx="17" cy="17" rx="17" ry="17" stroke="none"/>
-                     <ellipse cx="17" cy="17" rx="13" ry="13" fill="none"/>
-                   </g>
-                 </g>
-                 <g id="Group_11" data-name="Group 11" transform="translate(200)">
-                   <g id="Polygon_8-3" data-name="Polygon 8" transform="translate(837 144)" fill="none" opacity="0.22">
-                     <path d="M23,0,46,40H0Z" stroke="none"/>
-                     <path d="M 23 16.04908752441406 L 13.82822418212891 32 L 32.17177581787109 32 L 23 16.04908752441406 M 23 0 L 46 40 L 0 40 L 23 0 Z" stroke="none" fill="#fff"/>
-                   </g>
-                   <g id="Rectangle_41-3" data-name="Rectangle 41" transform="matrix(0.839, 0.545, -0.545, 0.839, 896.295, 197.867)" fill="none" stroke="#fff" stroke-width="7" opacity="0.25">
-                     <rect width="32" height="32" stroke="none"/>
-                     <rect x="3.5" y="3.5" width="25" height="25" fill="none"/>
-                   </g>
-                   <g id="Ellipse_10-3" data-name="Ellipse 10" transform="translate(837 240)" fill="none" stroke="#fff" stroke-width="8" opacity="0.27">
-                     <circle cx="17" cy="17" r="17" stroke="none"/>
-                     <circle cx="17" cy="17" r="13" fill="none"/>
-                   </g>
-                 </g>
-                 <g id="Ellipse_11" data-name="Ellipse 11" transform="translate(1116 143)" fill="none" stroke="#fff" stroke-width="8" opacity="0.26">
-                   <circle cx="20" cy="20" r="20" stroke="none"/>
-                   <circle cx="20" cy="20" r="16" fill="none"/>
-                 </g>
-                 <g id="Polygon_9" data-name="Polygon 9" transform="translate(1130.573 205.087) rotate(-14)" fill="none" opacity="0.31">
-                   <path d="M19,0,38,33H0Z" stroke="none"/>
-                   <path d="M 19 14.0290641784668 L 12.10764312744141 26 L 25.89235687255859 26 L 19 14.0290641784668 M 19 0 L 38 33 L 0 33 L 19 0 Z" stroke="none" fill="#fff"/>
-                 </g>
-               </g>
-             </svg>
-                 <div class="circle">
-                  
-                 </div>
-
-                 <div class="desc">
-                   <h1>{{facultyDetail.name}}</h1>
-                   <h3>{{facultyDetail.facultyId}}</h3>
-                   <h4>
-                     <i class="fas fa-envelope"></i> <span>{{facultyDetail.email}}</span>
-                   </h4>
-                   <h4>
-                     <i class="fas fa-phone-alt"></i> <span>{{facultyDetail.number}}</span>
-                   </h4>
-                 </div>
-            </div>
-           </div>
-
-           <div class="ill">
-             <img class="fac-img" src="../../../../assets/images/undraw_quiz_nlyh.svg" alt="faculty">
-           </div>
+        
 
     </div>
+</div>
 </section>
