@@ -49,7 +49,7 @@
 }
 
 .name h1{
-    color: #7D81FF;
+    color: #9aceff;
     margin-bottom: 5px;
     font-size: 30px;
     margin-top: 10px;
@@ -58,7 +58,7 @@
 }
 
 .name h3{
-    color: #FCA8A8;
+    color: #F88B8B;
     font-weight: 500;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
@@ -88,7 +88,7 @@
 }
 
 h2{
-    color: #FCA8A8;
+    color: #F88B8B;
     margin-bottom: 0;
     font-family: 'Roboto', sans-serif;
 }

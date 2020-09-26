@@ -1,85 +1,72 @@
-.verify{
+.main{
     height: 100vh;
     width: 100%;
-   overflow: hidden ;
-}
-::-webkit-scrollbar {
-    display: none;    
-  }
-.main{
-    width: 90%;
-    margin-left: 9%;
-    height: 100vh;
-    
+    background-color: #f7f7f8;
+    overflow: hidden;
 }
 
-.header{
-    width: 100%;
-    background-color: #7D81FF;
-    color: white;
-    margin-top: 1.5%;
-    padding: 20px;
-    border-radius: 20px;
-    background-image: url(../../../../assets/images/hdr-big.png);
-    background-size: cover;
+.content{
+    height: 100vh;
+    width: 84%;
+    margin-left: 16%;
 }
-.header h1{
-    margin-top: 12px;
-    font-size: 30px;
-    color: white;
+
+h1{
+    color: #FCA8A8;
+    margin-bottom: 0;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
 }
-
-.tiles .col-sm{
-    height: 200px;
-    background-color: #7D81FF;
-    margin-top: 20px;
-    margin-left: 20px;
-    border-radius: 15px;
+hr{
+    margin: 0;
 }
 
-.tiles{
-    margin-top: 15px;
+.selection{
+    text-align: center;
+    color: white;
+}
+
+.selection h2{
+    background-color: #98A8FC;
+    padding: 10px 5px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+
+.category{
+    background-color: white;
+    width: 90%;
+    border-radius: 30px;
+    margin-left: 4%;
+    padding: 10px 20px;
+    margin-top: 30px;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
+}
+
+.sel{
+    cursor: pointer;
 }
 
 .tables{
-    background-color: #ECECFF;
+    width: 90%;
+    background-color: white;
+    margin-left: 4%;
+    height: 350px;
     margin-top: 20px;
-    padding: 15px;
-    height: 450px;
-    overflow-y: scroll ;
-    border-radius: 15px;
+    -webkit-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    -moz-box-shadow: 0px 3px 6px 0px #dbdbdb;
+    box-shadow: 0px 3px 6px 0px #dbdbdb;
+    border-radius: 30px;
+    padding: 10px 20px;
+    
 }
 
 .mat-z8{
     width: 100%;
-    background-color: #ECECFF;
-}
-
-.tables h1{
-    margin: 0 !important;
-    padding: 0;
-}
-
-.tables .name hr{
-    margin: 0;
-    margin-bottom: 5px;
-}
-
-.tiles h1{
-    margin-top: 40%;
-    transform: translateY(-50%);
-    text-align: center;
-    font-size: 35px;
-    color: white;
-}
-
-.col-sm:hover{
-    transform: rotate(5deg);
-}
-
-.row{
-    padding: 0 10px;
 }
 
 .filter{
@@ -103,4 +90,8 @@
 
 .fa-times-circle{
     color: red;
+}
+
+.mat-z8{
+    margin-top: -10px;
 }

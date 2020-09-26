@@ -10,7 +10,6 @@ export interface College {
   reg: string;
   sem: number;
   CGPA: string;
-  attachment: string;
 }
 
 
@@ -34,7 +33,7 @@ export interface Placement{
     name: string;
     reg: string;
     percentage: string;
-    attachment: string;
+   
   }
 
 
@@ -45,7 +44,6 @@ export interface Twelth{
   name: string;
   reg: string;
   percentage: string;
-  attachment: string;
 }
 
 
@@ -61,16 +59,16 @@ export class VerificationComponent implements OnInit {
 
   constructor(private faculty_srv: FacultyService) { }
  TWELTH_DATA: Twelth[]  = [
-    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2', attachment: 'abcdef.pdf'}
+    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2'}
   ]
  TENTH_DATA: Tenth[]  = [
-    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2', attachment: 'pqrst.pdf'}
+    {name: 'Yaksh', reg: 'RA1811032010048', percentage: '93.2'}
   ]
    PLACEMENT_DATA: Placement[] = [
     {name: 'Yaksh', reg: 'RA1811032010048', details: 'Selected for round 2', company: 'Google'}
   ]
   COLLEGE_DATA: College[] = [
-    {name: 'Yaksh Chopra', reg: 'RA1811032010048', sem: 4, CGPA:'9.2',attachment:'yaksh.pdf'},
+    {name: 'Yaksh Chopra', reg: 'RA1811032010048', sem: 4, CGPA:'9.2'},
   ];
   dataSourceTwelth;
   dataSourceTenth;
@@ -140,7 +138,7 @@ export class VerificationComponent implements OnInit {
 
   // college table
 
-  displayedColumnsCollege: string[] = ['reg', 'name', 'sem', 'attachment','CGPA', 'verify']
+  displayedColumnsCollege: string[] = ['reg', 'name', 'sem','CGPA', 'verify']
 
 
   applyFilter(event: Event) {
@@ -163,7 +161,7 @@ export class VerificationComponent implements OnInit {
   // placement table end
 
   // tenth table
-    displayedColumnsTenth: string[] = ['reg', 'name', 'percentage','attachment', 'verify']
+    displayedColumnsTenth: string[] = ['reg', 'name', 'percentage', 'verify']
 
 
     applyFilterTenth(event: Event) {
@@ -173,7 +171,7 @@ export class VerificationComponent implements OnInit {
   // tenth table end
 
   // twelth table
-    displayedColumnsTwelth: string[] = ['reg', 'name', 'percentage', 'attachment', 'verify']
+    displayedColumnsTwelth: string[] = ['reg', 'name', 'percentage', 'verify']
 
 
     applyFilterTwelth(event: Event) {
@@ -259,10 +257,5 @@ export class VerificationComponent implements OnInit {
       })
 
   }
-
-
-
-
-
 
 }

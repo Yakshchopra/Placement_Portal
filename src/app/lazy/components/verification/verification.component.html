@@ -1,40 +1,81 @@
-<section class="verify">
-    <app-faculty-sidebar></app-faculty-sidebar>
-    <div class="main">
-        <div class="header">
-            <h1>Verification</h1>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <section class="tiles">
-                        <div class="row">
-                            <div class="col-sm" (click) = toggleDisplay2()>
-                                <h1>Placements</h1>
-                            </div>
-                            <div class="col-sm" (click) = toggleDisplay1()>
-                                <h1>College</h1>
-                            </div>
+<section class="main">
+  <app-faculty-sidebar></app-faculty-sidebar>
+  <div class="content">
+      <div class="category">
+        <h1>Preference</h1>
+                <hr>
+                <div class="selection container">
+                    <div class="row">
+                        <div class="col sel" (click) = toggleDisplay1()>
+                            <h2>Placements</h2>
                         </div>
-                        <div class="row">
-                            <div class="col-sm" (click) = toggleDisplay4()>
-                                <h1>Twelth</h1>
-                            </div>
-                            <div class="col-sm" (click) = toggleDisplay3()>
-                                <h1>Tenth</h1>
-                            </div>
-
-
+                        <div class="col sel" (click) = toggleDisplay2()>
+                            <h2>College</h2>
                         </div>
-                    </section>
+                        <div class="col sel" (click) = toggleDisplay3()>
+                            <h2>Class X</h2>
+                        </div>
+                        <div class="col sel" (click) = toggleDisplay4()>
+                          <h2>Class XII</h2>
+                      </div>
+                    </div>
                 </div>
-                <div class="col">
-                    <section class="tables" [hidden] = 'showPlacement'>
-                        <div class="name" >
-                           <h1>College</h1>
-                           <hr>
-                        </div>
-                        <div class="placement_table">
+      </div>
+      <div class="tables placement" [hidden] = 'showPlacement'>
+        <h1>Placements</h1>
+        <hr>
+        <div class="placement_table">
+          <mat-form-field class="filter">
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilterPlacement($event)" placeholder="Ex. RA1811032010048" #inputPlace>
+            </mat-form-field>
+
+            <table mat-table [dataSource]="dataSourcePlacement" class="mat-z8">
+
+              <!-- Position Column -->
+              <ng-container matColumnDef="reg">
+                <th mat-header-cell *matHeaderCellDef>Reg No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.reg}} </td>
+              </ng-container>
+
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Student Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+              <!-- Weight Column -->
+              <ng-container matColumnDef="company">
+                <th mat-header-cell *matHeaderCellDef> Company </th>
+                <td mat-cell *matCellDef="let element"> {{element.company}} </td>
+              </ng-container>
+
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="details">
+                <th mat-header-cell *matHeaderCellDef> Details </th>
+                <td mat-cell *matCellDef="let element"> {{element.details}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="verify">
+                <th mat-header-cell *matHeaderCellDef> Verify </th>
+                <td mat-cell *matCellDef="let element"> <span (click)='verifyPlacement(element,accepted)'><i class="fas fa-check-circle"></i></span><span (click)='verifyPlacement(element,rejected)'><i class="fas fa-times-circle"></i></span> </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumnsPlacement"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumnsPlacement;"></tr>
+
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{inputPlace.value}}"</td>
+              </tr>
+            </table>
+      </div>
+      </div>
+
+      <div class="tables college" [hidden] = 'showCollege'>
+        <h1>College</h1>
+        <hr>  
+        <div class="college_table">
                             <mat-form-field class="filter">
                                 <mat-label>Filter</mat-label>
                                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. RA1811032010048"  #input>
@@ -51,7 +92,7 @@
 
                                 <!-- Name Column -->
                                 <ng-container matColumnDef="name">
-                                  <th mat-header-cell *matHeaderCellDef>Name</th>
+                                  <th mat-header-cell *matHeaderCellDef>Student Name</th>
                                   <td mat-cell *matCellDef="let element"> {{element.name}} </td>
                                 </ng-container>
 
@@ -60,16 +101,8 @@
                                   <td mat-cell *matCellDef="let element"> {{element.sem}} </td>
                                 </ng-container>
                                 <ng-container matColumnDef="CGPA">
-                                  <th mat-header-cell *matHeaderCellDef>Semester</th>
-                                  <td mat-cell *matCellDef="let element"> {{element.sem}} </td>
-                                </ng-container>
-
-                                <!-- Weight Column -->
-
-                                <!-- Symbol Column -->
-                                <ng-container matColumnDef="attachment">
-                                  <th mat-header-cell *matHeaderCellDef> Attachment </th>
-                                  <td mat-cell *matCellDef="let element"> <a href={{element.attachment}} target="_blank">Open File</a>  </td>
+                                  <th mat-header-cell *matHeaderCellDef>SGPA</th>
+                                  <td mat-cell *matCellDef="let element"> {{element.CGPA}} </td>
                                 </ng-container>
 
                                 <ng-container matColumnDef="verify">
@@ -86,168 +119,105 @@
                                 </tr>
                               </table>
                         </div>
-                    </section>
+      </div>
 
-                    <section class="tables two" [hidden] = 'showCollege'>
-                        <div class="name" >
-                           <h1>Placements</h1>
-                           <hr>
-                        </div>
-                        <div class="placement_table">
-                            <mat-form-field class="filter">
-                                <mat-label>Filter</mat-label>
-                                <input matInput (keyup)="applyFilterPlacement($event)" placeholder="Ex. RA1811032010048" #inputPlace>
-                              </mat-form-field>
+      <div class="tables tenth" [hidden] = 'showTenth'>
+        <h1>Tenth</h1>
+        <hr>     
+        <div class="placement_table">
+          <mat-form-field class="filter">
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilterTenth($event)" placeholder="Ex. RA1811032010048" #inputTenth>
+            </mat-form-field>
 
-                              <table mat-table [dataSource]="dataSourcePlacement" class="mat-z8">
+            <table mat-table [dataSource]="dataSourceTenth" class="mat-z8">
 
-                                <!-- Position Column -->
-                                <ng-container matColumnDef="reg">
-                                  <th mat-header-cell *matHeaderCellDef>Reg No. </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.reg}} </td>
-                                </ng-container>
+              <!-- Position Column -->
+              <ng-container matColumnDef="reg">
+                <th mat-header-cell *matHeaderCellDef>Reg No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.reg}} </td>
+              </ng-container>
 
-                                <!-- Name Column -->
-                                <ng-container matColumnDef="name">
-                                  <th mat-header-cell *matHeaderCellDef> Name </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                                </ng-container>
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Student Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
 
-                                <!-- Weight Column -->
-                                <ng-container matColumnDef="company">
-                                  <th mat-header-cell *matHeaderCellDef> Company </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.company}} </td>
-                                </ng-container>
+              <!-- Weight Column -->
+              <ng-container matColumnDef="percentage">
+                <th mat-header-cell *matHeaderCellDef> Percenatge </th>
+                <td mat-cell *matCellDef="let element"> {{element.percentage}} </td>
+              </ng-container>
 
-                                <!-- Symbol Column -->
-                                <ng-container matColumnDef="details">
-                                  <th mat-header-cell *matHeaderCellDef> Details </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.details}} </td>
-                                </ng-container>
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="verify">
+                <th mat-header-cell *matHeaderCellDef> Verify </th>
+                <td mat-cell *matCellDef="let element"> <span (click)='verifyTen(element,accepted)'><i class="fas fa-check-circle"></i></span><span (click)='verifyTen(element,rejected)'><i class="fas fa-times-circle"></i></span> </td>
+              </ng-container>
 
-                                <ng-container matColumnDef="verify">
-                                  <th mat-header-cell *matHeaderCellDef> Verify </th>
-                                  <td mat-cell *matCellDef="let element"> <span (click)='verifyPlacement(element,accepted)'><i class="fas fa-check-circle"></i></span><span (click)='verifyPlacement(element,rejected)'><i class="fas fa-times-circle"></i></span> </td>
-                                </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumnsTenth"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumnsTenth;"></tr>
 
-                                <tr mat-header-row *matHeaderRowDef="displayedColumnsPlacement"></tr>
-                                <tr mat-row *matRowDef="let row; columns: displayedColumnsPlacement;"></tr>
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{inputTenth.value}}"</td>
+              </tr>
+            </table>
+      </div>
 
-                                <!-- Row shown when there is no matching data. -->
-                                <tr class="mat-row" *matNoDataRow>
-                                  <td class="mat-cell" colspan="4">No data matching the filter "{{inputPlace.value}}"</td>
-                                </tr>
-                              </table>
-                        </div>
-                    </section>
+      </div>
 
-                    <section class="tables three" [hidden] = 'showTenth'>
-                        <div class="name" >
-                           <h1>Tenth</h1>
-                           <hr>
-                        </div>
-                        <div class="placement_table">
-                            <mat-form-field class="filter">
-                                <mat-label>Filter</mat-label>
-                                <input matInput (keyup)="applyFilterTenth($event)" placeholder="Ex. RA1811032010048" #inputTenth>
-                              </mat-form-field>
+      <div class="tables twelth" [hidden] = 'showTwelth'>
+        <h1>Twelth</h1>
+        <hr> 
+        <div class="placement_table">
+          <mat-form-field class="filter">
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilterTwelth($event)" placeholder="Ex. RA1811032010048"  #inputTwelth>
+            </mat-form-field>
 
-                              <table mat-table [dataSource]="dataSourceTenth" class="mat-z8">
+            <table mat-table [dataSource]="dataSourceTwelth" class="mat-z8">
 
-                                <!-- Position Column -->
-                                <ng-container matColumnDef="reg">
-                                  <th mat-header-cell *matHeaderCellDef>Reg No. </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.reg}} </td>
-                                </ng-container>
+              <!-- Position Column -->
+              <ng-container matColumnDef="reg">
+                <th mat-header-cell *matHeaderCellDef>Reg No. </th>
+                <td mat-cell *matCellDef="let element"> {{element.reg}} </td>
+              </ng-container>
 
-                                <!-- Name Column -->
-                                <ng-container matColumnDef="name">
-                                  <th mat-header-cell *matHeaderCellDef> Name </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                                </ng-container>
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Student Name </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
 
-                                <!-- Weight Column -->
-                                <ng-container matColumnDef="percentage">
-                                  <th mat-header-cell *matHeaderCellDef> Percenatge </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.percentage}} </td>
-                                </ng-container>
+              <!-- Weight Column -->
+              <ng-container matColumnDef="percentage">
+                <th mat-header-cell *matHeaderCellDef> Percenatge </th>
+                <td mat-cell *matCellDef="let element"> {{element.percentage}} </td>
+              </ng-container>
 
-                                <ng-container matColumnDef="attachment">
-                                  <th mat-header-cell *matHeaderCellDef> Attachment </th>
-                                  <td mat-cell *matCellDef="let element"> <a href={{element.attachment}} target="_blank">Open File</a>  </td>
-                                </ng-container>
 
-                                <!-- Symbol Column -->
-                                <ng-container matColumnDef="verify">
-                                  <th mat-header-cell *matHeaderCellDef> Verify </th>
-                                  <td mat-cell *matCellDef="let element"> <span (click)='verifyTen(element,accepted)'><i class="fas fa-check-circle"></i></span><span (click)='verifyTen(element,rejected)'><i class="fas fa-times-circle"></i></span> </td>
-                                </ng-container>
+              <ng-container matColumnDef="verify">
+                <th mat-header-cell *matHeaderCellDef> Verify </th>
+                <td mat-cell *matCellDef="let element"><span (click)='verifyTwelve(element,accepted)'><i class="fas fa-check-circle"></i></span><span (click)='verifyTwelve(element,rejected)'><i class="fas fa-times-circle"></i></span> </td>
+              </ng-container>
 
-                                <tr mat-header-row *matHeaderRowDef="displayedColumnsTenth"></tr>
-                                <tr mat-row *matRowDef="let row; columns: displayedColumnsTenth;"></tr>
+              <tr mat-header-row *matHeaderRowDef="displayedColumnsTwelth"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumnsTwelth;"></tr>
 
-                                <!-- Row shown when there is no matching data. -->
-                                <tr class="mat-row" *matNoDataRow>
-                                  <td class="mat-cell" colspan="4">No data matching the filter "{{inputTenth.value}}"</td>
-                                </tr>
-                              </table>
-                        </div>
-                    </section>
+              <!-- Row shown when there is no matching data. -->
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">No data matching the filter "{{inputTwelth.value}}"</td>
+              </tr>
+            </table>
+      </div>
 
-                    <section class="tables four" [hidden] = 'showTwelth' >
-                        <div class="name" >
-                           <h1>Twelth</h1>
-                           <hr>
-                        </div>
-                        <div class="placement_table">
-                            <mat-form-field class="filter">
-                                <mat-label>Filter</mat-label>
-                                <input matInput (keyup)="applyFilterTwelth($event)" placeholder="Ex. RA1811032010048"  #inputTwelth>
-                              </mat-form-field>
+      </div>
 
-                              <table mat-table [dataSource]="dataSourceTwelth" class="mat-z8">
 
-                                <!-- Position Column -->
-                                <ng-container matColumnDef="reg">
-                                  <th mat-header-cell *matHeaderCellDef>Reg No. </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.reg}} </td>
-                                </ng-container>
 
-                                <!-- Name Column -->
-                                <ng-container matColumnDef="name">
-                                  <th mat-header-cell *matHeaderCellDef> Name </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-                                </ng-container>
+      
 
-                                <!-- Weight Column -->
-                                <ng-container matColumnDef="percentage">
-                                  <th mat-header-cell *matHeaderCellDef> Percenatge </th>
-                                  <td mat-cell *matCellDef="let element"> {{element.percentage}} </td>
-                                </ng-container>
-
-                                <!-- Symbol Column -->
-                                <ng-container matColumnDef="attachment">
-                                  <th mat-header-cell *matHeaderCellDef> Attachment </th>
-                                  <td mat-cell *matCellDef="let element"><a href={{element.attachment}} target="_blank">Open File</a>  </td>
-                                </ng-container>
-
-                                <ng-container matColumnDef="verify">
-                                  <th mat-header-cell *matHeaderCellDef> Verify </th>
-                                  <td mat-cell *matCellDef="let element"><span (click)='verifyTwelve(element,accepted)'><i class="fas fa-check-circle"></i></span><span (click)='verifyTwelve(element,rejected)'><i class="fas fa-times-circle"></i></span> </td>
-                                </ng-container>
-
-                                <tr mat-header-row *matHeaderRowDef="displayedColumnsTwelth"></tr>
-                                <tr mat-row *matRowDef="let row; columns: displayedColumnsTwelth;"></tr>
-
-                                <!-- Row shown when there is no matching data. -->
-                                <tr class="mat-row" *matNoDataRow>
-                                  <td class="mat-cell" colspan="4">No data matching the filter "{{inputTwelth.value}}"</td>
-                                </tr>
-                              </table>
-                        </div>
-                    </section>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </section>

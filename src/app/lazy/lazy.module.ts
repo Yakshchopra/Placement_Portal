@@ -24,6 +24,8 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 
 
@@ -94,7 +96,8 @@ import { PlacementComponent } from './components/placement/placement.component';
     MatTableModule,
     MatSortModule,
     MatListModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSliderModule,
   ],
   providers: [ProfileService,FacultyService ],
   bootstrap: [LazyComponent]
