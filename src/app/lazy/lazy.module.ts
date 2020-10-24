@@ -25,6 +25,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatListModule} from '@angular/material/list';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 
@@ -98,6 +99,7 @@ import { PlacementComponent } from './components/placement/placement.component';
     MatListModule,
     MatDatepickerModule,
     MatSliderModule,
+    MatRadioModule
   ],
   providers: [ProfileService,FacultyService ],
   bootstrap: [LazyComponent]

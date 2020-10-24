@@ -52,17 +52,45 @@
   </div>
 
   <div class="skills">
-    <h1>Filter</h1>
-    <hr>
-    <h3>CGPA</h3>
-    <mat-slider
-  thumbLabel
-  [displayWith]="formatLabel"
-  tickInterval="0.00001"
-  min="1"
-  max="10" class="slid"></mat-slider>
-    <h3>
-      Gender
-    </h3>
+    <form>
+      <h1>Filter</h1>
+      <hr>
+      <h3>CGPA</h3>
+      <mat-form-field class="example-full-width">
+        <mat-label>Minimum Limit</mat-label>
+        <input matInput placeholder="Enter maximum CGPA">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Maximum Limit</mat-label>
+        <input matInput placeholder="Enter minimum CGPA">
+      </mat-form-field>
+
+      <h3 class="gender">Gender</h3>
+      <mat-radio-group class="genderValue" aria-label="Select an option">
+        <mat-radio-button value="1">Male</mat-radio-button>
+        <mat-radio-button value="2">Female</mat-radio-button>
+
+      </mat-radio-group>
+
+      <h3>School Acadamics</h3>
+      <mat-form-field class="example-full-width">
+        <mat-label>Minimum Limit</mat-label>
+        <input matInput placeholder="Enter maximum Percentage">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Maximum Limit</mat-label>
+        <input matInput placeholder="Enter minimum Percentage">
+      </mat-form-field>
+
+      <h3 class="gender">Arrears</h3>
+      <mat-radio-group class="genderValue" aria-label="Select an option">
+        <mat-radio-button value="1">Nil</mat-radio-button>
+        <mat-radio-button value="2">Yes</mat-radio-button>
+
+      </mat-radio-group>
+
+
+    </form>
+       
   </div>
 </section>

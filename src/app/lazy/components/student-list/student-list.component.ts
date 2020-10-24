@@ -34,14 +34,7 @@ export class StudentListComponent implements OnInit{
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  formatLabel(value: number) {
-    // if (value >= 10) {
-    //   return Math.round(value / 1000) + 'k';
-    // }
-
-    return value;
-  }
- 
+  
   ngOnInit() {
 
 }
