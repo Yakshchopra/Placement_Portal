@@ -6,15 +6,15 @@ import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  registerNo: string;
+  CGPA: number;
+  Gender: string;
+  classXII: number;
+  standingArrears: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
+  {registerNo: 'RA1811032010048', name: 'Yaksh', CGPA: 9.8, Gender: 'Male',classXII: 93.2, standingArrears: 0},
 ];
 
 @Component({
@@ -26,7 +26,7 @@ export class StudentListComponent implements OnInit{
   constructor(private srv: FacultyService, private route:Router) { }
   
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['registerNo', 'name', 'CGPA', 'Gender', 'classXII', 'standingArrears'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   applyFilter(event: Event) {
