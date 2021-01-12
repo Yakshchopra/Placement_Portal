@@ -109,3 +109,8 @@ h4{
 .three h1{
     background-color: #FFCB3E;
 }
+
+.editic{
+    margin-left: 10px;
+    cursor: pointer;
+}

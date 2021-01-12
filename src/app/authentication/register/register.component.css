@@ -2,7 +2,7 @@
 .main{
     width: 100%;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     /* background-image: url(../../../assets/images/regbg.png);
     background-size: cover; */
 }
