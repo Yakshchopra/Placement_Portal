@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.loginForm.value, this.user).subscribe(
       (res) => {
         const response: any = res;
+        console.log(res);
         if (response.message === 'success') {
           localStorage.setItem('token', response.token);
           localStorage.setItem('user', response.user);

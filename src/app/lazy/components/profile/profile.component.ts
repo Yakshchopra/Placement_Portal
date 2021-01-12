@@ -16,11 +16,17 @@ interface userdetail {
   email: string;
   faculty?: string;
   number: number;
-  registrationNumber: String;
+  registrationNumber: string;
   CGPA: string,
   profile_url: string;
-}
+  gender: string,
+  dept: string,
+  specilization: string,
+  section: string,
+  nri: boolean,
+  dob:string
 
+}
 
 @Component({
   selector: 'app-profile',
@@ -109,6 +115,18 @@ all_placements = []
       .subscribe(res => {
         console.log(res);
     })
+  }
+  getUSer() {
+    this.srv.getUserDetail()
+      .subscribe(
+        res => {
+          this.profile = res;
+
+        },
+        err => {
+
+        }
+      )
   }
 
 

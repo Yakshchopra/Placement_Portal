@@ -16,7 +16,7 @@ import { FacultyGuard } from './faculty.guard';
 
 // Note-: Add other routes to lazyRouting
 const routes: Routes = [
-  { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) , canActivate: [AuthGuard]},
+  { path: 'student', loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule) },
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'select', component: RegSelectinComponent},
@@ -33,4 +33,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule { 
+  
+}

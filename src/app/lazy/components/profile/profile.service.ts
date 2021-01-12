@@ -9,6 +9,13 @@ interface userdetail {
   registrationNumber: string;
   CGPA: string,
   profile_url: string;
+  gender: string,
+  dept: string,
+  specilization: string,
+  section: string,
+  nri: boolean,
+  dob:string
+
 }
 @Injectable({
   providedIn: 'root'

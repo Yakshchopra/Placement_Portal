@@ -6,7 +6,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col">
-                                <h1>Welcome Yaksh!</h1>
+                                <h1>Welcome {{profile.name.split(" ")[0] | titlecase}}!</h1>
                                 <h3>Pickup from where you left.</h3>
                             </div>
                             <div class="col second" >
@@ -14,7 +14,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
 
                 <div class="info">
@@ -46,16 +46,16 @@
                             <div class="details">
                                 <h2>Class Details</h2>
                                 <hr>
-                                <h3>Department: Computer Science</h3>
-                                <h3 class="below">Specialization: IoT</h3>
-                                <h3 class="below">Section: N1</h3>
+                                <h3>Department: {{profile.dept | titlecase}}</h3>
+                                <h3 class="below">Specialization: {{profile.specilization  | titlecase}}</h3>
+                                <h3 class="below">Section: {{profile.section | titlecase}}</h3>
                             </div>
                             <div class="details gen">
                                 <h2>Personal Details</h2>
                                 <hr>
-                                <h3>Date of Birth: </h3>
-                                <h3>Gender:</h3>
-                                <h3>NRI:</h3>
+                                <h3>Date of Birth:{{profile.dob}} </h3>
+                                <h3>Gender:{{profile.gender  |titlecase}}</h3>
+                                <h3>NRI:{{profile.nri | titlecase}}</h3>
                             </div>
                         </div>
                     </div>
@@ -65,21 +65,21 @@
             <div class="col-4">
                 <div class="profile-side">
                     <div class="circle"></div>
-                    <h1>Yaksh Chopra</h1>
-                    <h3>RA1811032010048</h3>
+                    <h1>{{profile.name}}</h1>
+                    <h3>{{profile.registrationNumber}}</h3>
                     <h2>
-                        Email
+                        {{profile.email}}
                     </h2>
-                   
+
                     <hr>
                     <p>yakshchopra@gmail.com</p>
                     <p>yakshchopra@gmail.com</p>
                     <h2>
                         Contact Number
                     </h2>
-                   
+
                     <hr>
-                    <p>9682567645</p>
+                    <p>{{profile.number}}</p>
                     <p>9682567645</p>
                     <p>9682567645</p>
                     <div class="skl-cnt">
