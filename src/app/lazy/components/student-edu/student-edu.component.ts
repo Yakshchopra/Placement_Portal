@@ -37,6 +37,8 @@ export class StudentEduComponent implements OnInit, OnDestroy{
   college_string = '.college';
   school_string = '.school';
   percentage = '.percentage';
+  arrears;
+  standingarrears;
 
   constructor(private dialog: MatDialog, private srv: ProfileService) { }
   school: school = {
@@ -69,6 +71,8 @@ export class StudentEduComponent implements OnInit, OnDestroy{
         console.log(res);
         this.school = res.school;
         this.college = res.college;
+        this.arrears = res.arrears;
+        this.standingarrears = res.standingarrears;
 
         if (this.college.one.percentage != 'nan' && this.college.two.percentage != 'nan' && this.college.three.percentage != 'nan' && this.college.four.percentage != 'nan')
         {
