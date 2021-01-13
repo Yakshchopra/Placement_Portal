@@ -20,10 +20,10 @@ const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   {path: 'select', component: RegSelectinComponent},
-  {path: 'faculty/profile', component: FacultyProfileComponent},
+  {path: 'faculty/profile', component: FacultyProfileComponent , canActivate:[AuthGuard]},
   // {path: 'faculty/list', component: StudentListComponent, canActivate:[FacultyGuard]},
-  {path: 'faculty/list', component: StudentListComponent},
-  {path:'faculty/verify', component: VerificationComponent},
+  {path: 'faculty/list', component: StudentListComponent,canActivate:[AuthGuard]},
+  {path:'faculty/verify', component: VerificationComponent,canActivate:[AuthGuard]},
   {path: 'freg', component: FacultyRegistrationComponent},
   { path: 'student/register/:token', component: EmailVerifyComponent },
   { path: '**' , component: ErrorComponent}
@@ -33,6 +33,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { 
-  
+export class AppRoutingModule {
+
 }

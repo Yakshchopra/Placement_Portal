@@ -30,7 +30,7 @@ export class ProfileService{
   }
   getAchievements() {
     const URL = this.BaseURL + 'achievements/get';
-    return this.http.get<userdetail>(URL);
+    return this.http.get<any>(URL);
   }
   submitSkills(data) {
     const URL = this.BaseURL + 'skills/update';

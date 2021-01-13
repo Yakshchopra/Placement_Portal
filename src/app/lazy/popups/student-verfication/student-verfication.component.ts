@@ -3,6 +3,7 @@ import { Component, OnInit, Inject, OnDestroy } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { AchievmentsService } from '../../components/student-achivements/achievments.service';
 import { SubSink } from 'subsink';
+import { window } from 'rxjs/operators';
 
 interface certification {
   name: string;
@@ -23,6 +24,7 @@ export class StudentVerficationComponent implements OnInit, OnDestroy {
   form =  {
     name: '', doc: '', url: ''
   };
+  project ={name:'',description:'',techstack:'',link:''}
 
   upload = false;
   file: File;
@@ -71,6 +73,16 @@ export class StudentVerficationComponent implements OnInit, OnDestroy {
         }
       });
 
+  }
+  sub() {
+    this.acv_service.submitprojects(this.project)
+      .subscribe(res => {
+        console.log(res);
+        location.reload();
+      }, err => {
+
+          console.log(err);
+    })
   }
   ngOnDestroy() {
 

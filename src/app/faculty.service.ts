@@ -2,19 +2,20 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from './../environments/environment';
 
-interface PeriodicElement {
+export interface PeriodicElement {
   name: string;
- registrationNumber: string;
- CGPA: string;
- XII: string;
- X: string;
-
+  registrationNumber: string;
+  CGPA: number;
+  XII: number;
+  arrears: number;
+  gender:string
 }
+
 @Injectable({
   providedIn: 'root'
 })
 export class FacultyService {
-  facultyId = localStorage.getItem('faculty_id');
+  facultyId = '102253';
   constructor(private http: HttpClient) { }
   BaseURL = environment.BaseUrl;
   facultyLogin(data) {
@@ -31,7 +32,7 @@ export class FacultyService {
   }
   getFacultystudentDetail() {
     let URL = this.BaseURL + 'facultystudent/get';
-    return this.http.post<PeriodicElement[]>(URL, { facultyId: this.facultyId });
+    return this.http.post<PeriodicElement[]>(URL, { facultyId: '102253'});
   }
   getPlacements(){
     let URL = this.BaseURL + 'placement/get';

@@ -18,21 +18,21 @@
                         <h2>Link</h2>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" *ngFor="let item of projects">
                     <div class="col">
-                        <h3>Go-Co Tracker</h3>
+                        <h3>{{item.name}}</h3>
                     </div>
                     <div class="col">
-                        <h3>MEAN built web-app</h3>
+                        <h3>{{item.description}}</h3>
                     </div>
                     <div class="col">
-                        <h3>MEAN</h3>
+                        <h3>{{item.techstack}}</h3>
                     </div>
                     <div class="col">
-                        <h3>N/A</h3>
+                        <h3>{{item.link}}</h3>
                     </div>
                 </div>
-               
+
             </div>
         </div>
 

@@ -4,6 +4,7 @@ import { CodingComponent } from '../../popups/coding/coding.component';
 import { HackathonComponent } from '../../popups/hackathon/hackathon.component';
 import { OtherAchComponent } from '../../popups/other-ach/other-ach.component';
 import { StudentVerficationComponent } from '../../popups/student-verfication/student-verfication.component';
+import { ProfileService } from '../profile/profile.service';
 import { AchievmentsService } from './achievments.service';
 
 
@@ -12,6 +13,15 @@ interface file {
   name: string;
   doc: string;
   url: string;
+}
+interface achieve{
+   p
+}
+interface project{
+  name: string,
+  description: string,
+  techstack: string,
+  link: string
  }
 @Component({
   selector: 'app-student-achivements',
@@ -20,13 +30,15 @@ interface file {
 })
 export class StudentAchivementsComponent implements OnInit, OnDestroy {
 
-  constructor(public dialog: MatDialog, private acv_service: AchievmentsService) { }
+  constructor(public dialog: MatDialog, private acv_service: AchievmentsService,private prf_srvc:ProfileService) { }
   courses: file[];
   workshops: file[];
+  projects:project;
 
   ngOnInit(): void {
     this.retrievecourse();
     this.retrieveworkshops();
+    this.getAchievemets();
   }
   retrievecourse() {
 
@@ -59,6 +71,15 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
 
   openDialogAch(){
     this.dialog.open(OtherAchComponent)
+  }
+  getAchievemets() {
+    this.prf_srvc.getAchievements()
+      .subscribe(res => {
+        this.projects = res.project;
+        console.log(res);
+      }, err => {
+
+    })
   }
   // openDialog(state) {
   //  const dialog =  this.diaglogref.open(StudentVerficationComponent, {

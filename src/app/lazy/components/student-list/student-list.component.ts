@@ -6,16 +6,15 @@ import { Router } from '@angular/router';
 
 export interface PeriodicElement {
   name: string;
-  registerNo: string;
+  registrationNumber: string;
   CGPA: number;
-  Gender: string;
-  classXII: number;
-  standingArrears: number;
+
+  XII: number;
+  arrears: number;
+  gender:string
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  {registerNo: 'RA1811032010048', name: 'Yaksh', CGPA: 9.8, Gender: 'Male',classXII: 93.2, standingArrears: 0},
-];
+
 
 @Component({
   selector: 'app-student-list',
@@ -24,19 +23,69 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class StudentListComponent implements OnInit{
   constructor(private srv: FacultyService, private route:Router) { }
-  
-
-  displayedColumns: string[] = ['registerNo', 'name', 'CGPA', 'Gender', 'classXII', 'standingArrears'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-
+ ELEMENT_DATA: PeriodicElement[] = [
+    {registrationNumber: 'RA1811032010048', name: 'Yaksh', CGPA: 9.8,XII: 93.2, arrears: 0,gender:'male'},
+  ];
+  data;
+  displayedColumns: string[] = ['registrationNumber', 'name', 'CGPA', 'classXII', 'arrears','gender'];
+  dataSource = new MatTableDataSource(this.ELEMENT_DATA);
+  upper:number;
+  lower:number;
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  
-  ngOnInit() {
 
-}
-  
+
+  ngOnInit() {
+    this.srv.getFacultystudentDetail()
+      .subscribe(res => {
+        console.log(res);
+        this.data = res;
+        this.dataSource = new MatTableDataSource(res);
+      }, err => {
+          console.log(err);
+    })
+
+  }
+  male() {
+    this.dataSource = new MatTableDataSource(this.data.map(item => {
+      if (item.gender === 'male') {
+        return item;
+      }
+    }));
+
+  }
+  female() {
+    this.dataSource = new MatTableDataSource(this.data.map(item => {
+      if (item.gender === 'female') {
+        return item;
+      }
+    }));
+  }
+  arrears() {
+    this.dataSource = new MatTableDataSource(this.data.map(item => {
+      if (item.arrears > 0) {
+        return item;
+      }
+    }));
+  }
+  nilarrears() {
+    this.dataSource = new MatTableDataSource(this.data.map(item => {
+      if (item.arrears == 0) {
+        return item;
+      }
+    }));
+  }
+  cgpalimit() {
+    console.log(this.upper);
+    console.log(this.lower);
+    this.dataSource = new MatTableDataSource(this.data.map(item => {
+      if (item.CGPA <= this.upper && item.CGPA >= this.lower) {
+        return item;
+      }
+    }));
+  }
+
 }

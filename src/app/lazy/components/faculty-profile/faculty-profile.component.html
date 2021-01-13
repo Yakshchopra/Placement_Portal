@@ -15,7 +15,7 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
 
             <div class="over">
@@ -24,7 +24,7 @@
                   <div class="tiles one">
                     <div class="head">
                       <h1>Registered Students</h1>
-                      <h2>123</h2>
+                      <h2>{{registeredUser}}</h2>
                     </div>
                   </div>
                 </div>
@@ -33,7 +33,7 @@
                   <div class="tiles two">
                     <div class="head">
                       <h1>Pending Verifications</h1>
-                      <h2>123</h2>
+                      <h2>{{verification}}</h2>
                     </div>
                   </div>
                 </div>
@@ -42,39 +42,39 @@
                   <h1>Updates</h1>
                   <hr>
                 </div>
-                
+
               </div>
             </div>
 
-           
+
 
         </div>
         <div class="col-4">
             <div class="profile-side">
                 <div class="circle"></div>
-                <h1>Yaksh Chopra</h1>
-                <h3>RA1811032010048</h3>
+                <h1>{{facultyDetail.name}}</h1>
+                <h3>{{facultyDetail.facultyId}}</h3>
                 <h2>
                     Email
                 </h2>
-               
+
                 <hr>
-                <p>yakshchopra@gmail.com</p>
+                <p>{{facultyDetail.email}}</p>
                 <h2>
                   Deparment
-              </h2>             
+              </h2>
               <hr>
                <p>Computer Science</p>
 
                <h2>
                 Section
-            </h2>             
+            </h2>
             <hr>
              <p>N1</p>
             </div>
         </div>
 
-        
+
 
     </div>
 </div>

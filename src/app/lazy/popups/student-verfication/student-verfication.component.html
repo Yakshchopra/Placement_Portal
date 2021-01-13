@@ -1,4 +1,4 @@
-    <div class="cont">        
+    <div class="cont">
         <h1>Enter the following details.<i (click)='closerDialog()' class="fas fa-times"></i></h1>
         <hr>
             <!-- <div class="form-group">
@@ -17,33 +17,33 @@
                 <label class="custom-file-label" for="customFile">Attach Proof</label>
             </div>
             <button type="submit" class="btn btn-primary" (click)='submit()'>Submit</button> -->
-            <form action="">
+
                 <div class="form-group">
                     <div class="row">
                         <div class="col">
                             <mat-form-field appearance="fill" class="fields">
                                 <mat-label>Name</mat-label>
-                                <input matInput>
+                                <input matInput [(ngModel)]="project.name">
                             </mat-form-field>
                         </div>
                         <div class="col">
                             <mat-form-field appearance="fill" class="fields">
                                 <mat-label>Link</mat-label>
-                                <input matInput>
+                                <input matInput [(ngModel)]="project.link">
                             </mat-form-field>
                         </div>
                     </div>
                     <mat-form-field appearance="fill" class="fields">
                         <mat-label>Tech Stack</mat-label>
-                        <input matInput>
+                        <input matInput [(ngModel)]="project.techstack">
                     </mat-form-field>
                     <mat-form-field appearance="fill" class="fields">
                         <mat-label>Description</mat-label>
-                        <textarea matInput></textarea>
+                        <textarea matInput [(ngModel)]="project.description"></textarea>
                       </mat-form-field>
-                      <button class="enter" mat-flat-button color="primary" type="submit">Submit</button>
+                      <button class="enter" mat-flat-button color="primary" type="submit" (click)="sub()">Submit</button>
                 </div>
-            </form>
-            
-          
+
+
+
     </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-faculty-sidebar',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FacultySidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -15,7 +16,7 @@ export class FacultySidebarComponent implements OnInit {
     localStorage.removeItem('token');
     localStorage.removeItem('faculty_id');
     localStorage.removeItem('user');
-    window.location.reload();
+    this.router.navigateByUrl('/')
   }
 
 }

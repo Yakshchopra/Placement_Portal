@@ -11,52 +11,52 @@
           <mat-label>Filter</mat-label>
           <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
         </mat-form-field>
-        
+
         <table class="filterList" mat-table [dataSource]="dataSource" class="mat-z8">
-        
+
           <!-- Position Column -->
-          <ng-container matColumnDef="registerNo">
+          <ng-container matColumnDef="registrationNumber">
             <th class="th" mat-header-cell *matHeaderCellDef> No. </th>
-            <td  class="td" mat-cell *matCellDef="let element"> {{element.registerNo}} </td>
+            <td  class="td" mat-cell *matCellDef="let element"> {{element.registrationNumber}} </td>
           </ng-container>
-        
+
           <!-- Name Column -->
           <ng-container matColumnDef="name">
             <th class="th" mat-header-cell *matHeaderCellDef> Name </th>
             <td class="td" mat-cell *matCellDef="let element"> {{element.name}} </td>
           </ng-container>
-        
+
           <!-- Weight Column -->
           <ng-container matColumnDef="CGPA">
-            <th class="th" mat-header-cell *matHeaderCellDef> Weight </th>
+            <th class="th" mat-header-cell *matHeaderCellDef> CGPA </th>
             <td class="td" mat-cell *matCellDef="let element"> {{element.CGPA}} </td>
           </ng-container>
-        
+
           <!-- Symbol Column -->
-          <ng-container matColumnDef="Gender">
+          <ng-container matColumnDef="gender">
             <th class="th" mat-header-cell *matHeaderCellDef> Gender </th>
-            <td class="td" mat-cell *matCellDef="let element">{{element.Gender}}</td>
+            <td class="td" mat-cell *matCellDef="let element">{{element.gender}}</td>
           </ng-container>
 
           <ng-container matColumnDef="classXII">
             <th class="th" mat-header-cell *matHeaderCellDef> Class XII </th>
-            <td class="td" mat-cell *matCellDef="let element">{{element.classXII}}</td>
+            <td class="td" mat-cell *matCellDef="let element">{{element.XII}}</td>
           </ng-container>
 
-          <ng-container matColumnDef="standingArrears">
+          <ng-container matColumnDef="arrears">
             <th class="th" mat-header-cell *matHeaderCellDef>Arrears </th>
-            <td class="td" mat-cell *matCellDef="let element">{{element.standingArrears}}</td>
+            <td class="td" mat-cell *matCellDef="let element">{{element.arrears}}</td>
           </ng-container>
-        
+
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        
+
           <!-- Row shown when there is no matching data. -->
           <tr class="mat-row" *matNoDataRow>
             <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
           </tr>
         </table>
-        
+
        </div>
       </div>
   </div>
@@ -68,17 +68,17 @@
       <h3>CGPA</h3>
       <mat-form-field class="example-full-width">
         <mat-label>Minimum Limit</mat-label>
-        <input matInput placeholder="Enter maximum CGPA">
+        <input matInput placeholder="Enter maximum CGPA" [(ngModel)]="upper">
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Maximum Limit</mat-label>
-        <input matInput placeholder="Enter minimum CGPA">
+        <input matInput placeholder="Enter minimum CGPA" [(ngModel)]="lower" (keyup.enter)="cgpalimit()">
       </mat-form-field>
 
       <h3 class="gender">Gender</h3>
       <mat-radio-group class="genderValue" aria-label="Select an option">
-        <mat-radio-button value="1">Male</mat-radio-button>
-        <mat-radio-button value="2">Female</mat-radio-button>
+        <mat-radio-button value="1" (click)="male()">Male</mat-radio-button>
+        <mat-radio-button value="2" (click)="female()">Female</mat-radio-button>
 
       </mat-radio-group>
 
@@ -94,13 +94,13 @@
 
       <h3 class="gender">Arrears</h3>
       <mat-radio-group class="genderValue" aria-label="Select an option">
-        <mat-radio-button value="1">Nil</mat-radio-button>
-        <mat-radio-button value="2">Yes</mat-radio-button>
+        <mat-radio-button value="1" (click)="nilarrears()">Nil</mat-radio-button>
+        <mat-radio-button value="2" (click)="arrears()">Yes</mat-radio-button>
 
       </mat-radio-group>
 
 
     </form>
-       
+
   </div>
 </section>

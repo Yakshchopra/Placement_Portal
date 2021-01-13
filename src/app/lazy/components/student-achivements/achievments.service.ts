@@ -20,6 +20,10 @@ export class AchievmentsService {
     const URL = this.BaseURL + 'workshops/add';
     return this.http.post(URL, data);
   }
+  submitprojects(data) {
+    const URL = this.BaseURL + 'projects/add';
+    return this.http.post(URL, data);
+  }
   getworkshops() {
     const URL = this.BaseURL + 'workshops/get';
     return this.http.get( URL);
