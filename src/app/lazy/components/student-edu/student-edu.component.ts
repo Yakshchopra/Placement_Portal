@@ -39,6 +39,7 @@ export class StudentEduComponent implements OnInit, OnDestroy{
   percentage = '.percentage';
   arrears;
   standingarrears;
+  edit  = Array(6).fill(false);
 
   constructor(private dialog: MatDialog, private srv: ProfileService) { }
   school: school = {
@@ -89,7 +90,7 @@ export class StudentEduComponent implements OnInit, OnDestroy{
           } catch {
             console.log('failed');
           }
-          this.updatepercentage('CGPA', `${this.CGPA}`);
+          this.updatepercentage('CGPA', `${this.CGPA}`,2);
 
 
           }
@@ -121,14 +122,43 @@ export class StudentEduComponent implements OnInit, OnDestroy{
     this.srvUns.unsubscribe();
   }
   updatepercentage(type, data, i?) {
-    if(i)
-    this.index[i] = false;
+    let full;
+    let edu = 'educationDetails';
+    let colg = '.college';
+    let school = '.school';
+    if (i ==1)
+      full = edu + school + "." + type + ".percentage";
+    else if (i == 2)
+      full = 'CGPA';
+    else
+    full = edu + colg + "." + type + ".percentage";
+
     console.log('yo');
-    let response = { sem: type, response: data };
+
+
+    let response = { sem: full, response: data };
+    console.log(response);
     this.srv.updatePercentage(response)
       .subscribe(res => {
         console.log(res);
-    })
+
+      })
+    if (!i) {
+      this.srv.updatePercentage({sem:edu+colg+"."+type+".verified",response:'pending'})
+      .subscribe(res => {
+        console.log(res);
+        location.reload();
+
+      })
+    }
+    if (i == 1) {
+      this.srv.updatePercentage({sem:edu+school+"."+type+".verified",response:'pending'})
+      .subscribe(res => {
+        console.log(res);
+        location.reload();
+
+      })
+    }
   }
 
 

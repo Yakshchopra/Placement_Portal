@@ -1,0 +1,30 @@
+
+    <div class="cont">
+      <h1 style="display:flex;justify-content: space-between;"><span>the following details.</span> <i class="fas fa-times" mat-dialog-close></i></h1>
+      <hr>
+
+
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col">
+                          <mat-form-field appearance="fill" class="fields">
+                              <mat-label>Company</mat-label>
+                              <input matInput [(ngModel)]="project.company">
+                          </mat-form-field>
+                      </div>
+                      <div class="col">
+                          <mat-form-field appearance="fill" class="fields">
+                              <mat-label>Status</mat-label>
+                              <input matInput [(ngModel)]="project.status">
+                          </mat-form-field>
+                      </div>
+                  </div>
+
+
+
+              </div>
+              <button class="enter" mat-flat-button color="primary" type="submit"  (click)="submit()">Submit</button>
+
+
+
+  </div>

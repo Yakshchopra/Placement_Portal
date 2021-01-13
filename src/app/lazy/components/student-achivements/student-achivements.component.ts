@@ -81,6 +81,7 @@ export class StudentAchivementsComponent implements OnInit, OnDestroy {
 
     })
   }
+
   // openDialog(state) {
   //  const dialog =  this.diaglogref.open(StudentVerficationComponent, {
   //     width: '50%',

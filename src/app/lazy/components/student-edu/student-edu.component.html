@@ -19,10 +19,10 @@
           <h4>X</h4>
         </div>
         <div class="col">
-          <h4>{{school.X.percentage}}<i class="fas fa-pencil-alt editic"></i><i class="fas fa-save editic"></i></h4>
+          <h4><input class="invisibe" [(ngModel)]="school.X.percentage" *ngIf="edit[2]==true"><span *ngIf="edit[2]==false">{{school.X.percentage=='null'?'Not Entered':school.X.percentage}}</span><i class="fas fa-pencil-alt editic" (click)="edit[2]=true"></i><i class="fas fa-save editic" (click)="updatepercentage('X',school.X.percentage,1)"></i></h4>
         </div>
         <div class="col">
-          <h4><i class="far fa-check-circle"></i>Pending</h4>
+          <h4><span>{{school.X.verified | titlecase}}</span></h4>
         </div>
       </div>
       <div class="row container">
@@ -30,10 +30,10 @@
           <h4>XII</h4>
         </div>
         <div class="col">
-          <h4>{{school.XII.percentage}}<i class="fas fa-pencil-alt editic"></i><i class="fas fa-save editic"></i></h4>
+          <h4><input class="invisibe" [(ngModel)]="school.XII.percentage" *ngIf="edit[2]==true"><span *ngIf="edit[2]==false">{{school.XII.percentage=='null'?'Not Entered':school.XII.percentage}}</span><i class="fas fa-pencil-alt editic" (click)="edit[2]=true"></i><i class="fas fa-save editic" (click)="updatepercentage('XII',school.XII.percentage,1)"></i></h4>
         </div>
         <div class="col">
-          <h4><i class="far fa-check-circle"></i>Pending</h4>
+          <h4><span>{{school.XII.verified | titlecase}}</span></h4>
         </div>
       </div>
     </div>
@@ -59,10 +59,10 @@
           <h4>Sem-1</h4>
         </div>
         <div class="col">
-          <h4>{{college.one.percentage=='null'?'Not Entered':college.one.percentage}}<i class="fas fa-pencil-alt editic"></i><i class="fas fa-save editic"></i></h4>
+          <h4><input class="invisibe" [(ngModel)]="college.one.percentage" *ngIf="edit[2]==true"><span *ngIf="edit[2]==false">{{college.one.percentage=='null'?'Not Entered':college.one.percentage}}</span><i class="fas fa-pencil-alt editic" (click)="edit[2]=true"></i><i class="fas fa-save editic" (click)="updatepercentage('one',college.one.percentage)"></i></h4>
         </div>
         <div class="col">
-          <h4><i class="far fa-check-circle"></i>Pending</h4>
+          <h4><span>{{college.one.verified | titlecase}}</span></h4>
         </div>
       </div>
 
@@ -71,10 +71,10 @@
           <h4>Sem-2</h4>
         </div>
         <div class="col">
-          <h4>{{college.two.percentage=='null'?'Not Entered':college.two.percentage}}<i class="fas fa-pencil-alt editic"></i><i class="fas fa-save editic"></i></h4>
+          <h4><input class="invisibe" [(ngModel)]="college.two.percentage" *ngIf="edit[2]==true"><span *ngIf="edit[2]==false">{{college.two.percentage=='null'?'Not Entered':college.two.percentage}}</span><i class="fas fa-pencil-alt editic" (click)="edit[2]=true"></i><i class="fas fa-save editic" (click)="updatepercentage('two',college.two.percentage)"></i></h4>
         </div>
         <div class="col">
-          <h4><i class="far fa-check-circle"></i>Pending</h4>
+          <h4><span>{{college.two.verified | titlecase}}</span></h4>
         </div>
       </div>
       <div class="row container">
@@ -82,10 +82,10 @@
           <h4>Sem-3</h4>
         </div>
         <div class="col">
-          <h4>{{college.three.percentage=='null'?'Not Entered':college.three.percentage}}<i class="fas fa-pencil-alt editic"></i><i class="fas fa-save editic"></i></h4>
+          <h4><input class="invisibe" [(ngModel)]="college.three.percentage" *ngIf="edit[2]==true"><span *ngIf="edit[2]==false">{{college.three.percentage=='null'?'Not Entered':college.three.percentage}}</span><i class="fas fa-pencil-alt editic" (click)="edit[2]=true"></i><i class="fas fa-save editic" (click)="updatepercentage('three',college.three.percentage)"></i></h4>
         </div>
         <div class="col">
-          <h4><i class="far fa-check-circle"></i>Pending</h4>
+          <h4><span>{{college.three.verified | titlecase}}</span></h4>
         </div>
       </div>
       <div class="row container">
@@ -93,10 +93,10 @@
           <h4>Sem-4</h4>
         </div>
         <div class="col">
-          <h4>{{college.four.percentage=='null'?'Not Entered':college.four.percentage}}<i class="fas fa-pencil-alt editic"></i><i class="fas fa-save editic"></i></h4>
+          <h4><input class="invisibe" [(ngModel)]="college.four.percentage" *ngIf="edit[2]==true"><span *ngIf="edit[2]==false">{{college.four.percentage=='null'?'Not Entered':college.four.percentage}}</span><i class="fas fa-pencil-alt editic" (click)="edit[2]=true"></i><i class="fas fa-save editic" (click)="updatepercentage('four',college.four.percentage)"></i></h4>
         </div>
         <div class="col">
-          <h4><i class="far fa-check-circle"></i>Pending</h4>
+          <h4><span>{{college.four.verified | titlecase}}</span></h4>
         </div>
       </div>
 
@@ -107,7 +107,7 @@
       <div class="tiles one">
         <div class="head">
           <h1>CGPA</h1>
-          <h2>9.8</h2>
+          <h2>{{this.CGPA}}</h2>
         </div>
       </div>
       <div class="tiles two">

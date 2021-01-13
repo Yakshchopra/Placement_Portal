@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { MatDialog } from '@angular/material/dialog';
+import { PlacementaddComponent } from 'src/app/placementadd/placementadd.component';
+import { AchievmentsService } from '../student-achivements/achievments.service';
 
 export interface Skills {
   name: string;
@@ -18,11 +21,14 @@ export class PlacementComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
-  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
-  skills: Skills[] = [
-   
-  ];
+  constructor(private dialog:MatDialog,private srvc:AchievmentsService)
+  {
 
+}  readonly separatorKeysCodes: number[] = [ENTER, COMMA];
+  skills: Skills[] = [
+
+  ];
+  placementlist;
 
 
   add(event: MatChipInputEvent): void {
@@ -48,6 +54,15 @@ export class PlacementComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.srvc.getPlacement()
+      .subscribe(res => {
+        console.log(res);
+        this.placementlist = res;
+    })
   }
+  openDialog() {
+    this.dialog.open(PlacementaddComponent);
+  }
+
 
 }

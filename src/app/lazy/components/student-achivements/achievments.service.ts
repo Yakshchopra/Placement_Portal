@@ -36,4 +36,12 @@ export class AchievmentsService {
     const URL = this.BaseURL + 'file/upload';
     return this.http.post( URL, data);
   }
+  submitPlacement(data) {
+    const URL = this.BaseURL + 'placements/add';
+    return this.http.post( URL, data);
+  }
+  getPlacement() {
+    const URL = this.BaseURL + 'placements/get';
+    return this.http.get( URL);
+  }
 }

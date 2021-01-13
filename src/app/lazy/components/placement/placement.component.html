@@ -6,7 +6,7 @@
                 <hr>
                 <div class="selection container">
                     <div class="row">
-                        <div class="col">
+                        <div class="col" (click)="openDialog()">
                             <h2>Placements</h2>
                         </div>
                         <div class="col">
@@ -35,10 +35,21 @@
                         <h2>Verification</h2>
                     </div>
                 </div>
+                <div class="row title container" *ngFor="let item of placementlist">
+                  <div class="col">
+                      <h2>{{item.company}}</h2>
+                  </div>
+                  <div class="col">
+                      <h2>{{item.status}}</h2>
+                  </div>
+                  <div class="col">
+                      <h2>{{item.verified}}</h2>
+                  </div>
+              </div>
             </div>
 
-        </div>     
-        
+        </div>
+
         <div class="skills">
             <h1>Skills</h1>
             <hr>
@@ -56,9 +67,9 @@
                          (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>
               </mat-form-field>
-              
+
         </div>
 
-        
+
     </div>
 </section>

@@ -54,6 +54,7 @@ import { InternationalCertificationsComponent } from './popups/international-cer
 import { OtherCertificationsComponent } from './popups/other-certifications/other-certifications.component';
 import { InternshipsComponent } from './popups/internships/internships.component';
 import { PlacementComponent } from './components/placement/placement.component';
+import { PlacementaddComponent } from '../placementadd/placementadd.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { PlacementComponent } from './components/placement/placement.component';
     InternationalCertificationsComponent,
     OtherCertificationsComponent,
     InternshipsComponent,
-    PlacementComponent
+    PlacementComponent,
+    PlacementaddComponent
   ],
   entryComponents: [PlacementDetailsComponent],
   imports: [
