@@ -104,7 +104,7 @@ hr {
   border: solid #ffc117;
   top: 0;
   left: 0;
-  transform: rotate(355deg);
+  border-radius: 20px;
   -webkit-box-shadow: 2px 2px 8px 0px rgba(133, 133, 133, 1);
   -moz-box-shadow: 2px 2px 8px 0px rgba(133, 133, 133, 1);
   box-shadow: 2px 2px 8px 0px rgba(133, 133, 133, 1);
@@ -120,8 +120,4 @@ hr {
 
 .yc-selection {
   margin-top: 8%;
-}
-
-.mid {
-  transform: rotate(5deg);
 }
