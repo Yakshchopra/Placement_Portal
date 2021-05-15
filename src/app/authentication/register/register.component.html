@@ -1,197 +1,216 @@
 <section class="main">
   <div>
-
     <div class="row">
       <div class="col-6">
         <h1 class="headline">Looks like you are new here!</h1>
         <h2 class="support">Just go through some simple steps to get going.</h2>
+        <h1>Test</h1>
         <!-- STEPER -->
         <mat-horizontal-stepper [linear]="isLinear" #stepper class="form">
           <mat-step [stepControl]="firstFormGroup">
             <form [formGroup]="firstFormGroup">
               <ng-template matStepLabel>Personal Details</ng-template>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>First Name</mat-label>
-                      <input matInput formControlName="">
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Registration Name</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>First Name</mat-label>
+                    <input matInput formControlName="" />
+                  </mat-form-field>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>College Email</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Personal Email</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Registration Name</mat-label>
+                    <input matInput />
+                  </mat-form-field>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>College Email</mat-label>
+                    <input matInput />
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Personal Email</mat-label>
+                    <input matInput />
+                  </mat-form-field>
+                </div>
+              </div>
 
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Contact Number</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Alternate Number</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Contact Number</mat-label>
+                    <input matInput />
+                  </mat-form-field>
                 </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Alternate Number</mat-label>
+                    <input matInput />
+                  </mat-form-field>
+                </div>
+              </div>
 
               <div>
-                <button mat-button class="next" matStepperNext>Next<i class="fas fa-long-arrow-alt-right"></i></button>
+                <button mat-button class="next" matStepperNext>
+                  Next<i class="fas fa-long-arrow-alt-right"></i>
+                </button>
               </div>
             </form>
           </mat-step>
-          <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+          <mat-step
+            [stepControl]="secondFormGroup"
+            label="Fill out your address"
+          >
             <form [formGroup]="firstFormGroup">
               <ng-template matStepLabel>Class Details</ng-template>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Department</mat-label>
-                      <mat-select>
-                        <mat-option value="option">CSE</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Specialization</mat-label>
-                      <mat-select>
-                        <mat-option value="option">IoT</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Department</mat-label>
+                    <mat-select>
+                      <mat-option value="option">CSE</mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Year Co-ordinator</mat-label>
-                      <mat-select>
-                        <mat-option value="option">Mr. K.C. Prabushnkar</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Faculty Advisor</mat-label>
-                      <mat-select>
-                        <mat-option value="option">Mr. K.C. Prabushnkar</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Specialization</mat-label>
+                    <mat-select>
+                      <mat-option value="option">IoT</mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Year Co-ordinator</mat-label>
+                    <mat-select>
+                      <mat-option value="option"
+                        >Mr. K.C. Prabushnkar</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Faculty Advisor</mat-label>
+                    <mat-select>
+                      <mat-option value="option"
+                        >Mr. K.C. Prabushnkar</mat-option
+                      >
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
 
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Section</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>NRI Student</mat-label>
-                      <mat-select>
-                        <mat-option value="option">Yes</mat-option>
-                        <mat-option value="option">No</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Section</mat-label>
+                    <input matInput />
+                  </mat-form-field>
                 </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>NRI Student</mat-label>
+                    <mat-select>
+                      <mat-option value="option">Yes</mat-option>
+                      <mat-option value="option">No</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
 
               <div>
-                <button mat-button class="next" matStepperNext>Next<i class="fas fa-long-arrow-alt-right"></i></button>
+                <button mat-button class="next" matStepperNext>
+                  Next<i class="fas fa-long-arrow-alt-right"></i>
+                </button>
               </div>
             </form>
           </mat-step>
 
-          <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+          <mat-step
+            [stepControl]="secondFormGroup"
+            label="Fill out your address"
+          >
             <form [formGroup]="firstFormGroup">
               <ng-template matStepLabel>Miscelanious</ng-template>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Father's Contact Number</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Mother's Contact Number</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Father's Contact Number</mat-label>
+                    <input matInput />
+                  </mat-form-field>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Date of Birth</mat-label>
-                      <input matInput [matDatepicker]="picker">
-                      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                      <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Gender</mat-label>
-                      <mat-select>
-                        <mat-option value="option">Male</mat-option>
-                        <mat-option value="option">Female</mat-option>
-                        <mat-option value="option">Other</mat-option>
-                      </mat-select>
-                    </mat-form-field>
-                  </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Mother's Contact Number</mat-label>
+                    <input matInput />
+                  </mat-form-field>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Total Arrears</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Standing Arrears</mat-label>
-                      <input matInput>
-                    </mat-form-field>
-                  </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
                 </div>
-                <div class="row">
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Password</mat-label>
-                      <input matInput type="password">
-                    </mat-form-field>
-                  </div>
-                  <div class="col">
-                    <mat-form-field appearance="outline" class="inputs">
-                      <mat-label>Confirm Password</mat-label>
-                      <input matInput type="password">
-                    </mat-form-field>
-                  </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Gender</mat-label>
+                    <mat-select>
+                      <mat-option value="option">Male</mat-option>
+                      <mat-option value="option">Female</mat-option>
+                      <mat-option value="option">Other</mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Total Arrears</mat-label>
+                    <input matInput />
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Standing Arrears</mat-label>
+                    <input matInput />
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Password</mat-label>
+                    <input matInput type="password" />
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" class="inputs">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput type="password" />
+                  </mat-form-field>
+                </div>
+              </div>
 
               <div>
                 <button mat-button matStepperNext class="next">Submit</button>
-                <button mat-button (click)="stepper.reset()" class="reset">Reset</button>
+                <button mat-button (click)="stepper.reset()" class="reset">
+                  Reset
+                </button>
               </div>
             </form>
           </mat-step>
@@ -200,10 +219,12 @@
         <!-- STEPER END -->
       </div>
       <div class="col-6">
-        <img class="image" src="../../../assets/gifs/23844-concept-man-flying-with-books.gif" alt="student">
+        <img
+          class="image"
+          src="../../../assets/gifs/23844-concept-man-flying-with-books.gif"
+          alt="student"
+        />
       </div>
     </div>
-
   </div>
-
 </section>
